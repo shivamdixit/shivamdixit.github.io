@@ -243,3 +243,11 @@ body {
 #google-ico:hover {
 	background: url('../img/google_hover.png') no-repeat 0 center;
 }
+
+#github-ico {
+	background: url('../img/github.png') no-repeat 0 center;
+}
+
+#github-ico:hover {
+	background: url('../img/github_hover.png') no-repeat 0 center;
+}
