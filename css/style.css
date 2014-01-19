@@ -176,7 +176,7 @@ body {
 }
 
 .footer-container {
-	height: 80px;
+	height: 60px;
 	width: 100%;
 	background-color: #F6F6E8;
 	position:fixed;
@@ -190,8 +190,8 @@ body {
 
 
 .footer-icons {
-	margin: 3;
-	padding: 15;
+	margin: 2;
+	padding: 5;
 }
 
 .footer-icons li {
