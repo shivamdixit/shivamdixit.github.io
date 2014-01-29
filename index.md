@@ -23,7 +23,7 @@ At present I am working for a software company as a back-end developer. I am an 
 
 ## What is this blog about ?
 
-This blog is about everything that is peeping in my head, mostly programming. I am not a professional blogger. I love to share my personal experiences and this blog is just for my satisfaction. If you have any suggestions feel free to drop me an email at `shivamd001 at gmail dot com`. Blog [Archive](archive.html)
+This blog is about everything that is peeping in my head, mostly programming. I am not a professional blogger. I love to share my personal experiences and this blog is just for my satisfaction. If you have any suggestions feel free to drop me an email at `shivamd001 at gmail dot com`. Check out blog [Archive](archive.html)
 
 
 > *"Talk is cheap. Show me the code"*  - **Linus Torvalds**
