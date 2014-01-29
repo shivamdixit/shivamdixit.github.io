@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+        <title>Shivam Dixit</title>
+        <description>Shivam Dixit - Shivam Dixit</description>
+        <link>http://shivamdixit.com</link>
+        <link>http://shivamdixit.com</link>
+        <lastBuildDate>2014-01-29T20:22:44+05:30</lastBuildDate>
+        <pubDate>2014-01-29T20:22:44+05:30</pubDate>
+        <ttl>1800</ttl>
+
+
+        <item>
+                <title>The setup</title>
+                <description>&lt;p&gt;Alright, so the stage is set and I am all set for my first blog post.&lt;/p&gt;</description>
+                <link>http://shivamdixit.com/2014/01/29/the-setup</link>
+                <guid>http://shivamdixit.com/2014/01/29/the-setup</guid>
+                <pubDate>2014-01-29T00:00:00+05:30</pubDate>
+        </item>
+
+
+</channel>
+</rss>

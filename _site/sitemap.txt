@@ -1,0 +1,10 @@
+
+http://shivamdixit.com/archive.html
+http://shivamdixit.com/index.html
+http://shivamdixit.com/sitemap.txt
+http://shivamdixit.com/atom.xml
+http://shivamdixit.com/pages.html
+http://shivamdixit.com/rss.xml
+http://shivamdixit.com/tags.html
+
+http://shivamdixit.com/2014/01/29/the-setup

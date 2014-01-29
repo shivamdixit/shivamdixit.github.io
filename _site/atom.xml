@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Shivam Dixit</title>
+ <link href="http://shivamdixit.com/" rel="self"/>
+ <link href="http://shivamdixit.com"/>
+ <updated>2014-01-29T20:22:44+05:30</updated>
+ <id>http://shivamdixit.com</id>
+ <author>
+   <name>Shivam Dixit</name>
+   <email>shivamd001@gmail.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>The setup</title>
+   <link href="http://shivamdixit.com/2014/01/29/the-setup"/>
+   <updated>2014-01-29T00:00:00+05:30</updated>
+   <id>http://shivamdixit.com/2014/01/29/the-setup</id>
+   <content type="html">&lt;p&gt;Alright, so the stage is set and I am all set for my first blog post.&lt;/p&gt;</content>
+ </entry>
+ 
+ 
+</feed>
