@@ -3,8 +3,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>The setup</title>
-    <meta name="description" content="My first blog post">
+    <title>Using custom 404 page in Apache</title>
+    <meta name="description" content="How to use custom 404 error page in Apache">
     <meta name="author" content="Shivam Dixit">
     <meta name="keywords" content="shivam dixit, hacker, developer, mavihs, shivamd001, shivam">
     <link rel="icon" type="image/png" href="/assets/themes/twitter/img/favicon.ico">
@@ -100,7 +100,7 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>The setup </h1>
+  <h1>Using custom 404 page in Apache </h1>
 </div>
 
 <div class="row-fluid post-full">
@@ -109,7 +109,64 @@
       <span>29 January 2014</span>
     </div>
     <div class="content">
-      <p>Alright, so the stage is set and I am all set for my first blog post.</p>
+      <blockquote>
+<h2 id="what_is_404_error">What is 404 error?</h2>
+</blockquote>
+
+<p>When you fire up your web-browser and type in, say <code>google.com</code>, your web-browser makes a request to the server. In return, server returns a response with a special status code. <code>404</code> is the status code corresponding to “Page not found” error. Some other common status codes are:</p>
+
+<pre><code>200 : OK
+301 : Moved Permanently
+400 : Bad Request
+401 : Unauthorized
+403 : Forbidden
+404 : Not Found
+500 : Internal Server Error</code></pre>
+
+<blockquote>
+<h2 id="what_is_htaccess_file">What is .htaccess file?</h2>
+</blockquote>
+
+<p><code>.htaccess</code> is short name for Hypertext Access. They are apache server configuration files at directory level <em>i.e</em> they control the settings for the directory in which they are placed in as well as the sub-directories underneath. You can use them to over-ride the parent configuration settings. It is not recommended to use <code>.htaccess</code> files as they create certain performance issues. By default they are disabled.</p>
+
+<blockquote>
+<h2 id="how_to_enable_htaccess_">How to enable .htaccess ?</h2>
+</blockquote>
+
+<p>Open the file “default” placed inside <code>sites-available</code></p>
+
+<p><code>$ vim /etc/apache2/sites-available/default</code></p>
+
+<p>Search for the section:</p>
+
+<pre><code>&lt;Directory /var/www/&gt;
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride None
+            Order allow,deny
+            allow from all
+&lt;/Directory&gt;</code></pre>
+
+<p>Modify <code>AllowOverride None</code> to <code>AllowOverride All</code></p>
+
+<p>Restart the apache server:</p>
+
+<p><code>$ sudo service apache2 restart</code></p>
+
+<p>You are done!</p>
+
+<blockquote>
+<h2 id="how_to_use_custom_404_page_using_htaccess_">How to use custom 404 page using .htaccess ?</h2>
+</blockquote>
+
+<p>Create a file with name <code>.htaccess</code> in your document web root. If it already exists skip to next step.</p>
+
+<p>Place the following line at the end of the file :</p>
+
+<p><code>ErrorDocument 404 /404.html</code></p>
+
+<p>Save and exit.</p>
+
+<p>Now whenever a visitor request a page which does not exists, they will see 404.html instead of apache default 404 error message.</p>
     </div>
 
     
@@ -123,9 +180,9 @@
 
   
      
-    	<li><a href="/tags.html#setup-ref">setup <span>1</span></a></li>
+    	<li><a href="/tags.html#apache-ref">apache <span>1</span></a></li>
      
-    	<li><a href="/tags.html#introduction-ref">introduction <span>1</span></a></li>
+    	<li><a href="/tags.html#404-ref">404 <span>1</span></a></li>
     
   
 
@@ -138,11 +195,11 @@
     <div class="pagination">
       <ul>
       
-        <li class="prev disabled"><a>&larr; Previous</a></li>
+        <li class="prev"><a href="/2014/01/29/the-setup" title="The setup">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/2014/01/29/using-custom-404-page-in-apache" title="Using custom 404 page in Apache">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a>
       
       </ul>
     </div>

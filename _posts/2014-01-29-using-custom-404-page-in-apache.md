@@ -9,7 +9,7 @@ tags: [apache, 404]
 
 > ## What is 404 error?
 
-When you fire up your web-browser and type in, say `google.com`, your web-browser makes a request to the server. In return, server returns a response with a special status code. `404` is the status code corresponding to "Page not found" error. Some of the common status codes are:
+When you fire up your web-browser and type in, say `google.com`, your web-browser makes a request to the server. In return, server returns a response with a special status code. `404` is the status code corresponding to "Page not found" error. Some other common status codes are:
 
     200 : OK
     301 : Moved Permanently
@@ -25,7 +25,7 @@ When you fire up your web-browser and type in, say `google.com`, your web-browse
 
 > ## How to enable .htaccess ?
 
-Open the file "default" in `../apache2/sites-available`:
+Open the file "default" placed inside `sites-available`
 
 `$ vim /etc/apache2/sites-available/default`
 
@@ -44,12 +44,16 @@ Restart the apache server:
 
 `$ sudo service apache2 restart`
 
-> ## How to use custom 404 using .htaccess ?
+You are done!
+
+> ## How to use custom 404 page using .htaccess ?
 
 Create a file with name `.htaccess` in your document web root. If it already exists skip to next step.
 
 Place the following line at the end of the file :
 
 `ErrorDocument 404 /404.html`
+
+Save and exit.
 
 Now whenever a visitor request a page which does not exists, they will see 404.html instead of apache default 404 error message.
