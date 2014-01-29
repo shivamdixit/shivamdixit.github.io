@@ -15,11 +15,15 @@ I am a second year undergraduate student and a web developer. I spend most of my
 
 ## Tell me something more
 
-My journey to the virtual world started back in year 2001 when my parents brought a personal computer for me. I was mesmerized by the powers of virtual monster!
-
-I was introduced to programming when I was in VIII standard and since then I have never looked back.
-
 At present I am working for a software company as a back-end developer. I am an open source enthusiast and spend most of my free time writing code for [FOSS](http://en.wikipedia.org/wiki/Free_and_open-source_software) community.
+
+My area of interests include:
+
+* Data Structures and Algorithms
+* Web Development
+* Machine Learning
+* Application Security
+
 
 ## What is this blog about ?
 
