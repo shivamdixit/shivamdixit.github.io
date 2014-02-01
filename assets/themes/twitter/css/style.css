@@ -82,43 +82,53 @@
 
 
 #twitter-ico {
-  background: url('../img/twitter2.png') no-repeat 0 center;
+  background-image: url('../img/sprite.png');
+  background-position:  0 -656px; width: 32px; height: 32px;
 }
 
 
 #twitter-ico:hover {
-  background: url('../img/twitter2_hover.png') no-repeat 0 center;
+  background-image: url('../img/sprite.png');
+   background-position: 0 -738px; width: 32px; height: 32px;
 }
 
 #facebook-ico {
-  background: url('../img/facebook.png') no-repeat 0 center;
+  background-image: url('../img/sprite.png');
+  background-position: 0 0; width: 32px; height: 32px;
 }
 
 
 #facebook-ico:hover {
-  background: url('../img/facebook_hover.png') no-repeat 0 center;
+  background-image: url('../img/sprite.png');
+  background-position: 0 -82px; width: 32px; height: 32px;
 }
 
 #linkedin-ico {
-  background: url('../img/linkedin.png') no-repeat 0 center;
+  background-image: url('../img/sprite.png');
+  background-position: 0 -492px; width: 32px; height: 32px;
 }
 
 #linkedin-ico:hover {
-  background: url('../img/linkedin_hover.png') no-repeat 0 center;
+  background-image: url('../img/sprite.png');
+  background-position: 0 -574px; width: 32px; height: 32px;
 }
 
 #google-ico {
-  background: url('../img/google.png') no-repeat 0 center;
+  background-image: url('../img/sprite.png');
+  background-position: 0 -328px; width: 32px; height: 32px;
 }
 
 #google-ico:hover {
-  background: url('../img/google_hover.png') no-repeat 0 center;
+  background-image: url('../img/sprite.png');
+  background-position: 0 -410px; width: 32px; height: 32px;
 }
 
 #github-ico {
-  background: url('../img/github.png') no-repeat 0 center;
+  background-image: url('../img/sprite.png');
+  background-position: 0 -164px; width: 32px; height: 32px;
 }
 
 #github-ico:hover {
-  background: url('../img/github_hover.png') no-repeat 0 center;
+  background-image: url('../img/sprite.png');
+  background-position: 0 -246px; width: 32px; height: 32px;
 }
