@@ -1,8 +1,8 @@
 ---
 layout: page
-title: The virtual world...
-tagline: software, technology and more
-description: Personal blog of Shivam Dixit, student at LNM Institute of Information Technology
+title: The Virtual World
+tagline: software, technology & more
+description: Personal blog of Shivam Dixit, student at LNM Institute of Information Technology.
 ---
 {% include JB/setup %}
 
