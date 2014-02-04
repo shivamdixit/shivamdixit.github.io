@@ -9,7 +9,8 @@ tags: [apache, 404]
 
 > ## What is 404 error?
 
-When you fire up your web-browser and type in, say `google.com`, your web-browser makes a request to the server. In return, server returns a response with a special status code. `404` is the status code corresponding to "Page not found" error. Some other common status codes are:
+![404 error](/assets/themes/twitter/img/404.png)
+When you fire up your web-browser and type in, say `google.com/foo`, your web-browser makes a request to the server for page "foo". In return, server returns a response with a special status code indicating the status of the request. If the page `foo` is not found on the server, `404` status code is sent in the respone. Some other common status codes are:
 
     200 : OK
     301 : Moved Permanently

@@ -5,8 +5,8 @@
         <description>Shivam Dixit - Shivam Dixit</description>
         <link>http://shivamdixit.com</link>
         <link>http://shivamdixit.com</link>
-        <lastBuildDate>2014-02-02T21:55:46+05:30</lastBuildDate>
-        <pubDate>2014-02-02T21:55:46+05:30</pubDate>
+        <lastBuildDate>2014-02-05T00:30:18+05:30</lastBuildDate>
+        <pubDate>2014-02-05T00:30:18+05:30</pubDate>
         <ttl>1800</ttl>
 
 
@@ -16,7 +16,7 @@
 &lt;h2 id=&quot;what_is_404_error&quot;&gt;What is 404 error?&lt;/h2&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;When you fire up your web-browser and type in, say &lt;code&gt;google.com&lt;/code&gt;, your web-browser makes a request to the server. In return, server returns a response with a special status code. &lt;code&gt;404&lt;/code&gt; is the status code corresponding to “Page not found” error. Some other common status codes are:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/themes/twitter/img/404.png&quot; alt=&quot;404 error&quot; /&gt; When you fire up your web-browser and type in, say &lt;code&gt;google.com/foo&lt;/code&gt;, your web-browser makes a request to the server for page “foo”. In return, server returns a response with a special status code indicating the status of the request. If the page &lt;code&gt;foo&lt;/code&gt; is not found on the server, &lt;code&gt;404&lt;/code&gt; status code is sent in the respone. Some other common status codes are:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;200 : OK
 301 : Moved Permanently
@@ -70,16 +70,16 @@
 &lt;p&gt;Save and exit.&lt;/p&gt;
 
 &lt;p&gt;Now whenever a visitor request a page which does not exists, they will see 404.html instead of apache default 404 error message.&lt;/p&gt;</description>
-                <link>http://shivamdixit.com/2014/01/29/using-custom-404-page-in-apache</link>
-                <guid>http://shivamdixit.com/2014/01/29/using-custom-404-page-in-apache</guid>
+                <link>http://shivamdixit.com/posts/using-custom-404-page-in-apache</link>
+                <guid>http://shivamdixit.com/posts/using-custom-404-page-in-apache</guid>
                 <pubDate>2014-01-29T00:00:00+05:30</pubDate>
         </item>
 
         <item>
                 <title>The setup</title>
                 <description>&lt;p&gt;Alright, so the stage is set and I am all set for my first blog post.&lt;/p&gt;</description>
-                <link>http://shivamdixit.com/2014/01/29/the-setup</link>
-                <guid>http://shivamdixit.com/2014/01/29/the-setup</guid>
+                <link>http://shivamdixit.com/posts/the-setup</link>
+                <guid>http://shivamdixit.com/posts/the-setup</guid>
                 <pubDate>2014-01-29T00:00:00+05:30</pubDate>
         </item>
 

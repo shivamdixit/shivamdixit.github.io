@@ -7,5 +7,5 @@ http://shivamdixit.com/pages.html
 http://shivamdixit.com/rss.xml
 http://shivamdixit.com/tags.html
 
-http://shivamdixit.com/2014/01/29/using-custom-404-page-in-apache
-http://shivamdixit.com/2014/01/29/the-setup
+http://shivamdixit.com/posts/using-custom-404-page-in-apache
+http://shivamdixit.com/posts/the-setup
