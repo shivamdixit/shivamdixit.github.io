@@ -88,6 +88,6 @@ To access a file system it must be first [mounted](http://www.linfo.org/mounting
 </table>
 
 <br>
-The above design of init is called *SysV*- pronounced as [System five](http://en.wikipedia.org/wiki/UNIX_System_V). Several other implementations of *init* have been written now like *systemd* and *upstart*. Upstart is being used by ubuntu since 2006. More details of the upstart can be found [here](https://help.ubuntu.com/community/UbuntuBootupHowto).
+The above design of init is called *SysV*- pronounced as [System five](http://en.wikipedia.org/wiki/UNIX_System_V). Several other implementations of *init* have been written now. Some of the popular implementatios are *systemd* and *upstart*. Upstart is being used by ubuntu since 2006. More details of the upstart can be found [here](https://help.ubuntu.com/community/UbuntuBootupHowto).
 
 The next step of *init* is to start up various daemons that support networking and other services. X server daemon is one of the most important daemon. It manages display, keyboard, and mouse. When X server daemon is started you see a Graphical Interface and a login screen is displayed.

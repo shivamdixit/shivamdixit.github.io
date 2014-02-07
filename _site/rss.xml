@@ -5,8 +5,8 @@
         <description>Shivam Dixit - Shivam Dixit</description>
         <link>http://shivamdixit.com</link>
         <link>http://shivamdixit.com</link>
-        <lastBuildDate>2014-02-07T22:52:17+05:30</lastBuildDate>
-        <pubDate>2014-02-07T22:52:17+05:30</pubDate>
+        <lastBuildDate>2014-02-07T23:04:35+05:30</lastBuildDate>
+        <pubDate>2014-02-07T23:04:35+05:30</pubDate>
         <ttl>1800</ttl>
 
 
@@ -109,7 +109,7 @@
 &lt;/table&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;The above design of init is called &lt;em&gt;SysV&lt;/em&gt;- pronounced as &lt;a href=&quot;http://en.wikipedia.org/wiki/UNIX_System_V&quot;&gt;System five&lt;/a&gt;. Several other implementations of &lt;em&gt;init&lt;/em&gt; have been written now like &lt;em&gt;systemd&lt;/em&gt; and &lt;em&gt;upstart&lt;/em&gt;. Upstart is being used by ubuntu since 2006. More details of the upstart can be found &lt;a href=&quot;https://help.ubuntu.com/community/UbuntuBootupHowto&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The above design of init is called &lt;em&gt;SysV&lt;/em&gt;- pronounced as &lt;a href=&quot;http://en.wikipedia.org/wiki/UNIX_System_V&quot;&gt;System five&lt;/a&gt;. Several other implementations of &lt;em&gt;init&lt;/em&gt; have been written now. Some of the popular implementatios are &lt;em&gt;systemd&lt;/em&gt; and &lt;em&gt;upstart&lt;/em&gt;. Upstart is being used by ubuntu since 2006. More details of the upstart can be found &lt;a href=&quot;https://help.ubuntu.com/community/UbuntuBootupHowto&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The next step of &lt;em&gt;init&lt;/em&gt; is to start up various daemons that support networking and other services. X server daemon is one of the most important daemon. It manages display, keyboard, and mouse. When X server daemon is started you see a Graphical Interface and a login screen is displayed.&lt;/p&gt;</description>
                 <link>http://shivamdixit.com/posts/what-happens-when-you-power-on-your-computer</link>
