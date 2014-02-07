@@ -10,7 +10,7 @@ tags: [linux, GRUB, bootstrap]
 Ever wondered what all goes inside your computer when you switch on the power button ? How is an Operating System loaded ? How you are presented with an user friendly GUI screen ? Through this post I will peek into the booting process of UNIX like Operating Systems and try to answer some of the questions. Some of the things discussed in this post are also valid for Windows operating system.
 
 > ###An overview of the boot process
-![overview](/assets/themes/twitter/img/sequence.gif)
+![overview](/assets/themes/twitter/img/sequence.gif "Image Courtseyt: IBM")
 
 <br>
 When the computer is switched on, it's of no use because the data stored in the memory(RAM) is garbage  and there is no Operating System running. The first thing motherboard does is to initialize its own firmware and get the CPU running. Some of the CPU [registers](http://en.wikipedia.org/wiki/Processor_register) including Instruction Pointer (EIP) have predefined values. In x86 systems the initial value of the EIP is `0xfffffff0` and the instruction stored at this memory location is executed. The instruction is `JMP` (JUMP) to a Read Only Memory (ROM) which contains the [BIOS](http://en.wikipedia.org/wiki/BIOS) and its code starts executing.
