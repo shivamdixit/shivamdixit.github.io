@@ -2,6 +2,7 @@
 layout: post
 title: "Using custom 404 page in Apache"
 description: "How to use custom 404 error page in Apache"
+category: apache
 tags: [apache, 404]
 ---
 {% include JB/setup %}

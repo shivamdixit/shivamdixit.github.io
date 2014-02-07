@@ -5,10 +5,117 @@
         <description>Shivam Dixit - Shivam Dixit</description>
         <link>http://shivamdixit.com</link>
         <link>http://shivamdixit.com</link>
-        <lastBuildDate>2014-02-06T22:28:39+05:30</lastBuildDate>
-        <pubDate>2014-02-06T22:28:39+05:30</pubDate>
+        <lastBuildDate>2014-02-07T22:46:15+05:30</lastBuildDate>
+        <pubDate>2014-02-07T22:46:15+05:30</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>What Happens When You Power On Your Computer</title>
+                <description>&lt;p&gt;Ever wondered what all goes inside your computer when you switch on the power button ? How is an Operating System loaded ? How you are presented with an user friendly GUI screen ? Through this post I will peek into the booting process of UNIX like Operating Systems and try to answer some of the questions. Some of the things discussed in this post are also valid for Windows operating system.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&quot;an_overview_of_the_boot_process&quot;&gt;An overview of the boot process&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/themes/twitter/img/sequence.gif&quot; alt=&quot;overview&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;When the computer is switched on, it’s of no use because the data stored in the memory(RAM) is garbage and there is no Operating System running. The first thing motherboard does is to initialize its own firmware and get the CPU running. Some of the CPU &lt;a href=&quot;http://en.wikipedia.org/wiki/Processor_register&quot;&gt;registers&lt;/a&gt; including Instruction Pointer (EIP) have predefined values. In x86 systems the initial value of the EIP is &lt;code&gt;0xfffffff0&lt;/code&gt; and the instruction stored at this memory location is executed. The instruction is &lt;code&gt;JMP&lt;/code&gt; (JUMP) to a Read Only Memory (ROM) which contains the &lt;a href=&quot;http://en.wikipedia.org/wiki/BIOS&quot;&gt;BIOS&lt;/a&gt; and its code starts executing.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&quot;functions_of_bios&quot;&gt;Functions of BIOS&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;POST&lt;/strong&gt; (Power On Self Test) to ensure that the various components present in the system are functioning properly. If video card is missing or not functioning properly motherboard emit beeps since error cannot be displayed. Beeps are emitted according to &lt;em&gt;Beep Codes&lt;/em&gt; of the motherboard and it varies from one motherboard to other. A comprehensive list of beep codes can be found &lt;a href=&quot;http://www.computerhope.com/beep.htm&quot;&gt;here&lt;/a&gt;. If the computer passes the video card test, manufacturer logo is printed on the screen.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;It initializes the various hardware devices. It is an important process so as to ensure that all the devices operate smoothly without any conflicts. BIOSes following &lt;a href=&quot;http://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface&quot;&gt;ACPI&lt;/a&gt; create tables describing the devices in the computer.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;It looks for an Operating System to load. Typically, the BIOS will search it in Hard Drives, CD-ROMs, floppy disks etc. The actual search order can be configured by the user by changing &lt;code&gt;Boot Order&lt;/code&gt; in BIOS settings. If BIOS cannot find a bootable operating system it displays an error message “Non-System Disk Error”.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Generally the operating system is present in the hard disk. We will confine our discussion to how operating system boots from the hard disk.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&quot;master_boot_record&quot;&gt;Master Boot Record&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The first sector of the hard disk is called Master Boot Record (&lt;a href=&quot;http://en.wikipedia.org/wiki/Master_boot_record&quot;&gt;MBR&lt;/a&gt;). The structure of MBR is operating system independent. It is of 512 bytes and it has mainly two components. The first 446 bytes contain a special program called &lt;em&gt;Bootstrap Loader&lt;/em&gt;. The next 64 bytes contains a partition table. A partition table stores all the information about the partitions in a hard disk and &lt;a href=&quot;http://www.linfo.org/filesystem.html&quot;&gt;file system&lt;/a&gt; types (a file system describes how data will be stored and retrieved from the partition). A partition table is required to boot up the operating system. The last two bytes of MBR contains a &lt;em&gt;magic number&lt;/em&gt; &lt;code&gt;AA55&lt;/code&gt;. It is used to classify whether the MBR is valid or not. An invalid &lt;em&gt;magic number&lt;/em&gt; indicates that the MBR is corrupt and machine will not be able to boot. A typical structure looks like: &lt;br /&gt; &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/themes/twitter/img/mbr.png&quot; alt=&quot;Master Boot Record&quot; title=&quot;Image courtsey: Microsoft&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&quot;bootstrap_loader&quot;&gt;Bootstrap Loader&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Bootstrap loader or the &lt;em&gt;boot loader&lt;/em&gt; contains the code to load an operating system. Earlier Linux distributions used &lt;em&gt;LILO&lt;/em&gt; (LInux Loader) bootloader. Today, most of the distributions use &lt;em&gt;GRUB&lt;/em&gt; (GRand Unified Bootloader) which has many advantages over &lt;em&gt;LILO&lt;/em&gt;. BIOS loads the bootstrap loader into the memory (RAM) and starts executing the code.&lt;/p&gt;
+
+&lt;p&gt;Boot loader of traditional operating systems like Windows 98 used to identify an &lt;em&gt;active&lt;/em&gt; partition in the hard disk by looking at the &lt;em&gt;active&lt;/em&gt; flag of partition table and loading its &lt;em&gt;boot sector&lt;/em&gt; into the memory. &lt;em&gt;Boot sector&lt;/em&gt; is the first sector of each &lt;strong&gt;partition&lt;/strong&gt; in contrast to MBR which is the first sector of the hard disk. The &lt;em&gt;boot sector&lt;/em&gt; is of 512 bytes in memory and contains code to boot an operating system in that partition. However boot loaders like &lt;em&gt;GRUB&lt;/em&gt; and &lt;em&gt;LILO&lt;/em&gt; are more robust and boot process is not so straight forward.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/themes/twitter/img/grub.jpg&quot; alt=&quot;GRUB&quot; title=&quot;GRUB menu of a system with two operating systems&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Booting an operating system with GRUB is a two stage process: &lt;strong&gt;stage 1&lt;/strong&gt; and &lt;strong&gt;stage 2&lt;/strong&gt;. In some cases an intermediate stage &lt;em&gt;1.5&lt;/em&gt; may also be used to load stage 2 from an appropriate file system. Stage 1 is the boot loader code itself and its task is to only call the stage 2 which contains the main code. This is done because of the tiny size of the stage 1 (512 bytes). GRUB stage 2 loads the Linux &lt;strong&gt;Kernel&lt;/strong&gt; and &lt;strong&gt;initramfs&lt;/strong&gt; into the memory.&lt;/p&gt;
+
+&lt;p&gt;Kernel is the core component of an operating system. It has complete control of all the things happening in a system. It is the first part of the operating system to load into the memory and remains there throughout the session.&lt;/p&gt;
+
+&lt;p&gt;To access a file system it must be first &lt;a href=&quot;http://www.linfo.org/mounting.html&quot;&gt;mounted&lt;/a&gt;. When kernel is loaded into the memory none of the file system is mounted and hence initial RAM based file system (initramfs) is required by kernel to execute programs even before the &lt;em&gt;root&lt;/em&gt; file system is mounted. Kernel executes a &lt;code&gt;init&lt;/code&gt; (initialization) program which has &lt;a href=&quot;http://en.wikipedia.org/wiki/Process_identifier&quot;&gt;pid&lt;/a&gt;=1. It is a &lt;a href=&quot;http://en.wikipedia.org/wiki/Daemon_(computing&quot;&gt;daemon&lt;/a&gt; process and continues to run until the computer is shut down. It also load the modules and drivers required to mount the &lt;em&gt;root&lt;/em&gt; file system. Linux stores information about the major file systems in a file &lt;code&gt;/etc/fstab&lt;/code&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&quot;init&quot;&gt;init&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;init&lt;/strong&gt; is the last step of the kernel boot sequence. It looks for the file &lt;code&gt;/etc/inittab&lt;/code&gt; to see if there is an entry for &lt;code&gt;initdefault&lt;/code&gt;. It is used to determine initial run-level of the system. A &lt;em&gt;run-level&lt;/em&gt; is used to decide the initial state of the operating system. Some of the run levels are:&lt;/p&gt;
+&lt;table border='1'&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Level&lt;/th&gt;
+			&lt;th&gt;Description&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;0&lt;/td&gt;
+			&lt;td&gt;System Halt&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;1&lt;/td&gt;
+			&lt;td&gt;Single user mode&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;3&lt;/td&gt;
+			&lt;td&gt;Full multiuser mode with network&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;5&lt;/td&gt;
+			&lt;td&gt;Full multiuser mode with network and X display manager&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;6&lt;/td&gt;
+			&lt;td&gt;Reboot&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;The above design of init is called &lt;em&gt;SysV&lt;/em&gt;- pronounced as &lt;a href=&quot;http://en.wikipedia.org/wiki/UNIX_System_V&quot;&gt;System five&lt;/a&gt;. Several other implementations of &lt;em&gt;init&lt;/em&gt; have been written now like &lt;em&gt;systemd&lt;/em&gt; and &lt;em&gt;upstart&lt;/em&gt;. Upstart is being used by ubuntu since 2006. More details of the upstart can be found &lt;a href=&quot;https://help.ubuntu.com/community/UbuntuBootupHowto&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The next step of &lt;em&gt;init&lt;/em&gt; is to start up various daemons that support networking and other services. X server daemon is one of the most important daemon. It manages display, keyboard, and mouse. When X server daemon is started you see a Graphical Interface and a login screen is displayed.&lt;/p&gt;</description>
+                <link>http://shivamdixit.com/posts/what-happens-when-you-power-on-your-computer</link>
+                <guid>http://shivamdixit.com/posts/what-happens-when-you-power-on-your-computer</guid>
+                <pubDate>2014-02-07T00:00:00+05:30</pubDate>
+        </item>
 
         <item>
                 <title>Using custom 404 page in Apache</title>

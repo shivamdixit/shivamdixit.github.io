@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>What Happens When You Power On Your Computer</title>
+    <meta name="description" content="This article explains how each bit of your system is flipped when you power on your computer">
+    <meta name="author" content="Shivam Dixit">
+    <meta name="keywords" content="shivam dixit, hacker, developer, mavihs, shivamd001, shivam">
+    <link rel="icon" type="image/png" href="/assets/themes/twitter/img/favicon.ico">
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="/">Shivam Dixit</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+            <li><a href="http://about.me/shivamd001" target="_blank">About me</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>What Happens When You Power On Your Computer </h1>
+</div>
+
+<div class="row-fluid post-full">
+  <div class="span12">
+    <div class="date">
+      <span>07 February 2014</span>
+    </div>
+    <div class="content">
+      <p>Ever wondered what all goes inside your computer when you switch on the power button ? How is an Operating System loaded ? How you are presented with an user friendly GUI screen ? Through this post I will peek into the booting process of UNIX like Operating Systems and try to answer some of the questions. Some of the things discussed in this post are also valid for Windows operating system.</p>
+
+<blockquote>
+<h3 id="an_overview_of_the_boot_process">An overview of the boot process</h3>
+</blockquote>
+
+<p><img src="/assets/themes/twitter/img/sequence.gif" alt="overview" /></p>
+
+<p><br /></p>
+
+<p>When the computer is switched on, it’s of no use because the data stored in the memory(RAM) is garbage and there is no Operating System running. The first thing motherboard does is to initialize its own firmware and get the CPU running. Some of the CPU <a href="http://en.wikipedia.org/wiki/Processor_register">registers</a> including Instruction Pointer (EIP) have predefined values. In x86 systems the initial value of the EIP is <code>0xfffffff0</code> and the instruction stored at this memory location is executed. The instruction is <code>JMP</code> (JUMP) to a Read Only Memory (ROM) which contains the <a href="http://en.wikipedia.org/wiki/BIOS">BIOS</a> and its code starts executing.</p>
+
+<blockquote>
+<h3 id="functions_of_bios">Functions of BIOS</h3>
+</blockquote>
+
+<ul>
+<li>
+<p><strong>POST</strong> (Power On Self Test) to ensure that the various components present in the system are functioning properly. If video card is missing or not functioning properly motherboard emit beeps since error cannot be displayed. Beeps are emitted according to <em>Beep Codes</em> of the motherboard and it varies from one motherboard to other. A comprehensive list of beep codes can be found <a href="http://www.computerhope.com/beep.htm">here</a>. If the computer passes the video card test, manufacturer logo is printed on the screen.</p>
+</li>
+
+<li>
+<p>It initializes the various hardware devices. It is an important process so as to ensure that all the devices operate smoothly without any conflicts. BIOSes following <a href="http://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface">ACPI</a> create tables describing the devices in the computer.</p>
+</li>
+
+<li>
+<p>It looks for an Operating System to load. Typically, the BIOS will search it in Hard Drives, CD-ROMs, floppy disks etc. The actual search order can be configured by the user by changing <code>Boot Order</code> in BIOS settings. If BIOS cannot find a bootable operating system it displays an error message “Non-System Disk Error”.</p>
+</li>
+</ul>
+
+<p>Generally the operating system is present in the hard disk. We will confine our discussion to how operating system boots from the hard disk.</p>
+
+<blockquote>
+<h3 id="master_boot_record">Master Boot Record</h3>
+</blockquote>
+
+<p>The first sector of the hard disk is called Master Boot Record (<a href="http://en.wikipedia.org/wiki/Master_boot_record">MBR</a>). The structure of MBR is operating system independent. It is of 512 bytes and it has mainly two components. The first 446 bytes contain a special program called <em>Bootstrap Loader</em>. The next 64 bytes contains a partition table. A partition table stores all the information about the partitions in a hard disk and <a href="http://www.linfo.org/filesystem.html">file system</a> types (a file system describes how data will be stored and retrieved from the partition). A partition table is required to boot up the operating system. The last two bytes of MBR contains a <em>magic number</em> <code>AA55</code>. It is used to classify whether the MBR is valid or not. An invalid <em>magic number</em> indicates that the MBR is corrupt and machine will not be able to boot. A typical structure looks like: <br /> <br /></p>
+
+<p><img src="/assets/themes/twitter/img/mbr.png" alt="Master Boot Record" title="Image courtsey: Microsoft" /></p>
+
+<p><br /></p>
+
+<blockquote>
+<h3 id="bootstrap_loader">Bootstrap Loader</h3>
+</blockquote>
+
+<p>Bootstrap loader or the <em>boot loader</em> contains the code to load an operating system. Earlier Linux distributions used <em>LILO</em> (LInux Loader) bootloader. Today, most of the distributions use <em>GRUB</em> (GRand Unified Bootloader) which has many advantages over <em>LILO</em>. BIOS loads the bootstrap loader into the memory (RAM) and starts executing the code.</p>
+
+<p>Boot loader of traditional operating systems like Windows 98 used to identify an <em>active</em> partition in the hard disk by looking at the <em>active</em> flag of partition table and loading its <em>boot sector</em> into the memory. <em>Boot sector</em> is the first sector of each <strong>partition</strong> in contrast to MBR which is the first sector of the hard disk. The <em>boot sector</em> is of 512 bytes in memory and contains code to boot an operating system in that partition. However boot loaders like <em>GRUB</em> and <em>LILO</em> are more robust and boot process is not so straight forward.</p>
+
+<p><img src="/assets/themes/twitter/img/grub.jpg" alt="GRUB" title="GRUB menu of a system with two operating systems" /></p>
+
+<p><br /></p>
+
+<p>Booting an operating system with GRUB is a two stage process: <strong>stage 1</strong> and <strong>stage 2</strong>. In some cases an intermediate stage <em>1.5</em> may also be used to load stage 2 from an appropriate file system. Stage 1 is the boot loader code itself and its task is to only call the stage 2 which contains the main code. This is done because of the tiny size of the stage 1 (512 bytes). GRUB stage 2 loads the Linux <strong>Kernel</strong> and <strong>initramfs</strong> into the memory.</p>
+
+<p>Kernel is the core component of an operating system. It has complete control of all the things happening in a system. It is the first part of the operating system to load into the memory and remains there throughout the session.</p>
+
+<p>To access a file system it must be first <a href="http://www.linfo.org/mounting.html">mounted</a>. When kernel is loaded into the memory none of the file system is mounted and hence initial RAM based file system (initramfs) is required by kernel to execute programs even before the <em>root</em> file system is mounted. Kernel executes a <code>init</code> (initialization) program which has <a href="http://en.wikipedia.org/wiki/Process_identifier">pid</a>=1. It is a <a href="http://en.wikipedia.org/wiki/Daemon_(computing">daemon</a> process and continues to run until the computer is shut down. It also load the modules and drivers required to mount the <em>root</em> file system. Linux stores information about the major file systems in a file <code>/etc/fstab</code></p>
+
+<blockquote>
+<h3 id="init">init</h3>
+</blockquote>
+
+<p><strong>init</strong> is the last step of the kernel boot sequence. It looks for the file <code>/etc/inittab</code> to see if there is an entry for <code>initdefault</code>. It is used to determine initial run-level of the system. A <em>run-level</em> is used to decide the initial state of the operating system. Some of the run levels are:</p>
+<table border='1'>
+	<thead>
+		<tr>
+			<th>Level</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>0</td>
+			<td>System Halt</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Single user mode</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Full multiuser mode with network</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>Full multiuser mode with network and X display manager</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>Reboot</td>
+		</tr>
+	</tbody>
+</table>
+<p><br /></p>
+
+<p>The above design of init is called <em>SysV</em>- pronounced as <a href="http://en.wikipedia.org/wiki/UNIX_System_V">System five</a>. Several other implementations of <em>init</em> have been written now like <em>systemd</em> and <em>upstart</em>. Upstart is being used by ubuntu since 2006. More details of the upstart can be found <a href="https://help.ubuntu.com/community/UbuntuBootupHowto">here</a>.</p>
+
+<p>The next step of <em>init</em> is to start up various daemons that support networking and other services. X server daemon is one of the most important daemon. It manages display, keyboard, and mouse. When X server daemon is started you see a Graphical Interface and a login screen is displayed.</p>
+    </div>
+
+  
+    <ul class="tag_box inline">
+      <li><i class="icon-folder-open"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/categories.html#linux-ref">
+    		linux <span>1</span>
+    	</a></li>
+    
+  
+
+
+    </ul>
+    
+
+  
+    <ul class="tag_box inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/tags.html#linux-ref">linux <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#GRUB-ref">GRUB <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#bootstrap-ref">bootstrap <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/posts/using-custom-404-page-in-apache" title="Using custom 404 page in Apache">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'shivamdixit'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+</div>
+
+
+      </div>
+      <hr>
+      <footer>
+        <div class="footer-container">
+          <ul class="footer-icons">
+            <li>
+                <a target="_blank" href="http://www.twitter.com/shivamd001" id="twitter-ico"></a>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.github.com/shivamdixit" id="github-ico"></a>
+            </li>
+            <li>
+                <a target="_blank" href="http://in.linkedin.com/in/shivamd001/" id="linkedin-ico"></a>
+            </li>
+            <li>
+                <a target="_blank" href="http://google.com/+ShivamDixit1" id="google-ico"></a>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.facebook.com/shivamd001" id="facebook-ico"></a>
+            </li>
+            </ul>
+            <!-- <br style="clear:left"/> -->
+        </div>
+        <p>&copy; 2014 Shivam Dixit -
+          with help from Jekyll Bootstrap
+        </p>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
+
