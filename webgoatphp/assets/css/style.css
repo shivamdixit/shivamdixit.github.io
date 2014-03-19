@@ -1,0 +1,13 @@
+.page-header {
+	margin-top: 0px;
+}
+
+.center {
+	float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+	margin-bottom: 55px; /*To prevent text from going under the footer*/
+}

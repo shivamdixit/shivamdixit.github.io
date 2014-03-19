@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>OWASP WebGoatPHP</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Shivam Dixit">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	</head>
+	<body>
+
+		<!--navbar
+		============-->
+		<div class="navbar navbar-inverse navbar-static-top">
+			<div class="container">
+				<a href="#" class="navbar-brand" style="color:white"><b>Single User Mode</b></a>
+
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse navHeaderCollapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Documentation</a></li>
+						<li><a href="#">Github</a></li>
+						<!-- <li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contribute <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">How</a></li>
+								<li><a href="#">Rules</a></li>
+								<li><a href="#">Github</a></li>
+							</ul>
+						</li> -->
+						<li><a href="#contact" data-toggle="modal">Contact</a></li>
+						<li><a href="index.html"><strong>Logout</strong></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+
+					<!--Accordion
+					============-->
+					<div class="panel-group" id="accordion">
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="accordion" href="#section1">
+										General
+									</a>
+								</h4>
+							</div>
+
+							<div class="panel-collapse collapse" id="section1">
+								<div class="panel-body">
+									<ul class="nav nav-pills nav-stacked">
+			  							<li><a href="#">Forgot Password</a></li>
+						  				<li><a href="#">HTTP requests</a></li>
+						  				<li><a href="#">Other</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="accordion" href="#section2">
+										Access Control Flaws
+									</a>
+								</h4>
+							</div>
+
+							<div class="panel-collapse collapse" id="section2">
+								<div class="panel-body">
+									<ul class="nav nav-pills nav-stacked">
+			  							<li><a href="#"><span class="glyphicon glyphicon-ok"></span> Forgot Password</a></li>
+						  				<li><a href="#"><span class="glyphicon glyphicon-ok"></span> Password Strength</a></li>
+						  				<li><a href="#"><span class="glyphicon glyphicon-ok"></span> Basic Authentication</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="accordion" href="#section3">			Authentication Flaws
+									</a>
+								</h4>
+							</div>
+
+							<div class="panel-collapse collapse in" id="section3">
+								<div class="panel-body">
+									<ul class="nav nav-pills nav-stacked">
+			  							<li class="active"><a href="#"><span class="glyphicon glyphicon-ok"></span> Forgot Password</a></li>
+						  				<li><a href="#">Password Strength</a></li>
+						  				<li><a href="#">Basic Authentication</a></li>
+						  				<li><a href="#">Multi Level Login 1</a></li>
+						  				<li><a href="#">Multi Level Login 2</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="accordion" href="#section4">
+										Concurrency
+									</a>
+								</h4>
+							</div>
+
+							<div class="panel-collapse collapse" id="section4">
+								<div class="panel-body">
+									<ul class="nav nav-pills nav-stacked">
+			  							<li><a href="#">Forgot Password</a></li>
+						  				<li><a href="#">Password Strength</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="accordion" href="#section5">
+										Injection Flaws
+									</a>
+								</h4>
+							</div>
+
+							<div class="panel-collapse collapse" id="section5">
+								<div class="panel-body">
+									<ul class="nav nav-pills nav-stacked">
+			  							<li><a href="#">Forgot Password</a></li>
+						  				<li><a href="#">Password Strength</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="accordion" href="#section6">
+										Insecure Configuration
+									</a>
+								</h4>
+							</div>
+
+							<div class="panel-collapse collapse" id="section6">
+								<div class="panel-body">
+									<ul class="nav nav-pills nav-stacked">
+			  							<li><a href="#">Forgot Password</a></li>
+						  				<li><a href="#">Password Strength</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="accordion" href="#section7">
+										Session Management
+									</a>
+								</h4>
+							</div>
+
+							<div class="panel-collapse collapse" id="section7">
+								<div class="panel-body">
+									<ul class="nav nav-pills nav-stacked">
+			  							<li><a href="#">Forgot Password</a></li>
+						  				<li><a href="#">Password Strength</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="accordion" href="#section8">
+										Web Services
+									</a>
+								</h4>
+							</div>
+
+							<div class="panel-collapse collapse" id="section8">
+								<div class="panel-body">
+									<ul class="nav nav-pills nav-stacked">
+			  							<li><a href="#">Forgot Password</a></li>
+						  				<li><a href="#">Password Strength</a></li>
+						  				<li><a href="#">Basic Authentication</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div><!--Accordion ends-->
+				</div>
+
+				<div class="col-lg-9">
+
+					<!-- Main content
+					============-->
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="page-header">
+								<h3>Forgot Password</h3>
+							</div>
+							<div class="page-body">
+								<p>Web Applications frequently provide their users the ability to retrieve a forgotten password. Unfortunately, many web applications fail to implement the mechanism properly. The information required to verify the identity of the user is often overlt simplistic.
+								</p>
+								<h4>General Goal(s)</h4>
+								<p>Users can retreive their password if they can answer the secret question properly. There is no lock-out mechanism on this 'Forgot Password' page. Your user name is 'webgoatphp' and your favorite color is 'red'.
+								</p>
+								<br>
+								<div class="span5 center">
+									<h4><strong>WebgoatPHP password recovery</strong></h4>
+									<p>
+										Please input your username, See the OWASP admin if you do not have an account
+									</p>
+									<form class="form-inline" role="form">
+	  									<div class="form-group">
+								    		<label class="sr-only" for="exampleInputEmail2">UserName</label>
+											<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+			  							</div>
+							            <button type="submit" class="btn btn-danger">Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div><!--Main content ends-->
+					<hr>
+
+
+					<!-- Options
+					============-->
+					<div class="row">
+						<div class="col-lg-6 center"><!--To Place it in the center-->
+							<div class="btn-group" data-toggle="buttons">
+						  		<label class="btn btn-default">
+		    						<input type="radio" name="options" id="option1"> Hints
+		  						</label>
+		  						<label class="btn btn-default">
+		    						<input type="radio" name="options" id="option2"> Cookie Inspector
+		  						</label>
+		  						<label class="btn btn-default">
+		    						<input type="radio" name="options" id="option3"> Show Code
+		  						</label>
+		  						<label class="btn btn-default">
+		    						<input type="radio" name="options" id="option3"> Solution
+		  						</label>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div><!--Row ends-->
+		</div><!--container ends-->
+
+		<!--contact modal
+		==================-->
+		<div class="modal fade" id="contact" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2>Contact Us</h2>
+					</div>
+					<div class="modal-body">
+						<p>If you have any queries please write to us at <span style="color:#d2322d">webgoatphp at owasp dot org</span></p>
+						<p>Thank You</p>
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--footer
+		===========-->
+		<div class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+				<p class="navbar-text pull-left"><strong>The project is under development.</strong></p>
+				<a href="#" class="btn navbar-btn btn-danger pull-right">Contribute!</a>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+	</body>
+</html>
