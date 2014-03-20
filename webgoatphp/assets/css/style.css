@@ -11,3 +11,8 @@
 body {
 	margin-bottom: 55px; /*To prevent text from going under the footer*/
 }
+
+.large-font {
+	font-weight: bold;
+	font-size: 16px;
+}
