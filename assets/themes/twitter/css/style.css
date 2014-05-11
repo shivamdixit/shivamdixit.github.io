@@ -132,3 +132,7 @@
   background-image: url('../img/sprite.png');
   background-position: 0 -246px; width: 32px; height: 32px;
 }
+
+#container {
+  margin: 0 auto;
+}
