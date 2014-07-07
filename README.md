@@ -1,4 +1,4 @@
 shivamdixit.github.io
 =====================
 
-My blog
+My personal homepage and blog
