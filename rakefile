@@ -15,9 +15,9 @@ end
     task :pro do
       edit_config 'url', '/Notepad'
     end
-  end 
+  end
 
-  # adapted from https://github.com/imathis/octopress/blob/master/Rakefile   
+  # adapted from https://github.com/imathis/octopress/blob/master/Rakefile
   # usage rake new_post['My New Post'] or rake new_post (defaults to "My New Post")
   desc "Start a new post"
   task :new, :title do |t, args|
@@ -43,7 +43,7 @@ end
    end
   end
 
-  # adapted from https://github.com/imathis/octopress/blob/master/Rakefile   
+  # adapted from https://github.com/imathis/octopress/blob/master/Rakefile
   # usage rake new_post['My New Post'] or rake new_post (defaults to "My New Post")
   desc "Start a new page"
   task :newpage, :title do |t, args|
