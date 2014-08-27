@@ -9,8 +9,6 @@ comments: true
 share: true
 ---
 
-###Introduction
-
 Ever wondered what all goes inside your computer when you switch on the power button? How is an Operating System loaded ? How you are presented with an user friendly GUI screen? Through this post I will peek into the booting process of UNIX like Operating Systems and try to answer some of the questions. Some of the things discussed in this post are also valid for Windows operating system.
 
 ###An overview of the boot process
