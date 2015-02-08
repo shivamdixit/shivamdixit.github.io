@@ -3,7 +3,7 @@ layout: post
 title: "Zinger - Build Vocabulary"
 description: "Build your vocabulary with minimum efforts"
 category: zinger
-tags: [zinger, vocabulary, learn, improve, english, build]
+tags: [zinger, vocabulary, english]
 imagefeature: cover13.jpg
 comments: true
 share: true
