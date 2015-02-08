@@ -9,7 +9,7 @@ comments: true
 share: true
 ---
 
-Almost all of us face the problem of forgetting new words which we learn. Moreover, it is difficult to compile a list of all new words to later reference. Even if we maintain such list, we almost never open it because of lack of time or motivation. To solve this problem, I've developed a chrome extension - [Zinger](https://chrome.google.com/webstore/detail/zinger/fcpibijcomgjkeecnmjkkjfcnfnaldin?hl=en-US&gl=IN) which helps you to learn new words with minimum efforts. For learning new words you don't have to devote explicit time, you can learn them while you are browsing the web.
+Almost all of us face the problem of forgetting new words which we learn. Moreover, it is difficult to compile a list of all new words to later reference. Even if we maintain such list, we almost never open it because of lack of time or motivation. To solve this problem, We have developed a chrome extension - [Zinger](https://chrome.google.com/webstore/detail/zinger/fcpibijcomgjkeecnmjkkjfcnfnaldin?hl=en-US&gl=IN) which helps you to learn new words with minimum efforts. For learning new words you don't have to devote explicit time, you can learn them while you are browsing the web.
 
 ##Features
 
@@ -35,7 +35,7 @@ To view meaning of a particular word you can simply double click on the word.
 
 If you don't want Zinger to remind you this word later, you can uncheck the "Show later" box.
 
-If you are unable to select a word by double clicking (if it is a link) you can highlight the word using mouse and then click on the Zinger icon next to address bar to view its meaning. You can also lookup a word by entering it manually in this window.
+If you are unable to select a word by double clicking (maybe it is a link) you can highlight the word using mouse and then click on the Zinger icon next to address bar to view its meaning. You can also lookup a word by entering it manually in this window.
 
 ![Word Meaning]({{ site.url }}/images/zinger-post/zinger7.png)
 
