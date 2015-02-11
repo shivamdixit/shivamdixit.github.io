@@ -3,7 +3,7 @@ layout: post
 title: "Zinger - Build Vocabulary"
 description: "Build your vocabulary with minimum efforts"
 category: zinger
-tags: [zinger, vocabulary, english]
+tags: [zinger, vocabulary, english, chrome, extension]
 imagefeature: cover13.jpg
 comments: true
 share: true
