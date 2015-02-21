@@ -50,6 +50,8 @@ This is the most important part of the application. It is the only thing which i
 
 Remember, mentors are volunteers and they are not obliged to help you. They have many other important things to do, so respect their time. Learn the IRC, mailing list etiquettes and how to ask smart [questions](http://www.catb.org/esr/faqs/smart-questions.html). This [presentation](http://www.shakthimaan.com/downloads/glv/presentations/i-want-2-do-project-tell-me-wat-2-do.pdf) is also going to help you a lot.
 
+For your reference, you can have a look at my previous year proposal [here]({{ site.url }}/gsoc/gsoc-14-webgoatphp-proposal).
+
 ##Code, eat, sleep, repeat!
 
 Code the summers away! And don't get disheartened if your proposal is rejected, you can always contribute to the organization and learn from the community.
