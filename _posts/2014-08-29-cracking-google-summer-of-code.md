@@ -13,6 +13,8 @@ Google Summer of Code is a program sponsored by Google to introduce students to 
 
 ##Start Early
 
+![GSoC]({{ site.url }}/images/cracking-gsoc-post/gsoc-icon.png)
+
 The learning curve of the program is high, hence you need to have an ample amount of time for start preparing. Remember it's never too early to start preparing for GSOC. After all, GSOC is all about open source software development and you can always contribute to open source projects. If you are running short of time, don't worry it's never too late to start your preparation! You don't need to be an expert to get selected but it is always helpful if you have a strong foundation in computer science.
 
 ##Explore
