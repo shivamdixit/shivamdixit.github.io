@@ -4,6 +4,7 @@ title: "Cracking Google Summer Of Code"
 description: "How to prepare for Google Summer Of Code"
 category: gsoc
 tags: [gsoc, howto]
+imagefeature: cover3.jpg
 comments: true
 share: true
 ---
