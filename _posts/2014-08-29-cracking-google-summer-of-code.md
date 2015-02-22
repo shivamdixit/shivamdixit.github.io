@@ -13,8 +13,6 @@ Google Summer of Code is a program sponsored by Google to introduce students to 
 
 ##Start Early
 
-![GSoC]({{ site.url }}/images/cracking-gsoc-post/gsoc-icon.jpg)
-
 The learning curve of the program is high, hence you need to have an ample amount of time for start preparing. Remember it's never too early to start preparing for GSOC. After all, GSOC is all about open source software development and you can always contribute to open source projects. If you are running short of time, don't worry it's never too late to start your preparation! You don't need to be an expert to get selected but it is always helpful if you have a strong foundation in computer science.
 
 ##Explore
@@ -50,8 +48,6 @@ This is the _second_ most important factor (sometimes most important!) in your a
 This is the most important part of the application. It is the only thing which is evaluated by the organization. The best part is that your college, past experience (except open source experience), internships etc won't even matter in your application. The proposal must be concise and should cover all the implementation details of the project. It must have a clear timeline of all the major milestones in the project. The earlier you start, the stronger your proposal. Don't focus on the quantity but the quality. Different organizations have different templates for the proposal so the best person to give feedback about your proposal is your mentor himself/herself. Don't hesitate to ask your mentor what he/she feels about your proposal. Ask for suggestions and keep on improving your proposal until the deadline is reached.
 
 Remember, mentors are volunteers and they are not obliged to help you. They have many other important things to do, so respect their time. Learn the IRC, mailing list etiquettes and how to ask smart [questions](http://www.catb.org/esr/faqs/smart-questions.html). This [presentation](http://www.shakthimaan.com/downloads/glv/presentations/i-want-2-do-project-tell-me-wat-2-do.pdf) is also going to help you a lot.
-
-For your reference, you can have a look at my previous year proposal [here]({{ site.url }}/gsoc/gsoc-14-webgoatphp-proposal).
 
 ##Code, eat, sleep, repeat!
 
