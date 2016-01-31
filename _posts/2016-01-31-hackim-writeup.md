@@ -266,7 +266,7 @@ Next take the XOR of both the Hex strings
 
 <img src="{{ site.url }}/images/hackim-writeup-post/crypto1-3.png" alt="Crypto 1-3" width="750">
 
-We have our secret key **Its right there what you are looking for. ** which is getting repeated. (Don't forget the blank space after dot). Now use this to decode the mind file. Be careful with the key size, split the encrypted text in chunks of key size. Here is the first 42 bytes of data:
+Now we have the secret key *Its right there what you are looking for. * (which is repeated). (Don't forget the blank space after dot). Now use this to decode the mind file. Be careful with the key size, split the encrypted text in chunks of key size. Here is the first 42 bytes of data:
 
 <img src="{{ site.url }}/images/hackim-writeup-post/crypto1-4.png" alt="Crypto 1-4" width="550">
 
