@@ -236,4 +236,42 @@ This is the final answer.
 
     0000000000,0001100000,0001111010,0000001001,0000001010,0000000000,0000000000,0000000000,0000000000,0000000000
 
-I'll update all the solutions of Crypto very soon.
+* * *
+
+Now let's have a look at the Crypto questions, which I felt were of average difficulty level.
+
+###Crypto 1
+
+    You are in this GAME. A critical mission, and you are surrounded by the beauties, ready to shed their slik gown    s on your beck. On onside your feelings are pulling you apart and another side you are called by the duty. The bigg    iest question is seX OR success? The signals of subconcious mind are not clear, cryptic. You also have the message     of heart which is clear and cryptic. You just need to use three of them and find whats the clear message of your Mi    nd... What you must do?
+
+File: [crypto1.zip](http://ctf.nullcon.net/crypto/crypto1.zip)
+
+We have the following files in the zip:
+
+<img src="{{ site.url }}/images/hackim-writeup-post/crypto1-1.png" alt="Crypto 1-1" width="750">
+
+The cipher used for decoding is the XOR cipher (given in the question) which works as follows:
+
+    plain_text XOR secret = encrypted_text
+    encrypted_text XOR secret = plain_text
+    encrypted_text XOR plain_text = secret
+
+We have both plain text and cipher text for the heart file, hence we will get the secret by XORing both of them. I used an online [tool](http://xor.pw/) for the same.
+
+First convert the text in both the files to hex. I used a tool for Mac known as Hex Fiend.
+
+<img src="{{ site.url }}/images/hackim-writeup-post/crypto1-2.png" alt="Crypto 1-2" width="750">
+
+Next take the XOR of both the Hex strings
+
+<img src="{{ site.url }}/images/hackim-writeup-post/crypto1-3.png" alt="Crypto 1-3" width="750">
+
+We have our secret key **Its right there what you are looking for. ** which is getting repeated. (Don't forget the blank space after dot). Now use this to decode the mind file. Be careful with the key size, split the encrypted text in chunks of key size. Here is the first 42 bytes of data:
+
+<img src="{{ site.url }}/images/hackim-writeup-post/crypto1-4.png" alt="Crypto 1-4" width="550">
+
+On decoding the complete file you will get a play store [URL](https://play.google.com/store/apps/collection/promotion_3001629_watch_live_games?hl) which says "Never Miss a Game"
+
+**Flag:** Never Miss a Game 
+
+Adding more crypto answers very soon..
