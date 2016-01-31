@@ -274,4 +274,35 @@ On decoding the complete file you will get a play store [URL](https://play.googl
 
 **Flag:** Never Miss a Game 
 
-Adding more crypto answers very soon..
+###Crypto 2
+    Some one was here, some one had breached the security and had infiltrated here. All the evidences are touched, Logs are altered, records are modified with key as a text from book.The Operation was as smooth as CAESAR had Conquested Gaul. After analysing the evidence we have some extracts of texts in a file. We need the title of the book back, but unfortunately we only have a portion of it...
+
+File: [The_extract.txt](http://ctf.nullcon.net/crypto/The_extract.txt)
+
+It is a Caesar cipher (given) with unknown key. Hence I used a [tool](http://www.xarg.org/tools/caesar-cipher/) which can "guess" the key. The key turned out to be **16**, and the deciphered text was as follows:
+
+<img src="{{ site.url }}/images/hackim-writeup-post/crypto2.png" alt="Crypto 2" width="550">
+
+On googling the extract you will find the exact name of the book, which is our flag.
+
+**Flag:** In the Shadow of Greed
+
+###Crypto 3
+
+    After entring the luxurious condomium,you get the feel that you are in home of a yester Star. the extravagant flooring and furnishings shows the richness of this star. But where is she? There she is, lying peacefuly on her couch. See what Envy has done to her...with a perfectly well maintained attractive body she still looks sex diva, except for her face beyond recogniton. Her identity is crucial to know who killed her and why? In absence of any personal data around there is only a file. with a cryptic text in it. Preity sure she has used her own name to XOR encrypt the file. And challenge is to know her name.
+
+File: [AncientSecretsOfTheKamaSutra.txt](http://ctf.nullcon.net/crypto/AncientSecretsOfTheKamaSutra.txt)
+
+This question is same as Crypto 1 except that we don't have the plain text of the given cipher text. Therefore it becomes bit trickier to find the key. There are many algorithms and theories around breaking the repeated key XOR, such as on [matasano](http://cryptopals.com/sets/1/challenges/6/), [web](https://wiremask.eu/tools/xor-cracker/), etc. They are time consuming and I was already running short of time. Therefore I decided to follow a different approach, *i.e* try finding the plain text directly. Although this might sound bizarre at first and might not work everytime, but I was lucky this time. I googled the name of file *Ancient Secrets Of The KamaSutra*, it turned out to be a movie. I copied the first few letters (*Julie and Steve's*) from the imdb story line (17 bytes) and converted them to hex, and XORed it with the first 17 bytes of the cipher text.
+
+<img src="{{ site.url }}/images/hackim-writeup-post/crypto3-1.png" alt="Crypto 3-1" width="750">
+
+<img src="{{ site.url }}/images/hackim-writeup-post/crypto3-2.png" alt="Crypto 3-2" width="550">
+
+Bingo! We have the name that we were looking for. Just a sidenote, this name is also present in the cast on imdb.
+
+**Flag:** Jeanna Fine
+
+###Crypto 4
+
+
