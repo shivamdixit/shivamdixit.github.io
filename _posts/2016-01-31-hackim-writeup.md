@@ -2,7 +2,7 @@
 layout: post
 title: "HackIM writeup (Prog and Crypto)"
 description: "Writeup of Nullcon HackIM (programming and crypto sections)"
-category: ctf
+category: CTF
 tags: [writeup, crypto, nullcon, programming, hackim]
 imagefeature: cover15.jpg
 comments: true
