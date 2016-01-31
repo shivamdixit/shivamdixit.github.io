@@ -15,7 +15,7 @@ Almost all of us face the problem of forgetting new words which we learn. Moreov
 
 The extension keeps a track of all the words which you have looked up on the web. It shows these words periodically in form of flashcards when you are surfing the internet so that you are able to retain these words. The flashcard won't hinder your browsing experience as they are _draggable_. An example of a flashcard which is displayed:
 
-![Flashcard]({{ site.url }}/images/zinger-post/zinger2.png =50x)
+![Flashcard]({{ site.url }}/images/zinger-post/zinger2.png)
 
 To aid you in learning a new word, the extension will also show the context in which you saw a particular word on a website. You can click the "hint" button to see the context of a word.
 
