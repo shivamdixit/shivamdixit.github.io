@@ -305,4 +305,55 @@ Bingo! We have the name that we were looking for. Just a sidenote, this name is 
 
 ###Crypto 4
 
+    He is influential, he is powerful. He is your next contact you can get you out of this situation. You must reach him soon. Who is he? The few pointers intrecpted by KGB are in the file. Once we know him, we can find his most valuable possession, his PRIDE.
 
+File: [whatsHisPride.md5s](http://ctf.nullcon.net/crypto/whatsHisPride.md5s)
+
+This was more of a hit-and-try problem. MD5 hashes were given which can be decrypted using an online tool. The output of MD5 decryption was - *Carrie Grease Perfect Shout Basic Actor Aircraft name*. On googling, you will get the name **John Travolta**. The first part of question is solved where we had to find the name. Now the next part is to find his pride.
+
+I followed the wiki article and searched for PRIDE and it's synonyms. On searching *honor* I found the key which got accepted at last. (I tried ~30 keys before my solution was accepted)
+
+**Flag:** Jett Clipper Ella 
+
+###Crypto 5
+
+    Now you are one step away from knowing who is that WARRIOR. The Fighter who will decide the fate of war between the 2 countries. The Pride of One and Envey of the Other... You have got the secrete file which has the crucial information to identify the fighter. But the file is encrypted with a RSA-Private key. Good news you have its corresponding public key in a file. Bad news there are 49 other keys. Whos is the Fighter.
+
+File: [crypto5.zip](http://ctf.nullcon.net/crypto/crypto5.zip)
+
+It was purely a Brute Force question. Firstly I separated out the keys using AWK:
+
+{% highlight bash %}
+awk '/BEGIN PUBLIC KEY/{n++}{print >"out" n ".pub" }' all_keys.txt
+{% endhighlight %}
+
+At this point, I had 50 different public keys in different files, now I just had to find the correct key file. I wrote a small shell script to know it:
+
+{% highlight bash linenos %}
+#!/bin/bash
+
+for i in `seq 1 50`
+do
+    openssl rsautl -inkey "out$i.pub" -pubin -in warrior.txt > /dev/null 2>&1
+
+    if [ $? -eq 0 ]
+    then
+    echo "Value of i is $i"
+    openssl rsautl -inkey "out$i.pub" -pubin -in warrior.txt
+    exit 0
+    fi
+done
+{% endhighlight %}
+
+The output of the script was:
+
+    Value of i is 26
+    This fighter is a designation for two separate, heavily upgraded derivatives of the Su-35 'Flanker' jet plane. They are single-seaters designed by Sukhoi(KnAAPO).
+
+On googling the paragraph I found the name of fighter on wikipedia.
+
+<img src="{{ site.url }}/images/hackim-writeup-post/crypto5.png" alt="Crypto 5" width="550">
+
+**Flag:** Sukhoi Su-35
+
+This covers both Programming and Crypto questions. Write-up for other questions coming soon...
