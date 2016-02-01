@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "HackIM writeup (Prog and Crypto)"
-description: "Writeup of Nullcon HackIM (programming and crypto sections)"
+title: "HackIM 2016 write-up (Prog and Crypto)"
+description: "Writeup of Nullcon HackIM 2016 (programming and crypto questions)"
 category: CTF
-tags: [writeup, crypto, nullcon, programming, hackim]
+tags: [writeup, crypto, nullcon, programming, hackim, 2016]
 imagefeature: cover15.jpg
 comments: true
 share: true
