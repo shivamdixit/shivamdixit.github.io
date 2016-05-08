@@ -53,6 +53,8 @@ It was followed by dynamic analysis, and hands on with tools like Drozer, burp s
 * Exported Activities
 * Exported Content Provider
 
+#### Key Takeaways
+
 Some of the key takeaways from the workshop were:
 
 * Android directory structure and permission model
