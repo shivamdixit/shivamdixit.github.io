@@ -23,7 +23,7 @@ The workshop was organized at Sapient, Gurgaon, which is located in the heart of
 
 "_Android Fight Club_"---as the name suggests, it was a workshop on android security and penetration testing. I've a background of web application security, but Android was something totally new for me. We were asked to pre-install some of the tools and VMs for the hands on session.
 
-<img src="{{ site.url }}/images/null-humla-post/img3.jpg" alt="House full" width="750">
+<img src="{{ site.url }}/images/null-humla-post/img3.JPG" alt="House full" width="750">
 
 The session was house full with ~45 participants. It started with the introductions by the attendees. Everyone was asked to tell a _cool thing_ about themselves. Abhinav (speaker) was charismatic and he kept us engaged throughout the session with his witty sense of humor and funny slides.
 
@@ -44,7 +44,7 @@ We were given insights of android market share and why android security is essen
 
 The hacking started with static analysis of android applications. We tried tools like apktool, adb, dex2jar, etc.,  read SMALI files, discussed about binary protection and other static analysis tools available in the market.
 
-<img src="{{ site.url }}/images/null-humla-post/img4.jpg" alt="Abhinav" width="750">
+<img src="{{ site.url }}/images/null-humla-post/img4.JPG" alt="Abhinav" width="750">
 
 It was followed by dynamic analysis, and hands on with tools like Drozer, burp suite, etc. We tried to find bugs in a vulnerable Goat Droid app by OWASP. We exploited various components like:
 
