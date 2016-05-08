@@ -9,7 +9,7 @@ comments: true
 share: true
 ---
 
-Last week I got a chance to attend my first Null HUMLA workshop. People who are not familiar with Null, it is a community of hackers who are willing to share knowledge and trying to make the world a more secure place. In this post, I'll share my experience with the workshop.
+Last week I got a chance to attend my first Null HUMLA workshop. People who are not familiar with Null, it is a community of security enthusiasts who are willing to share knowledge and trying to make the world a more secure place. In this post, I'll share my experience with the workshop.
 
 ### Introduction
 
