@@ -11,12 +11,13 @@ share: true
 
 Ever wondered what all goes inside your computer when you switch on the power button? How is an Operating System loaded ? How you are presented with an user friendly GUI screen? Through this post I will peek into the booting process of UNIX like Operating Systems and try to answer some of the questions. Some of the things discussed in this post are also valid for Windows operating system.
 
-###An overview of the boot process
+### An overview of the boot process
+
 ![overview]({{ site.url }}/images/power-on-post/sequence.gif "Image Courtseyt: IBM")
 
 When the computer is switched on, it's of no use because the data stored in the memory(RAM) is garbage  and there is no Operating System running. The first thing motherboard does is to initialize its own firmware and get the CPU running. Some of the CPU [registers](http://en.wikipedia.org/wiki/Processor_register) including Instruction Pointer (EIP) have predefined values. In x86 systems the initial value of the EIP is `0xfffffff0` and the instruction stored at this memory location is executed. The instruction is `JMP` (JUMP) to a Read Only Memory (ROM) which contains the [BIOS](http://en.wikipedia.org/wiki/BIOS) and its code starts executing.
 
-###Functions of BIOS
+### Functions of BIOS
 
 __POST__ (Power On Self Test) to ensure that the various components present in the system are functioning properly. If video card is missing or not functioning properly motherboard emit beeps since error cannot be displayed. Beeps are emitted according to *Beep Codes* of the motherboard and it varies from one motherboard to other. A comprehensive list of beep codes can be found [here](http://www.computerhope.com/beep.htm). If the computer passes the video card test, manufacturer logo is printed on the screen.
 
@@ -26,13 +27,13 @@ It looks for an Operating System to load. Typically, the BIOS will search it in 
 
 Generally the operating system is present in the hard disk. We will confine our discussion to how operating system boots from the hard disk.
 
-###Master Boot Record
+### Master Boot Record
 
 The first sector of the hard disk is called Master Boot Record ([MBR](http://en.wikipedia.org/wiki/Master_boot_record)). The structure of MBR is operating system independent. It is of 512 bytes and it has mainly two components. The first 446 bytes contain a special program called *Bootstrap Loader*. The next 64 bytes contains a partition table. A partition table stores all the information about the partitions in a hard disk and [file system](http://www.linfo.org/filesystem.html) types (a file system describes how data will be stored and retrieved from the partition). A partition table is required to boot up the operating system. The last two bytes of MBR contains a *magic number* `AA55`. It is used to classify whether the MBR is valid or not. An invalid *magic number* indicates that the MBR is corrupt and machine will not be able to boot. A typical structure looks like:
 
 ![Master Boot Record]({{ site.url }}/images/power-on-post/mbr.png "Image courtsey: Microsoft")
 
-###Bootstrap Loader
+### Bootstrap Loader
 
 Bootstrap loader or the *boot loader* contains the code to load an operating system. Earlier Linux distributions used *LILO* (LInux Loader) bootloader. Today, most of the distributions use  *GRUB* (GRand Unified Bootloader) which has many advantages over *LILO*. BIOS loads the bootstrap loader into the memory (RAM) and starts executing the code.
 
@@ -46,7 +47,7 @@ Kernel is the core component of an operating system. It has complete control of 
 
 To access a file system it must be first [mounted](http://www.linfo.org/mounting.html). When kernel is loaded into the memory none of the file system is mounted and hence initial RAM based file system (initramfs) is required by kernel to execute programs even before the *root* file system is mounted. Kernel executes a `init` (initialization) program which has [pid](http://en.wikipedia.org/wiki/Process_identifier)=1. It is a [daemon](http://en.wikipedia.org/wiki/Daemon_(computing) process and continues to run until the computer is shut down. It also load the modules and drivers required to mount the *root* file system. Linux stores information about the major file systems in a file `/etc/fstab`
 
-###init
+### init
 
 **init** is the last step of the kernel boot sequence. It looks for the file `/etc/inittab` to see if there is an entry for `initdefault`. It is used to determine initial run-level of the system. A *run-level* is used to decide the initial state of the operating system. Some of the run levels are:
 
