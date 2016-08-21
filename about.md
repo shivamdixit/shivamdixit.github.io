@@ -34,7 +34,7 @@ chart: true
 I'm **Shivam Dixit**, DevOps and security Engineer at [Kayako](https://www.kayako.com/). During the daytime you would find me glued to my laptop, at night I fight ninjas. I love to explore new technologies and always looking forward for challenging problems.
 
 ### Resume
-Download the latest version <a href="{{ site.url }}/assets/resume.pdf">here</a>. Personal information has been removed from the online version of the resume.
+Download the latest version <a href="{{ site.url }}/assets/resume.pdf">here</a>.
 
 ### Blog Stats
 
