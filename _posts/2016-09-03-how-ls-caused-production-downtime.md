@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How 'ls' command caused a downtime on prod"
+title: "How 'ls' command output caused a downtime on prod"
 description: "The innocuous command 'ls' can sometimes be dangerous too. Read how."
 category: linux
 tags: [bash, shell, linux]
