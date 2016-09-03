@@ -33,7 +33,7 @@ The Engineer's investigation was going well until he mistakenly pasted the clipb
 
 {% highlight bash linenos %}
 
-[root@app04]lrwxrwxrwx 1 nobody     nobody       70 Apr 12 13:22 index.php -> /some/path/master/current/novo/index.php
+[root@app04]lrwxrwxrwx 1 nobody nobody 70 Apr 12 13:22 index.php -> /master/current/index.php
 bash: lrwxrwxrwx: command not found
 
 {% endhighlight %}
