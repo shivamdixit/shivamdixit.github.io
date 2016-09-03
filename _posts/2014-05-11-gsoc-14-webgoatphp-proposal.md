@@ -14,17 +14,17 @@ share: true
   <figcaption>Google Summer Of Code</figcaption>
 </figure>
 
-###Abstract
+### Abstract
 
 WebGoat is one of the most popular open source web applications developed by OWASP. It is a deliberately insecure web application developed using Java to provide a security awareness environment. It offers a set of challenges based on various vulnerabilities listed in OWASP. Since PHP is extremely popular in web applications and has many of the security flaws which Java doesn't, my work is to develop a deliberately insecure PHP web application.
 
-###The Project
+### The Project
 
 WebGoatPHP is a port of WebGoat to PHP and MySQL/SQLite databases. The goal is to create an interactive teaching environment for web application security by offering lessons in the form of challenges. In each challenge the user must exploit the vulnerability to demonstrate their understanding. WebGoatPHP will contain all the standard features of WebGoat as well as support for four different modes i.e single mode, workshop mode, contest mode and secure coding mode. Different modes will make WebGoatPHP much more usable and will create an ideal learning environment for different group of users. A framework will be developed that will facilitate contributors in adding challenges.
 
 ![Overview]({{ site.url }}/images/gsoc-proposal/overview.png "Overview of WebGoatPHP")
 
-####Different Operating Modes
+#### Different Operating Modes
 
 **Single-User Mode**
 
@@ -56,7 +56,7 @@ In secure coding mode user has to patch the security vulnerabilities. For each c
 <br/>
 <br/>
 
-####Classification of challenges/lessons:
+#### Classification of challenges/lessons:
 
 WebGoatPHP covers most of the attacks listed in OWASP Top 10 2013 along-with some other critical vulnerabilities. Some of the important categories of the challenges are:
 
@@ -97,7 +97,7 @@ Apart from above listed attacks, WebGoatPHP has an extensive list of various oth
 
 <br/>
 
-####Use Cases
+#### Use Cases
 
 Some of the use cases of the project are:
 
@@ -107,7 +107,7 @@ Dr. Bansal is the professor of Information Security. He uses workshop mode to gi
 
 Ashish is the coordinator of cyber  security club of his college. He hosts various CTF competitions in his college using contest mode of the WebGoatPHP.
 
-####Implementation
+#### Implementation
 
 Various features will be implemented as follows:
 
@@ -121,7 +121,7 @@ Each lesson will have it's own directory which will contain all the files requir
 
 <br/>
 
-####Why a new project ?
+#### Why a new project ?
 
 The present vulnerable web applications for learning security have many limitations. There is no mechanism through which a user can patch the vulnerability in the challenges and learn how to write secure code.The process of adding new challenges is cumbersome and requires a user to change the source code of the application. Most of the applications are not suitable for school/college environment. Apart from these limitations, they are over-complicated and cannot be safely deployed on a live server. Limitations of some of the most popular similar applications present a
 
