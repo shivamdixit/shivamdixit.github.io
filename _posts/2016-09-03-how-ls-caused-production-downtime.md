@@ -9,7 +9,7 @@ comments: true
 share: true
 ---
 
-**ls** is one of the innocuous commands that sysadmins probably use hundreds of times a day. But yesterday, we faced downtime on production because of this command. Here's the full story...
+**ls** is one of the innocuous commands that sysadmins probably use hundreds of times a day. But yesterday, we faced downtime on production because of the output of this command. Here's the full story...
 
 One of our production app server was behaving funny yesterday, because of which an Ops Engineer was doing routine checks on the server. He ran the beloved `ll` command (which is aliased to `ls -lah`). The output of the command was something like:
 
