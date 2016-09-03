@@ -42,7 +42,7 @@ Aha! `bash: lrwxrwxrwx: command not found` --- what a relief to see that command
 
 Well, at some point in time, we all have pasted something weird in our shells. Nothing happens usually because the output almost never makes a valid command!
 
-Though the command didn't execute, _"command not found"_ error was printed on the `stderr` and `stdout` was empty. The symlink sign `->` in the output has a hidden redirection operator `>`, which caused the output of stdout (which is empty) to overwrite the contents of index.php file.
+Though the command didn't execute, _"command not found"_ error was printed on the `stderr` and `stdout` was empty. The symlink sign `->` in the output has a hidden redirection operator `>`, which caused the output of `stdout` (which is empty) to overwrite the contents of index.php file.
 
 After this, we all had a good laugh.
 
