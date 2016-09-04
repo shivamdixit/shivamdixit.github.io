@@ -23,7 +23,7 @@ It took us a while to identify that `index.php` file (the front controller) was 
 
 Though the issue was resolved, it made us thinking---who truncated the contents of `index.php` file? Is it the buggy deployment script? Or someone compromised our servers? Or it was a _paranormal_ activity?
 
-Thankfully, the answer is none of the above. Let's go back to our `ls -lah` command output:
+Thankfully, the answer is none of the above. Let's go back to our `ls -lah` command output which our Ops Engineer ran:
 
 ![Output]({{ site.url }}/images/ls-post/output.png)
 
