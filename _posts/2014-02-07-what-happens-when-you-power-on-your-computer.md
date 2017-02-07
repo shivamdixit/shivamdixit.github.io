@@ -2,7 +2,7 @@
 layout: post
 title: "What Happens When You Power On Your Computer"
 description: "This article explains how each bit of your system is flipped when you power on your computer"
-category: Linux
+category: linux
 tags: [Linux, GRUB, Operating System]
 imagefeature: cover12.jpg
 comments: true
