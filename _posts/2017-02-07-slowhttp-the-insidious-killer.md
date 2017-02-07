@@ -128,8 +128,8 @@ I also see one more fix to this problem by rejecting very low client-side receiv
 
 ### References
 
-1. https://github.com/shekyan/slowhttptest/wiki
-2. http://blog.shekyan.com/2012/01/are-you-ready-for-slow-reading.html
-3. https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/
-4. http://www.aosabook.org/en/nginx.html
-5. https://www.nginx.com/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus/
+1. [SlowHTTPTest](https://github.com/shekyan/slowhttptest/wiki)
+2. [Are you ready for slow reading](http://blog.shekyan.com/2012/01/are-you-ready-for-slow-reading.html)
+3. [Inside Nginx](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+4. [Nginx reference](http://www.aosabook.org/en/nginx.html)
+5. [Nginx DDOS mitigation](https://www.nginx.com/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus/)
