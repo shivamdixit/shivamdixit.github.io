@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Incident handling at Kayako"
-description: "An overview of how Kayako handles incident and downtimes"
+description: "An overview of how Kayako handles incidents and downtimes"
 category: kayako
 tags: [incident response, outages, slack]
 imagefeature: cover3.jpg
