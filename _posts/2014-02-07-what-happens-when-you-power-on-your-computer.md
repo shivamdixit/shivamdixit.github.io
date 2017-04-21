@@ -45,7 +45,7 @@ Booting an operating system with GRUB is a two stage process: **stage 1** and **
 
 Kernel is the core component of an operating system. It has complete control of all the things happening in a system. It is the first part of the operating system to load into the memory and remains there throughout the session.
 
-To access a file system it must be first [mounted](http://www.linfo.org/mounting.html). When kernel is loaded into the memory none of the file system is mounted and hence initial RAM based file system (initramfs) is required by kernel to execute programs even before the *root* file system is mounted. Kernel executes a `init` (initialization) program which has [pid](http://en.wikipedia.org/wiki/Process_identifier)=1. It is a [daemon](http://en.wikipedia.org/wiki/Daemon_(computing) process and continues to run until the computer is shut down. It also load the modules and drivers required to mount the *root* file system. Linux stores information about the major file systems in a file `/etc/fstab`
+To access a file system it must be first [mounted](http://www.linfo.org/mounting.html). When kernel is loaded into the memory none of the file system is mounted and hence initial RAM based file system (initramfs) is required by kernel to execute programs even before the *root* file system is mounted. Kernel executes a `init` (initialization) program which has [pid](http://en.wikipedia.org/wiki/Process_identifier)=1. It is a [daemon](http://en.wikipedia.org/wiki/Daemon_(computing)) process and continues to run until the computer is shut down. It also load the modules and drivers required to mount the *root* file system. Linux stores information about the major file systems in a file `/etc/fstab`
 
 ### init
 
