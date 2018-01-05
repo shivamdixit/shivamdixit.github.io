@@ -7,7 +7,7 @@ imagefeature: cover6.jpg
 chart: true
 ---
 <figure>
-  <img src="{{ site.url }}/images/shivam-dixit.png" alt="Shivam Dixit">
+  <img src="{{ site.url }}/images/shivam-dixit.png" alt="Shivam Dixit" width="450">
   <figcaption>Shivam Dixit</figcaption>
 </figure>
 
