@@ -48,4 +48,4 @@ After this, we all had a good laugh.
 
 **Lessons learned---be respectful to shell and never take it for granted**
 
-Put a comment if you have got ideas on how to avoid this from happening in future?
+Leave a comment if you have got ideas on how to avoid this from happening.
