@@ -30,7 +30,7 @@ chart: true
     {% endif %}
 {% endfor %}
 
-I'm a Site Reliability Engineer in Security at [Booking.com](https://www.booking.com/). During the daytime you would find me glued to my laptop, at night I fight with ninjas. I have experience of both building and breaking web applications.
+I'm a Site Reliability Engineer at [Uber](https://www.uber.com). During the daytime you would find me glued to my laptop, at night I fight with ninjas. I have experience of both building and breaking web applications.
 
 ### Blog Stats
 
