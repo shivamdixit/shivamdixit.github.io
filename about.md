@@ -7,7 +7,7 @@ imagefeature: cover6.jpg
 chart: true
 ---
 <figure>
-  <img src="{{ site.url }}/images/shivam-dixit.png" alt="Shivam Dixit" width="450">
+  <img src="{{ site.url }}/images/shivam-dixit.jpg" alt="Shivam Dixit" width="450">
 </figure>
 
 {% assign total_words = 0 %}
