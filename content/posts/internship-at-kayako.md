@@ -46,7 +46,7 @@ Just to give you an idea of complexity, there are more than 20 ways of saying �
 
 Computers are dumb machines. It’s very difficult for them to understand the context. Machine translations are therefore very awkward and often produce hilarious results which make no sense at all. For example:
 
-![Image 1]({{ site.url }}/images/internship-at-kayako-post/1.png)
+![Image 1](/images/internship-at-kayako-post/1.png)
 
 The above translated text in Hindi is equivalent of — _Brother hangs me outside._
 
@@ -64,7 +64,7 @@ We also didn’t want to lose the advantages of the community-driven translation
 
 We chose to go with Transifex because it natively supports the translation service Gengo, which provides human translations. The rich web interface of Transifex would allow us to order translations from Gengo, as well as continue to support community-driven translations.
 
-![Transifex]({{ site.url }}/images/internship-at-kayako-post/2.png)
+![Transifex](/images/internship-at-kayako-post/2.png)
 
 Transifex provides exhaustive APIs to update resources, add translations, add new resources, etc. An API was a critical requirement for us as we had to automate everything from within a script, which would not have been possible without it. However we soon realized that ordering translations of the phrases from Gengo is supported only through the web interface, and not through the APIs. It was a big problem.
 
@@ -84,7 +84,7 @@ The API is _asynchronous_. You don’t need to poll Gengo for the status of tran
 
 Gengo also has a comprehensive sandbox mode which is very helpful for testing out the APIs. It has support for pseudo credits so that no actual money is charged when placing orders for testing.
 
-<img src="{{ site.url }}/images/internship-at-kayako-post/3.png" alt="Gengo" width="550">
+![Gengo](/images/internship-at-kayako-post/3.png)
 
 #### Joining the pieces together
 
@@ -115,13 +115,13 @@ Whenever I wasn’t sure about anything, my mentor Pankaj was always available t
 
 After few days of work, we finally came out with a proposal. It was my first real project proposal and I was nervous about it. I was really elated when Varun appreciated me for it.
 
-<img src="{{ site.url }}/images/internship-at-kayako-post/4.png" alt="Gengo" width="550">
+![Gengo](/images/internship-at-kayako-post/4.png)
 
 This proposal was short-lived as it missed out many important details. Soon we came out with another iteration of the proposal which included DFDs, API design, database design, milestones and a tentative timeline along with visible challenges in sight. My experience with writing project proposals for open source projects in Google Summer Of Code came in handy.
 
 The intricate nature of the project meant we had to produce multiple iterations of the workflow before we got it right. We worked on the proposal for around two weeks and what came next was what I was craving for — coding.
 
-<img src="{{ site.url }}/images/internship-at-kayako-post/5.png" alt="Gengo" width="550">
+![Gengo](/images/internship-at-kayako-post/5.png)
 
 #### The Part I Was Waiting For — Coding!
 
@@ -131,7 +131,7 @@ When a commit or a pull request comes to a GitHub repository, the checker gets a
 
 Once the translations are completed, the synchronizer commits the translations back into the same branch. The commit triggers a build, but this time it passes because the translations are now present.
 
-<img src="{{ site.url }}/images/internship-at-kayako-post/6.png" alt="Gengo" width="550">
+![Gengo](/images/internship-at-kayako-post/6.png)
 
 ### Learnings From Building the Workflow
 
@@ -151,11 +151,10 @@ In the initial versions of the workflow we missed out some of the key aspects li
 
 We realized that we need to show the status of translations in the PR itself. So we used the GitHub statuses API. For the first time in my life, I was happy to see a red cross in front of my PR.
 
-<img src="{{ site.url }}/images/internship-at-kayako-post/7.png" alt="Gengo" width="550">
+![Gengo](/images/internship-at-kayako-post/7.png)
 
 ### Conclusion
 
 The careful planning and designing of this project was key to its success. This helped us to foresee problems, allowing us to fine-tune the flow without much resistance. Changing the structure of an existing code is much more difficult and time consuming than doing it with a pen and paper.
 
 It was the most interesting project which I’ve ever worked on, particularly because it involved synchronization of so many services, all in one project!
-
