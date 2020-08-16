@@ -17,7 +17,7 @@ hasCJKLanguage = false
     twitter = "shivamd001"
 
     enableRSS = true
-    enableToc = true
+    enableToc = false
 
     enableDisqus = true
     disqusShortname = "shivamdixit"
