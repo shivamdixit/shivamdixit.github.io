@@ -15,7 +15,7 @@ The HackIM 2016 edition has just concluded. Programming questions were pretty st
 
 We have three clues in the question - *Delhi*, *Tandoori Chicken*, and *last week*. Twitter has a fancy [advance search](https://twitter.com/search-advanced) feature in which I entered "Tandoori Chicken" in the section "All of these words", "Delhi" as tweet location and set date between 2016-01-17 and 2016-01-29. The tweet popped up right at the bottom.
 
-<img src="{{ site.url }}/images/hackim-writeup-post/prog1.png" alt="Programming 1" width="550">
+{{< figure src="/images/hackim-writeup-post/prog1.png" alt="Programming 1" >}}
 
 **Flag:** @anyahotels
 
@@ -23,11 +23,11 @@ We have three clues in the question - *Delhi*, *Tandoori Chicken*, and *last wee
 
     Your simple good Deeds can save you but your GREED can kill you. This has happened before. This greedy person lived a miserable life just for the greed of gold and lust. You must know him, once you know him, you must reach his capital and next clues will be given by his famous EX-Body Guard. This file consists of few paragraphs. Each paragraph singles out one Alphabet. Scrambling those Aplphabets will help you to know the country of this Ruler. Who was this Ruler?
 
-File: [TheLastRuler.txt]({{ site.url }}/assets/hackim-writeup-post/TheLastRuler.txt)
+File: [TheLastRuler.txt](/assets/hackim-writeup-post/TheLastRuler.txt)
 
 Without solving anything it is clearly evident that the name of country will be five letters. I quickly opened the [list of countries](http://bestforpuzzles.com/lists/countries/5.html) with five letters in name. Our problem space has been significantly reduced. But to proceed further we need something more. To determine a pattern, I did a frequency analysis of letters in each paragraph. Here is how it looks:
 
-<img src="{{ site.url }}/images/hackim-writeup-post/prog2.png" alt="Programming 2" width="550">
+{{< figure src="/images/hackim-writeup-post/prog2.png" alt="Programming 2" >}}
 
 I separated the letter with highest frequency in each paragraph (In first paragraph it is letter 'a') and hence got a word - *aliby*. On re-arranging it slightly we have our country name, *i.e* Libya. Finally I googled "Libya gold ruler" and the first name that popped up in results was the flag.
 
@@ -39,7 +39,7 @@ I separated the letter with highest frequency in each paragraph (In first paragr
 
 Googling " a social home for each of our passions" reveals the name *Affimity*. On opening their Google+ page, you can see the link to their home page. I don't know why this question is of 300 points.
 
-<img src="{{ site.url }}/images/hackim-writeup-post/prog3.png" alt="Programming 3" width="350">
+{{< figure src="/images/hackim-writeup-post/prog3.png" alt="Programming 3" >}}
 
 **Flag:** affimity.com
 
@@ -49,7 +49,7 @@ Googling " a social home for each of our passions" reveals the name *Affimity*. 
 
 I don't even know why this question is here. Just a simple google video search reveals the answer.
 
-<img src="{{ site.url }}/images/hackim-writeup-post/prog4.png" alt="Programming 4" width="550">
+{{< figure src="/images/hackim-writeup-post/prog4.png" alt="Programming 4" >}}
 
 **Flag:** a4_PvN_A1ts
 
@@ -83,7 +83,7 @@ A search on wiki for GAME OF LIFE reveals that the next GENERATION or STATE is d
 
 We have to apply the above algorithm and find the state after 7 generations. I googled and found the implementation of algo. I made some modifications in it as per the requirements. The final C program looks like:
 
-{% highlight C linenos %}
+```C {linenos=true}
 #include <stdio.h>
 
 /* dimensions of the screen */
@@ -213,7 +213,7 @@ int main (int argc, char *argv[]) {
         // puts ("\033[H\033[J");
     }
 }
-{% endhighlight %}
+```
 
 On executing the above, we get final state after 7 generations as follows:
 
@@ -246,7 +246,7 @@ File: [crypto1.zip](http://ctf.nullcon.net/crypto/crypto1.zip)
 
 We have the following files in the zip:
 
-<img src="{{ site.url }}/images/hackim-writeup-post/crypto1-1.png" alt="Crypto 1-1" width="750">
+{{< figure src="/images/hackim-writeup-post/crypto1-1.png" alt="Crypto 1-1" >}}
 
 The cipher used for decoding is the XOR cipher (given in the question) which works as follows:
 
@@ -258,15 +258,15 @@ We have both plain text and cipher text for the heart file, hence we will get th
 
 First convert the text in both the files to hex. I used a tool for Mac known as Hex Fiend.
 
-<img src="{{ site.url }}/images/hackim-writeup-post/crypto1-2.png" alt="Crypto 1-2" width="750">
+{{< figure src="/images/hackim-writeup-post/crypto1-2.png" alt="Crypto 1-2" >}}
 
 Next take the XOR of both the Hex strings
 
-<img src="{{ site.url }}/images/hackim-writeup-post/crypto1-3.png" alt="Crypto 1-3" width="750">
+{{< figure src="/images/hackim-writeup-post/crypto1-3.png" alt="Crypto 1-3" >}}
 
 Now we have the secret key -> *Its right there what you are looking for. * (which is ofcourse being repeated). Don't forget the blank space after dot, it is also part of the key. Now use this to decode the cipher text in mind_crypt.txt. Be careful with the key size, split the encrypted text in chunks of key size. Here is the first 42 bytes of data:
 
-<img src="{{ site.url }}/images/hackim-writeup-post/crypto1-4.png" alt="Crypto 1-4" width="550">
+{{< figure src="/images/hackim-writeup-post/crypto1-4.png" alt="Crypto 1-4" >}}
 
 On decoding the complete file you will get a play store [URL](https://play.google.com/store/apps/collection/promotion_3001629_watch_live_games?hl) which says "Never Miss a Game"
 
@@ -279,7 +279,7 @@ File: [The_extract.txt](http://ctf.nullcon.net/crypto/The_extract.txt)
 
 It is a Caesar cipher (given) with unknown key. Hence I used a [tool](http://www.xarg.org/tools/caesar-cipher/) which can "guess" the key. The key turned out to be **16**, and the deciphered text was as follows:
 
-<img src="{{ site.url }}/images/hackim-writeup-post/crypto2.png" alt="Crypto 2" width="550">
+{{< figure src="/images/hackim-writeup-post/crypto2.png" alt="Crypto 2" >}}
 
 On googling the extract you will find the exact name of the book, which is our flag.
 
@@ -293,9 +293,9 @@ File: [AncientSecretsOfTheKamaSutra.txt](http://ctf.nullcon.net/crypto/AncientSe
 
 This question is same as Crypto 1 except that we don't have the plain text of the given cipher text. Therefore it becomes bit trickier to find the key. There are many algorithms and theories around breaking the repeated key XOR, such as on [matasano](http://cryptopals.com/sets/1/challenges/6/), [web](https://wiremask.eu/tools/xor-cracker/), etc. They are time consuming and I was already running short of time. Therefore I decided to follow a different approach, *i.e* try finding the plain text directly. Although this might sound bizarre at first and might not work everytime, but I was lucky this time. I googled the name of file *Ancient Secrets Of The KamaSutra*, it turned out to be a movie. I copied the first few letters (*Julie and Steve's*) from the imdb story line (17 bytes) and converted them to hex, and XORed it with the first 17 bytes of the cipher text.
 
-<img src="{{ site.url }}/images/hackim-writeup-post/crypto3-1.png" alt="Crypto 3-1" width="750">
+{{< figure src="/images/hackim-writeup-post/crypto3-1.png" alt="Crypto 3-1" >}}
 
-<img src="{{ site.url }}/images/hackim-writeup-post/crypto3-2.png" alt="Crypto 3-2" width="550">
+{{< figure src="/images/hackim-writeup-post/crypto3-2.png" alt="Crypto 3-2" >}}
 
 Bingo! We have the name that we were looking for. Just a sidenote, this name is also present in the cast on imdb.
 
@@ -321,13 +321,13 @@ File: [crypto5.zip](http://ctf.nullcon.net/crypto/crypto5.zip)
 
 It was purely a Brute Force question. Firstly I separated out the keys using AWK:
 
-{% highlight bash %}
+```bash
 awk '/BEGIN PUBLIC KEY/{n++}{print >"out" n ".pub" }' all_keys.txt
-{% endhighlight %}
+```
 
 At this point, I had 50 different public keys in different files, now I just had to find the correct key file. I wrote a small shell script to know it:
 
-{% highlight bash linenos %}
+```bash {linenos=true}
 #!/bin/bash
 
 for i in `seq 1 50`
@@ -341,7 +341,7 @@ do
     exit 0
     fi
 done
-{% endhighlight %}
+```
 
 The output of the script was:
 
@@ -350,7 +350,7 @@ The output of the script was:
 
 On googling the paragraph I found the name of fighter on wikipedia.
 
-<img src="{{ site.url }}/images/hackim-writeup-post/crypto5.png" alt="Crypto 5" width="550">
+{{< figure src="/images/hackim-writeup-post/crypto5.png" alt="Crypto 5" >}}
 
 **Flag:** Sukhoi Su-35
 

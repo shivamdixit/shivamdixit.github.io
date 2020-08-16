@@ -12,7 +12,6 @@ We at Kayako strive for the number of 9's in our uptime metric. We want to ensur
 1. Identifying that an incident has occurred
 2. Minimizing the impact of the incident
 
-
 ### Identifying an incident
 
 Our goal is to identify an incident before our customer. It not only helps us in proactively informing our customers on the ongoing issues but also helps us to prepare our Support team better for the incoming queries. It is a step towards better customer experience, which is what Kayako is all about.
@@ -44,7 +43,7 @@ We create a channel on Slack for every new incident (called an "issue" channel),
 Before I go into the details of our SOP, let's first start by listing down all the issue channels that we currently have. We follow convention as #issue-topic-ddmm. So if there is an issue with our crons on 12th March 2016, we will create a channel #issue-cron-1203.
 
 
-```python
+```python {linenos=true}
 import requests
 import json
 
@@ -72,7 +71,7 @@ print(len(issue_channels))
 But before we conclude anything, let's see what is the time range in which these channels span:
 
 
-```python
+```python {linenos=true}
 from datetime import datetime
 
 # We will sort these channels by created date, which is a unix-timestamp
@@ -117,7 +116,7 @@ Active not necessarily mean that the issue is ongoing, it can also mean that the
 Do you want to know what was my worst day in the last one year? Let's find out
 
 
-```python
+```python {linenos=true}
 # Let's find out the maximum number of issue channels created in a day
 from collections import OrderedDict
 
@@ -153,7 +152,7 @@ print("Total number of issue channels created on this date: " + str(channels_on_
 Let's try to analyze the trend of issue channels over time. To find a trend, we need to need to know the archive date of a channel, which is not present in the issue_channels list that we have. Fortunately, Slack has an API to get the archive date of a channel.
 
 
-```python
+```python {linenos=true}
 # Let's fetch archive date from history API
 import math
 
@@ -178,7 +177,7 @@ for channel in issue_channels:
 Now we have archived dates in our issue_channels list. Let's try to plot the number of open issue channels over time in the given date range. To plot this, we will create a range of dates for X-axis and the number of issue channels that were open on that date on the Y axis.
 
 
-```python
+```python {linenos=true}
 import time
 
 # Returns if the channel was open at a given timestamp
@@ -217,7 +216,7 @@ xaxis = list(map(timestamp_to_date, xaxis))
 So we have our range on X-axis and the corresponding number of open issue channels on Y-axis. Let's plot them:
 
 
-```python
+```python {linenos=true}
 %matplotlib inline
 
 import matplotlib
@@ -234,7 +233,7 @@ plt.show()
 ```
 
 
-![Graph]({{ site.url }}/images/incident-post/output.png)
+![Graph](/images/incident-post/output.png)
 
 
 #### Interpreting the graph

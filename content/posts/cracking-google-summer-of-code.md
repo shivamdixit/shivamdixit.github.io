@@ -15,8 +15,6 @@ The learning curve of the program is high, hence you need to have an ample amoun
 
 ## Explore
 
-![Explore]({{ site.url }}/images/cracking-gsoc-post/find.png)
-
 Familiarize yourself with Google Summer Of Code program, know what it is all about. This is valid for any contest/program in which you want to participate. Google open source [blog](http://google-opensource.blogspot.in/) is a good source to start with. Explore how the program works. This will help you to prepare yourself mentally for the rest of the journey. GSOC [flossmanual](http://en.flossmanuals.net/GSoCStudentGuide/) covers each bit of the program in great detail. Know about the perks that GSOC students get. It will help you to stay motivated throughout.
 
 ## Learn

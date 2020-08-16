@@ -21,11 +21,11 @@ My open source journey started with my participation in Google Summer Of Code '1
 
 This is how my public contribution history looks now (personal account):
 
-![Github-personal]({{ site.url }}/images/how-did-it-get-so-late-post/github-personal.png)
+![Github-personal](/images/how-did-it-get-so-late-post/github-personal.png)
 
 And the contribution history of private repositories (work account):
 
-![Github-personal]({{ site.url }}/images/how-did-it-get-so-late-post/github-work.png)
+![Github-personal](/images/how-did-it-get-so-late-post/github-work.png)
 
 I miss contributing to open source projects. It's not that I don't like my new work, in fact I love it, love it more than anything. It's challenging and always a lot of learning is involved. But I miss the IRC chats, long discussions on public mailing lists, and the feeling of your patch being accepted (the BEST feeling ever).
 

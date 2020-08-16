@@ -11,7 +11,7 @@ draft: false
 
 One of our production app server was behaving funny yesterday, because of which an Ops Engineer was doing routine checks on the server. He ran the beloved `ll` command (which is aliased to `ls -lah`). The output of the command was something like:
 
-![Output]({{ site.url }}/images/ls-post/output.png)
+![Output](/images/ls-post/output.png)
 
 As you can see, all the symlinks and files were neatly listed. Nothing unusual, right? The Engineer copied the output and pasted it over to someone on Slack.
 
@@ -23,18 +23,16 @@ Though the issue was resolved, it made us thinking---who truncated the contents 
 
 Thankfully, the answer is none of the above. Let's go back to our `ls -lah` command output which our Ops Engineer ran:
 
-![Output]({{ site.url }}/images/ls-post/output.png)
+![Output](/images/ls-post/output.png)
 
 Did you spot something strange? Notice the numbers before every line. Yes, this is a screenshot of `history` command. When I was going through the `history`, at first glance I just ignored it as command and its output, but then I quickly came to senses and realised that history doesn’t show the command output. It was the output of the command which was being executed as a command. Let’s recap…
 
 The Engineer's investigation was going well until he mistakenly pasted the clipboard contents (which had ll's output) on the shell. Since it had line-breaks, he couldn't do much to stop it. The output of command execution was:
 
-{% highlight bash linenos %}
-
+```bash
 [root@app04]lrwxrwxrwx 1 nobody nobody 70 Apr 12 13:22 index.php -> /master/current/index.php
 bash: lrwxrwxrwx: command not found
-
-{% endhighlight %}
+```
 
 Aha! `bash: lrwxrwxrwx: command not found` --- what a relief to see that command didn't execute. _Nothing went wrong._
 
