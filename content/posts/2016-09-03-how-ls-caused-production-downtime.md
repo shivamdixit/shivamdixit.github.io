@@ -1,12 +1,10 @@
 ---
-layout: post
 title: "How 'ls' command output caused a downtime on prod"
+date: 2016-09-03
 description: "The innocuous command 'ls' can sometimes be dangerous too. Read how."
-category: linux
+category: [linux]
 tags: [bash, shell, linux]
-imagefeature: cover17.jpg
-comments: true
-share: true
+draft: false
 ---
 
 **ls** is one of the innocuous commands that sysadmins probably use hundreds of times a day. But yesterday, we faced downtime on production because of the output of this command. Here's the full story...

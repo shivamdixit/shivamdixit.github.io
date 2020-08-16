@@ -1,12 +1,10 @@
 ---
-layout: post
 title: "My Internship At Kayako"
+date: 2016-02-31
 description: "My internship experience at Kayako as a product engineer intern"
-category: kayako
-tags: [internship, experience]
-imagefeature: cover16.jpeg
-comments: true
-share: true
+categories: ["internship"]
+tags: ["internship", "kayako"]
+draft: false
 ---
 
 This post was originally posted on [Medium](https://medium.com/life-at-kayako/my-internship-at-kayako-704bef257ae8#.qeerqmjle) as a part of life at Kayako series.

@@ -1,12 +1,10 @@
 ---
-layout: post
 title: "What Happens When You Power On Your Computer"
+date: 2014-02-07
 description: "This article explains how each bit of your system is flipped when you power on your computer"
-category: linux
-tags: [Linux, GRUB, Operating System]
-imagefeature: cover12.jpg
-comments: true
-share: true
+categories: ["linux"]
+tags: ["GRUB", "Operating System"]
+draft: false
 ---
 
 Ever wondered what all goes inside your computer when you switch on the power button? How is an Operating System loaded ? How you are presented with an user friendly GUI screen? Through this post I will peek into the booting process of UNIX like Operating Systems and try to answer some of the questions. Some of the things discussed in this post are also valid for Windows operating system.

@@ -1,12 +1,10 @@
 ---
-layout: post
 title: "Cracking Google Summer Of Code"
+date: 2014-05-11
 description: "How to prepare for Google Summer Of Code"
-category: gsoc
-tags: [gsoc, howto]
-imagefeature: cover3.jpg
-comments: true
-share: true
+categories: ["gsoc"]
+tags: ["gsoc", "howto"]
+draft: false
 ---
 
 Google Summer of Code is a program sponsored by Google to introduce students to open source programming. Students work on the projects mentored by different open source organizations. It is an incredible opportunity to learn the various tools and practices used in real world softwares. I was GSOC 2014 student under Open Web Application Security Project in my sophomore year. In this post I will shed some lights on how to start preparing for GSOC.

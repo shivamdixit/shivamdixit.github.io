@@ -1,12 +1,10 @@
 ---
-layout: post
 title: "HackIM 2016 write-up (Prog and Crypto)"
+date: 2016-01-31
 description: "Writeup of Nullcon HackIM 2016 (programming and crypto questions)"
-category: CTF
-tags: [writeup, crypto, nullcon, programming, hackim]
-imagefeature: cover15.jpg
-comments: true
-share: true
+categories: ["CTF"]
+tags: ["writeup", "crypto", "nullcon", "programming", "hackim"]
+draft: false
 ---
 
 The HackIM 2016 edition has just concluded. Programming questions were pretty straight forward and didn't require much programming skills. Let's have a look at them:

@@ -1,12 +1,10 @@
 ---
-layout: post
 title: "Incident handling at Kayako"
+date: 2017-03-23
 description: "An overview of how Kayako handles incidents and downtimes"
-category: kayako
-tags: [incident response, outages, slack]
-imagefeature: cover3.jpg
-comments: true
-share: true
+category: [howto]
+tags: ["incident response", outages, kayako]
+draft: false
 ---
 
 We at Kayako strive for the number of 9's in our uptime metric. We want to ensure minimum service disruption for our customers, and therefore we need to work hard on the following two aspects:

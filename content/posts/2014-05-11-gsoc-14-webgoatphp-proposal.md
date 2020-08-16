@@ -1,12 +1,9 @@
 ---
-layout: post
 title: "GSOC '14 WebGoatPHP Proposal"
 description: "My Google Summer of Code 2014 proposal for the project - OWASP WebGoatPHP"
-category: gsoc
-tags: [GSOC, WebGoatPHP, proposal]
-imagefeature: cover11.jpg
-comments: true
-share: true
+categories: ["security"]
+tags: ["GSOC", "WebGoatPHP"]
+draft: false
 ---
 
 <figure>

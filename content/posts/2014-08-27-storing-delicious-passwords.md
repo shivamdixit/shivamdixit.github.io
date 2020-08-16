@@ -1,12 +1,10 @@
 ---
-layout: post
 title: "Storing Delicious Passwords"
+date: 2014-08-27
 description: "An overview of how to securely store passwords in the database"
-category: security
-tags: [AppSec, salt, hash]
-imagefeature: cover6.jpg
-comments: true
-share: true
+categories: ["security"]
+tags: ["password", "hash", "crypto"]
+draft: false
 ---
 
 Most of the web applications require their users to authenticate themselves by asking them username and password. They compare the user supplied credentials with the data stored in their database and if the credentials match, the user is granted access. Sounds good! But what will happen if the database in which the website is storing your passwords gets compromised? This article covers various techniques of storing passwords in the database.

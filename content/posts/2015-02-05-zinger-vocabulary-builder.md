@@ -1,12 +1,10 @@
 ---
-layout: post
 title: "Zinger - Build Vocabulary"
+date: 2015-08-29
 description: "Build your vocabulary with minimum efforts"
-category: zinger
-tags: [zinger, vocabulary, english, chrome, extension]
-imagefeature: cover13.jpg
-comments: true
-share: true
+categories: ["application"]
+tags: ["vocabulary", "chrome extension"]
+draft: false
 ---
 
 Almost all of us face the problem of forgetting new words which we learn. Moreover, it is difficult to compile a list of all new words to later reference. Even if we maintain such list, we almost never open it because of lack of time or motivation. To solve this problem, We have developed a chrome extension - [Zinger](https://chrome.google.com/webstore/detail/zinger/fcpibijcomgjkeecnmjkkjfcnfnaldin?hl=en-US&gl=IN) which helps you to learn new words with minimum efforts. For learning new words you don't have to devote explicit time, you can learn them while you are browsing the web.

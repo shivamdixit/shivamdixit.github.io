@@ -1,13 +1,10 @@
 ---
-layout: post
 title: "Custom 404 page in Apache"
+date: 2014-01-29
 description: "How to use custom 404 error page in Apache"
-category: apache
-modified: 2014-01-29
-tags: [apache]
-imagefeature: cover9.jpg
-comments: true
-share: true
+categories: ["linux"]
+tags: ["apache"]
+draft: false
 ---
 
 ## What is 404 error?

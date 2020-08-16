@@ -1,12 +1,10 @@
 ---
-layout: post
 title: "Null HUMLA Write-up"
+date: 2016-05-02
 description: "Write-up of Delhi null HUMLA workshop on android security and penetration testing."
-category: writeup
-tags: [writeup, nullcon, OWASP, null, HUMLA, security]
-imagefeature: cover16_2.jpg
-comments: true
-share: true
+category: [security]
+tags: [writeup, nullcon, OWASP, null, HUMLA]
+draft: false
 ---
 
 Last week I got a chance to attend my first Null HUMLA workshop. People who are not familiar with Null, it is a community of security enthusiasts who are willing to share knowledge and trying to make the world a more secure place. In this post, I'll share my experience with the workshop.

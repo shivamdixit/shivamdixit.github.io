@@ -1,12 +1,10 @@
 ---
-layout: post
 title: "Slow HTTP - The Insidious Killer"
+date: 2017-02-07
 description: "Slow HTTP are application layer Denial Of Service (DoS) attacks and have potential to knock down a server with limited resources. Read more to find out how to patch your servers against this vulnerability."
-category: linux
-tags: [linux, http, ddos, nginx, slowloris]
-imagefeature: cover15.jpg
-comments: true
-share: true
+categories: [linux]
+tags: [http, ddos, nginx, slowloris]
+draft: false
 ---
 
 Slow HTTP are application layer Denial Of Service (DoS) attacks and have a potential to knock down a server with limited resources. Because of the nature of the attack (slow speed and low volume), they are hard to detect and can cause equal damage as a high volume DDoS. In this post, I'll share my experience with these attacks.

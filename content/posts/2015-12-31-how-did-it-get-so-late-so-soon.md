@@ -1,12 +1,10 @@
 ---
-layout: post
 title: "How did it get so late so soon?"
+date: 2015-12-31
 description: "My musings of year 2015"
-category: personal
-tags: [musings, reflection, new year, resolution]
-imagefeature: cover14.jpg
-comments: true
-share: true
+categories: ["personal"]
+tags: ["musings", "reflection", "new year", "resolution"]
+draft: false
 ---
 
 Another year is about to end and yet it seems it has just started. At the start of 2015, I had ambitious plans for the year. A lot of things to do, a plethora of resolutions, and a heart brimming with optimism. The year is about to conclude and I'm afraid that I'm far from my plans. I had fallen in the trap of *planning fallacy*.
@@ -29,7 +27,7 @@ And the contribution history of private repositories (work account):
 
 ![Github-personal]({{ site.url }}/images/how-did-it-get-so-late-post/github-work.png)
 
-I miss contributing to open source projects. It's not that I don't like my new work, in fact I love it, love it more than anything. It's challenging and always a lot of learning is involved. But I miss the IRC chats, long discussions on public mailing lists, and the feeling of your patch being accepted (the BEST feeling ever).  
+I miss contributing to open source projects. It's not that I don't like my new work, in fact I love it, love it more than anything. It's challenging and always a lot of learning is involved. But I miss the IRC chats, long discussions on public mailing lists, and the feeling of your patch being accepted (the BEST feeling ever).
 
 With 2015 setting down, here I am, writing this post, and making another set of new year resolutions. But this time with a change. With a plan to not loose focus and to keep things simple. This time I'm not going to repeat my mistake of creating a mammoth list. I will just limit it to four points:
 
