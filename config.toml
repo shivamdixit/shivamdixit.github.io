@@ -11,7 +11,7 @@ hasCJKLanguage = false
 
 [params]
     author = "Shivam Dixit"
-    description = "A Developer's Diary"
+    description = "Senior Production Engineer at Uber, making Uber’s Payment systems more secure and reliable."
     bio = "A Developer's Diary"
 
     twitter = "shivamd001"
@@ -22,9 +22,7 @@ hasCJKLanguage = false
     enableDisqus = true
     disqusShortname = "shivamdixit"
 
-
     enableSummary = true
-
     # Set the value to true if use description in post front matter replace content summary
     useDescriptionReplaceSummary = false
 
@@ -71,11 +69,14 @@ hasCJKLanguage = false
 
     # Choose a font for the social icons in the footer. Either "mono-social" or "font-awesome"
     iconFont = "font-awesome"
-  # The social icons can be styled differently if you use mono as font - circle, rounded, or empty
-  socialIconStyle = ""
+    # The social icons can be styled differently if you use mono as font - circle, rounded, or empty
+    socialIconStyle = ""
 
 
 # Add additional social link entries underneath
 [social]
     twitter-square = "https://www.twitter.com/shivamd001"
     github-square = "https://www.github.com/shivamdixit"
+
+[permalinks]
+    posts = "/:slug/:title/"

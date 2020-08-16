@@ -3,6 +3,7 @@ title: "HackIM 2016 write-up (Prog and Crypto)"
 date: 2016-01-31
 description: "Writeup of Nullcon HackIM 2016 (programming and crypto questions)"
 categories: ["CTF"]
+slug: ctf
 tags: ["writeup", "crypto", "nullcon", "programming", "hackim"]
 draft: false
 ---

@@ -3,6 +3,7 @@ title: "How did it get so late so soon?"
 date: 2015-12-31
 description: "My musings of year 2015"
 categories: ["personal"]
+slug: personal
 tags: ["musings", "reflection", "new year", "resolution"]
 draft: false
 ---

@@ -2,6 +2,7 @@
 title: "GSOC '14 WebGoatPHP Proposal"
 description: "My Google Summer of Code 2014 proposal for the project - OWASP WebGoatPHP"
 categories: ["security"]
+slug: gsoc
 tags: ["GSOC", "WebGoatPHP"]
 draft: false
 ---

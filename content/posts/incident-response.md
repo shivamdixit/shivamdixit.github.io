@@ -3,6 +3,7 @@ title: "Incident handling at Kayako"
 date: 2017-03-23
 description: "An overview of how Kayako handles incidents and downtimes"
 category: [howto]
+slug: kayako
 tags: ["incident response", outages, kayako]
 draft: false
 ---

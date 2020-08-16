@@ -3,6 +3,7 @@ title: "Null HUMLA Write-up"
 date: 2016-05-02
 description: "Write-up of Delhi null HUMLA workshop on android security and penetration testing."
 category: [security]
+slug: security
 tags: [writeup, nullcon, OWASP, null, HUMLA]
 draft: false
 ---

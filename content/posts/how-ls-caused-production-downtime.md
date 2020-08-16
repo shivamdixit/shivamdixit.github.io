@@ -3,6 +3,7 @@ title: "How 'ls' command output caused a downtime on prod"
 date: 2016-09-03
 description: "The innocuous command 'ls' can sometimes be dangerous too. Read how."
 category: [linux]
+slug: linux
 tags: [bash, shell, linux]
 draft: false
 ---

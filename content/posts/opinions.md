@@ -3,6 +3,7 @@ title: "Opinions"
 date: 2020-05-17
 description: "What does it take to form an opinion and how do you go about handling the conflicts arising because of opinions"
 categories: [management]
+slug: management
 tags: ["musings", "decision making"]
 draft: false
 ---
