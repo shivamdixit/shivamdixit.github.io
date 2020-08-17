@@ -2,14 +2,15 @@
 title: "Custom 404 page in Apache"
 date: 2014-01-29
 description: "How to use custom 404 error page in Apache"
-categories: ["linux"]
+categories: [linux]
+slug: linux
 tags: ["apache"]
 draft: false
 ---
 
 ## What is 404 error?
 
-![404 error]({{ site.url }}/images/404_post.png)
+![404 error](/images/404_post.png)
 
 When you fire up your web-browser and type in, say `google.com/foo`, your web-browser makes a request to the server for page "foo". In return, server returns a response with a special status code indicating the status of the request. If the page `foo` is not found on the server, `404` status code is sent in the respone. Some other common status codes are:
 

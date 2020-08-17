@@ -3,6 +3,7 @@ title: "Slow HTTP - The Insidious Killer"
 date: 2017-02-07
 description: "Slow HTTP are application layer Denial Of Service (DoS) attacks and have potential to knock down a server with limited resources. Read more to find out how to patch your servers against this vulnerability."
 categories: [linux]
+slug: linux
 tags: [http, ddos, nginx, slowloris]
 draft: false
 ---
@@ -40,7 +41,7 @@ Though we were resistant to Slowloris and R-U-Dead-Yet, but not to the slow read
 
 We used a tool called [slowhttptest](https://github.com/shekyan/slowhttptest) to simulate an attack against our servers and measure the impact. After carefully crafting the attack payload we were able to successfully DoS the server. Here is the graph of attack on one of our servers:
 
-<img src="{{ site.url }}/images/slowhttp-post/img1.png" alt="slowhttp" width="750">
+![slowhttp](/images/slowhttp-post/img1.png)
 
 As you might observe from the graph, service was mostly unavailable during the attack window. The connections were consumed linearly and the service became unavailable in 23 seconds. The service was back after a while (by cleaning up old connections) and it went down again.
 
@@ -48,12 +49,12 @@ Before I jump into the fix of the problem, I'll give a brief background of Nginx
 
 ### Nginx architecture
 
-![slowhttp]({{ site.url }}/images/slowhttp-post/img2.png)
+![slowhttp](/images/slowhttp-post/img2.png)
 
 
 Nginx has a master process and a number of helper processes (including worker processes). Master process manages all the privileged operations whereas the worker processes do the actual work and handle the connections. Nginx's architecture is fundamentally different from that of Apache's. Apache spawns a blocking thread for every new connection [[4]](#references), whereas Nginx is based on non-blocking event-driven architecture. The diagram below summarises the flow:
 
-![slowhttp]({{ site.url }}/images/slowhttp-post/img3.png)
+![slowhttp](/images/slowhttp-post/img3.png)
 
 
 This architecture provides innate prevention against Slow HTTP attacks to some extent as the worker process is not blocked on IO. It can continue to serve other requests. However, it is not full proof and depends on the Nginx configuration options as well.
@@ -72,11 +73,11 @@ I added the directives that weren't present (*limit_conn* and *send_timeout*) an
 
 #### Before
 
-<img src="{{ site.url }}/images/slowhttp-post/img4.png" alt="slowhttp" width="750">
+![slowhttp](/images/slowhttp-post/img4.png)
 
 #### After
 
-<img src="{{ site.url }}/images/slowhttp-post/img5.png" alt="slowhttp" width="750">
+![slowhttp](/images/slowhttp-post/img5.png)
 
 Observe the blue line, the connections are now being closed pretty aggressively because of the timeout values. Also, the total number of *connected* connections at any given time is far less. The overall availability has increased, but it is still far from ideal.
 
@@ -84,7 +85,7 @@ Observe the blue line, the connections are now being closed pretty aggressively 
 
 I further tweaked the send timeout and reduced the limit on the number of concurrent connections from a single IP. This time the result was pretty astonishing:
 
-<img src="{{ site.url }}/images/slowhttp-post/img6.png" alt="slowhttp" width="750">
+![slowhttp](/images/slowhttp-post/img6.png)
 
 It's worse than the first iteration. Connections were still being aggressively closed, the pending connections shot up and went down at same rate, however, the service was available for far less time. There was no obvious explanation for this behaviour.
 
@@ -92,13 +93,13 @@ It's worse than the first iteration. Connections were still being aggressively c
 
 Just to benchmark how an ideal graph will look like, I ran the tests on Google:
 
-<img src="{{ site.url }}/images/slowhttp-post/img7.png" alt="slowhttp" width="750">
+![slowhttp](/images/slowhttp-post/img7.png)
 
 None of the connections were closed and service was available throughout. Also, the pending connections were almost zero throughout the test.
 
 Just to get a distinct deviation in the graphs, I reduced the number concurrent connections from a single IP down to two on our servers. The results were surprising again:
 
-<img src="{{ site.url }}/images/slowhttp-post/img8.png" alt="slowhttp" width="750">
+![slowhttp](/images/slowhttp-post/img8.png)
 
 Since the concurrent connection count was reduced to two, I was expecting it to show service as unavailable immediately after the start of the test (because all the subsequent requests will be throttled and 503 response code will be returned). Instead, the graphs showed 100% availability and looked pretty similar to that of Google.
 
@@ -110,11 +111,11 @@ Therefore, for all the future tests, I used a different device with a different 
 
 This time I decided to manually check the availability from a different device. I ran the tool on the first device and got expected 503 responses in the web browser. Surprisingly, when I opened the webpage from a different device with a different IP, I still got the same 503 response. It implied that the requests from all the IPs were being blocked, making the mitigation useless as the service won't be available to any of the users. On debugging I found the following:
 
-<img src="{{ site.url }}/images/slowhttp-post/img9.png" alt="slowhttp" width="750">
+![slowhttp](/images/slowhttp-post/img9.png)
 
 The Nginx logs were showing client IP as that of private IP of our load balancer. The problem was clear now, we weren't handling the IP addresses correctly in our Nginx configurations. I configured the real IP module of Nginx and re-ran the tests. The results were great:
 
-<img src="{{ site.url }}/images/slowhttp-post/img10.png" alt="slowhttp" width="750">
+![slowhttp](/images/slowhttp-post/img10.png)
 
 All the IPs were correctly being identified by the Nginx, clients opening too many concurrent connections were being throttled, and all the legit requests from different IPs were being served normally.
 

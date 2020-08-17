@@ -3,13 +3,14 @@ title: "Storing Delicious Passwords"
 date: 2014-08-27
 description: "An overview of how to securely store passwords in the database"
 categories: ["security"]
+slug: security
 tags: ["password", "hash", "crypto"]
 draft: false
 ---
 
 Most of the web applications require their users to authenticate themselves by asking them username and password. They compare the user supplied credentials with the data stored in their database and if the credentials match, the user is granted access. Sounds good! But what will happen if the database in which the website is storing your passwords gets compromised? This article covers various techniques of storing passwords in the database.
 
-![Sign In]({{ site.url }}/images/hash-passwords-post/sign-in.jpg)
+![Sign In](/images/hash-passwords-post/sign-in.jpg)
 
 According to [naked security](http://nakedsecurity.sophos.com/2013/04/23/users-same-password-most-websites/), 55% of the net users use the same password for most of the websites! It implies that if the website storing your password in **plain text** gets compromised, hacker is not only able to gain access of your account on that website but all your social media, email, forums etc accounts in which you are using the same password!
 
@@ -26,17 +27,11 @@ Some of the popular cryptographic hash functions are (read *were*) [MD5](http://
 
 Hackers are smart guys and once they came to know that developers are storing hashed passwords, they pre-computed hash of large number of words (from a popular word list or dictionary words). They created a table of words and their corresponding hashes. This table is known as [Rainbow Table](http://en.wikipedia.org/wiki/Rainbow_table) and it is readily available online. They can use this table to reverse lookup the actual password by comparing the hashes obtained from the database. Hence it is very important to have a **strong** password since the possibility of your password appearing in the word list becomes less.
 
-<figure>
-  <img src="{{ site.url }}/images/hash-passwords-post/rainbow-table.png" alt="Rainbow Table">
-  <figcaption>Simplified rainbow table with 3 reduction functions (Source: Wikipedia)</figcaption>
-</figure>
+{{< figure src="/images/hash-passwords-post/rainbow-table.png" title="Simplified rainbow table with 3 reduction functions (Source: Wikipedia)" class="align-center" >}}
 
 Simply storing the hash of a password is not going to help anymore. Processing power has increased drastically with the introduction of GPUs and CUDA, OpenCL libraries. A fast GPU can generate millions of MD5/SHA1 hashes in one second. Hence a hacker can easily generate large number of hashes by brute-forcing various possible combinations and can compare it with the hashes stored in the database to extract the actual password.
 
-<figure>
-  <img src="{{ site.url }}/images/hash-passwords-post/surprised.png" alt="Surprised">
-  <figcaption>Even hashed passwords are not secure! Surprised?</figcaption>
-</figure>
+{{< figure src="/images/hash-passwords-post/surprised.png" title="Even hashed passwords are not secure! Surprised?" class="half-width align-center" >}}
 
 Don't loose hope! There is still something that developers can do to keep your passwords away from prying eyes of the hackers. Make the passwords **delicious** by adding some __salt__ to them! Yeah, right..! Add a [salt](http://en.wikipedia.org/wiki/Salt_(cryptography)). A salt is random data that is concatenated with your password before sending it as the input of the hashing function. For example - if your password is `abc` and the salt is `!ZaP0#8`, the result of `hashFunction('abc!ZaP0#8')` will be stored in the database instead of hashFunction('abc'). Hence the rainbow table attacks won't be effective now as the probability that rainbow table contains hash of 'abc!ZaP0#8' is meager (because generally rainbow tables are constructed from common words, dictionary words etc). Salt is **not** stored in the database and only present in the application configuration file which is not accessible to outer world. Gaining access to the source files is difficult than gaining access to the database.
 
