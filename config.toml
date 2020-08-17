@@ -12,7 +12,7 @@ hasCJKLanguage = false
 [params]
     author = "Shivam Dixit"
     description = "Senior Production Engineer at Uber, making Uber’s Payment systems more secure and reliable."
-    bio = "A Developer's Diary"
+    bio = "Security | Reliability | Engineering"
 
     twitter = "shivamd001"
 
@@ -79,6 +79,7 @@ hasCJKLanguage = false
 [social]
     twitter-square = "https://www.twitter.com/shivamd001"
     github-square = "https://www.github.com/shivamdixit"
+    linkedin-square = "https://www.linkedin.com/in/shivamd001/"
 
 [permalinks]
     posts = "/:slug/:filename/"
