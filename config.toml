@@ -4,6 +4,8 @@ languageCode = "en"
 title = "Shivam Dixit"
 theme = "hugo-theme-cactus-plus"
 
+publishDir = "docs"
+
 googleAnalytics = "UA-47304954-1"
 
 # Set the value to true if your site include CJK (Chinese, Japanese, and Korean languages) characters
