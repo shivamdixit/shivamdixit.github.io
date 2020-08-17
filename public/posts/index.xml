@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Shivam Dixit</title>
+    <link>https://shivamdixit.com/posts/</link>
+    <description>Recent content in Posts on Shivam Dixit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 17 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://shivamdixit.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Opinions</title>
+      <link>https://shivamdixit.com/management/opinions/</link>
+      <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/management/opinions/</guid>
+      <description>We all have opinions on different topics, from the best pizza place in town to the political party to vote for in the next election. More often than not these opinions are innocuous and don&amp;rsquo;t impact anything critical. However, there are times when opinions can have an impact on other individuals, projects, or an organization.
+In such cases, a certain level of rigor is expected from an individual before they form an opinion.</description>
+    </item>
+    
+    <item>
+      <title>Incident handling at Kayako</title>
+      <link>https://shivamdixit.com/kayako/incident-response/</link>
+      <pubDate>Thu, 23 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/kayako/incident-response/</guid>
+      <description>We at Kayako strive for the number of 9&amp;rsquo;s in our uptime metric. We want to ensure minimum service disruption for our customers, and therefore we need to work hard on the following two aspects:
+ Identifying that an incident has occurred Minimizing the impact of the incident  Identifying an incident Our goal is to identify an incident before our customer. It not only helps us in proactively informing our customers on the ongoing issues but also helps us to prepare our Support team better for the incoming queries.</description>
+    </item>
+    
+    <item>
+      <title>Slow HTTP - The Insidious Killer</title>
+      <link>https://shivamdixit.com/linux/slowhttp-the-insidious-killer/</link>
+      <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/linux/slowhttp-the-insidious-killer/</guid>
+      <description>Slow HTTP are application layer Denial Of Service (DoS) attacks and have a potential to knock down a server with limited resources. Because of the nature of the attack (slow speed and low volume), they are hard to detect and can cause equal damage as a high volume DDoS. In this post, I&amp;rsquo;ll share my experience with these attacks.
+Introduction As explained in the WiKi [1], Slow HTTP attacks rely on the fact that the HTTP protocol, by design, requires requests to be completely received by the server before they are processed.</description>
+    </item>
+    
+    <item>
+      <title>How &#39;ls&#39; command output caused a downtime on prod</title>
+      <link>https://shivamdixit.com/linux/how-ls-caused-production-downtime/</link>
+      <pubDate>Sat, 03 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/linux/how-ls-caused-production-downtime/</guid>
+      <description>ls is one of the innocuous commands that sysadmins probably use hundreds of times a day. But yesterday, we faced downtime on production because of the output of this command. Here&amp;rsquo;s the full story&amp;hellip;
+One of our production app server was behaving funny yesterday, because of which an Ops Engineer was doing routine checks on the server. He ran the beloved ll command (which is aliased to ls -lah). The output of the command was something like:</description>
+    </item>
+    
+    <item>
+      <title>Null HUMLA Write-up</title>
+      <link>https://shivamdixit.com/security/null-humla-writeup/</link>
+      <pubDate>Mon, 02 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/security/null-humla-writeup/</guid>
+      <description>Last week I got a chance to attend my first Null HUMLA workshop. People who are not familiar with Null, it is a community of security enthusiasts who are willing to share knowledge and trying to make the world a more secure place. In this post, I&amp;rsquo;ll share my experience with the workshop.
+Introduction Null community organizes three different kinds of events:
+ Humla (for offensive security) Bachaav (for defensive security) Pulia (for bridging the gap between two)  The workshop was organized at Sapient, Gurgaon, which is located in the heart of the city.</description>
+    </item>
+    
+    <item>
+      <title>HackIM 2016 write-up (Prog and Crypto)</title>
+      <link>https://shivamdixit.com/ctf/hackim-writeup/</link>
+      <pubDate>Sun, 31 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/ctf/hackim-writeup/</guid>
+      <description>The HackIM 2016 edition has just concluded. Programming questions were pretty straight forward and didn&amp;rsquo;t require much programming skills. Let&amp;rsquo;s have a look at them:
+Programming 1 So you reached Delhi and now the noise in your head is not allowing you to think rationally. The Nosise in your head has origin its Origin in your Stomach. And this is a big hunger. You can finish one or probably 2 Tandoori Chicken.</description>
+    </item>
+    
+    <item>
+      <title>How did it get so late so soon?</title>
+      <link>https://shivamdixit.com/personal/how-did-it-get-so-late-so-soon/</link>
+      <pubDate>Thu, 31 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/personal/how-did-it-get-so-late-so-soon/</guid>
+      <description>Another year is about to end and yet it seems it has just started. At the start of 2015, I had ambitious plans for the year. A lot of things to do, a plethora of resolutions, and a heart brimming with optimism. The year is about to conclude and I&amp;rsquo;m afraid that I&amp;rsquo;m far from my plans. I had fallen in the trap of planning fallacy.
+Daniel Kahneman describes planning fallacy as follows:</description>
+    </item>
+    
+    <item>
+      <title>Zinger - Build Vocabulary</title>
+      <link>https://shivamdixit.com/application/zinger-vocabulary-builder/</link>
+      <pubDate>Sat, 29 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/application/zinger-vocabulary-builder/</guid>
+      <description>Almost all of us face the problem of forgetting new words which we learn. Moreover, it is difficult to compile a list of all new words to later reference. Even if we maintain such list, we almost never open it because of lack of time or motivation. To solve this problem, We have developed a chrome extension - Zinger which helps you to learn new words with minimum efforts. For learning new words you don&amp;rsquo;t have to devote explicit time, you can learn them while you are browsing the web.</description>
+    </item>
+    
+    <item>
+      <title>Storing Delicious Passwords</title>
+      <link>https://shivamdixit.com/security/storing-delicious-passwords/</link>
+      <pubDate>Wed, 27 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/security/storing-delicious-passwords/</guid>
+      <description>Most of the web applications require their users to authenticate themselves by asking them username and password. They compare the user supplied credentials with the data stored in their database and if the credentials match, the user is granted access. Sounds good! But what will happen if the database in which the website is storing your passwords gets compromised? This article covers various techniques of storing passwords in the database.</description>
+    </item>
+    
+    <item>
+      <title>Cracking Google Summer Of Code</title>
+      <link>https://shivamdixit.com/gsoc/cracking-google-summer-of-code/</link>
+      <pubDate>Sun, 11 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/gsoc/cracking-google-summer-of-code/</guid>
+      <description>Google Summer of Code is a program sponsored by Google to introduce students to open source programming. Students work on the projects mentored by different open source organizations. It is an incredible opportunity to learn the various tools and practices used in real world softwares. I was GSOC 2014 student under Open Web Application Security Project in my sophomore year. In this post I will shed some lights on how to start preparing for GSOC.</description>
+    </item>
+    
+    <item>
+      <title>What Happens When You Power On Your Computer</title>
+      <link>https://shivamdixit.com/linux/what-happens-when-you-power-on-your-computer/</link>
+      <pubDate>Fri, 07 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/linux/what-happens-when-you-power-on-your-computer/</guid>
+      <description>Ever wondered what all goes inside your computer when you switch on the power button? How is an Operating System loaded ? How you are presented with an user friendly GUI screen? Through this post I will peek into the booting process of UNIX like Operating Systems and try to answer some of the questions. Some of the things discussed in this post are also valid for Windows operating system.</description>
+    </item>
+    
+    <item>
+      <title>Custom 404 page in Apache</title>
+      <link>https://shivamdixit.com/linux/using-custom-404-page-in-apache/</link>
+      <pubDate>Wed, 29 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/linux/using-custom-404-page-in-apache/</guid>
+      <description>What is 404 error? When you fire up your web-browser and type in, say google.com/foo, your web-browser makes a request to the server for page &amp;ldquo;foo&amp;rdquo;. In return, server returns a response with a special status code indicating the status of the request. If the page foo is not found on the server, 404 status code is sent in the respone. Some other common status codes are:
+200 : OK 301 : Moved Permanently 400 : Bad Request 401 : Unauthorized 403 : Forbidden 404 : Not Found 500 : Internal Server Error  What is .</description>
+    </item>
+    
+    <item>
+      <title>GSOC &#39;14 WebGoatPHP Proposal</title>
+      <link>https://shivamdixit.com/gsoc/gsoc-14-webgoatphp-proposal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/gsoc/gsoc-14-webgoatphp-proposal/</guid>
+      <description>Abstract WebGoat is one of the most popular open source web applications developed by OWASP. It is a deliberately insecure web application developed using Java to provide a security awareness environment. It offers a set of challenges based on various vulnerabilities listed in OWASP. Since PHP is extremely popular in web applications and has many of the security flaws which Java doesn&amp;rsquo;t, my work is to develop a deliberately insecure PHP web application.</description>
+    </item>
+    
+    <item>
+      <title>My Internship At Kayako</title>
+      <link>https://shivamdixit.com/kayako/internship-at-kayako/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/kayako/internship-at-kayako/</guid>
+      <description>This post was originally posted on Medium as a part of life at Kayako series.
+This summer I got the opportunity to do an internship as a Product Engineer at Kayako. I was fresh out of college and looking for a chance to apply the knowledge that I learned at college. I accepted the offer straight away.
+The internship was the perfect platform to kick start my professional career. It not only honed my technical skills, but also helped me to the understand the various aspects of how an organization like this works.</description>
+    </item>
+    
+  </channel>
+</rss>

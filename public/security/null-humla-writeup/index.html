@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 
+			
+  
+    <meta name="twitter:card" content="summary"/>
+    
+      <meta name="twitter:image" content="https://shivamdixit.comimages/avatar.png" />
+    
+  
+  
+  <meta name="twitter:title" content="Null HUMLA Write-up"/>
+  <meta name="twitter:description" content="Write-up of Delhi null HUMLA workshop on android security and penetration testing."/>
+  
+    <meta name="twitter:site" content="@shivamd001"/>
+  
+  
+  
+  
+    <meta name="twitter:creator" content="@Shivam Dixit"/>
+  
+
+
+
+		
+		<meta name="author" content="Shivam Dixit">
+		<meta name="description" content="Senior Production Engineer at Uber, making Uber’s Payment systems more secure and reliable.">
+		<meta name="generator" content="Hugo 0.74.3" />
+		<title>Null HUMLA Write-up &middot; Shivam Dixit</title>
+		<link rel="shortcut icon" href="https://shivamdixit.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://shivamdixit.comcss/style.css">
+		<link rel="stylesheet" href="https://shivamdixit.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://shivamdixit.comcss/font-awesome.min.css">
+		
+
+		
+		<link href="https://shivamdixit.com/index.xml" rel="alternate" type="application/rss+xml" title="Shivam Dixit" />
+		
+
+		
+		<link rel="stylesheet" href="https://shivamdixit.comcss/main.css">
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://shivamdixit.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://shivamdixit.composts'>Archive</a>
+	<a href='https://shivamdixit.comcategories'>Categories</a>
+	<a href='https://shivamdixit.comabout'>About</a>
+
+	
+
+	
+	<a class="cta" href="https://shivamdixit.com/index.xml">RSS</a>
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Null HUMLA Write-up
+                    </h1>
+                    <h2 class="headline">
+                    May 2, 2016 00:00
+                    · 460 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://shivamdixit.comtags/writeup">writeup</a>
+                          
+                              <a href="https://shivamdixit.comtags/nullcon">nullcon</a>
+                          
+                              <a href="https://shivamdixit.comtags/owasp">OWASP</a>
+                          
+                              <a href="https://shivamdixit.comtags/"></a>
+                          
+                              <a href="https://shivamdixit.comtags/humla">HUMLA</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p>Last week I got a chance to attend my first Null HUMLA workshop. People who are not familiar with Null, it is a community of security enthusiasts who are willing to share knowledge and trying to make the world a more secure place. In this post, I&rsquo;ll share my experience with the workshop.</p>
+<h3 id="introduction">Introduction</h3>
+<p>Null community organizes three different kinds of events:</p>
+<ul>
+<li><strong>Humla</strong> (for offensive security)</li>
+<li><strong>Bachaav</strong> (for defensive security)</li>
+<li><strong>Pulia</strong> (for bridging the gap between two)</li>
+</ul>
+<p>The workshop was organized at Sapient, Gurgaon, which is located in the heart of the city. There was a long queue of hackers at the reception desk, all looking excited and ready to break the ice.</p>
+<p>&ldquo;<em>Android Fight Club</em>&quot;&mdash;as the name suggests, it was a workshop on android security and penetration testing. I have a background in web application security, but Android was something totally new for me. We were asked to pre-install some of the tools and VMs for the hands-on session.</p>
+<!-- raw HTML omitted -->
+<p>The session was a house full with ~45 participants. It started with the introductions by the attendees. Everyone was asked to tell a <em>cool thing</em> about themselves. Abhinav (speaker) was charismatic and he kept us engaged throughout the session with his witty sense of humor and funny slides.</p>
+<!-- raw HTML omitted -->
+<h3 id="the-workshop">The Workshop</h3>
+<p>Abhinav explained us about the architecture, privileges &amp; permissions, and other high-level details of android applications.</p>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>Because <em>why</em> is more important than <em>how</em> - Abhinav</p>
+</blockquote>
+<p>We were given insights of android market share and why android security is essential in today&rsquo;s world. The rest of the workshop was divided into two major parts:</p>
+<ul>
+<li>Static analysis</li>
+<li>Dynamic analysis</li>
+</ul>
+<p>The hacking started with the static analysis of android applications. We tried tools like apktool, adb, dex2jar, etc.,  read SMALI files, discussed binary protection and other static analysis tools available in the market.</p>
+<!-- raw HTML omitted -->
+<p>It was followed by dynamic analysis, and hands-on with tools like Drozer, burp suite, etc. We tried to find bugs in a vulnerable Goat Droid app by OWASP. We exploited various components like:</p>
+<ul>
+<li>Exported Services</li>
+<li>Exported Broadcast receivers</li>
+<li>Exported Activities</li>
+<li>Exported Content Provider</li>
+</ul>
+<h4 id="key-takeaways">Key Takeaways</h4>
+<p>Some of the key takeaways from the workshop were:</p>
+<ul>
+<li>Android directory structure and permission model</li>
+<li>Knowledge of various static and dynamic analysis tools for pen-testing</li>
+<li>Various common exploitable vulnerabilities</li>
+<li>Emulators and VMs</li>
+<li>How to start earning money Gangsta style (bug-bounty)</li>
+</ul>
+<p>Overall it was a fun and informative session. I met lots of security enthusiast, discussed the latest trends in security and made new friends. After all, the best part of any meet-up is the amazing people in it.</p>
+<h3 id="organizers">Organizers</h3>
+<p>The event was very well organized, thanks to <a href="https://twitter.com/VaibhavGupta_1">Vaibhav</a>, <a href="https://www.linkedin.com/in/vishalasthana">Vishal</a>, and <a href="https://www.owasp.org/index.php/User:Sandeep_Singh">Sandeep</a> for taking the initiatives of organizing excellent security meet-ups and workshops in Delhi/NCR region.</p>
+<p>Looking forward to seeing you all at the next event!</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fshivamdixit.com%2fsecurity%2fnull-humla-writeup%2f - Null%20HUMLA%20Write-up by @shivamd001"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'shivamdixit'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/shivamdixit">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.linkedin.com/in/shivamd001/">
+        <i class="fa fa-linkedin-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/shivamd001">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Shivam Dixit
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://shivamdixit.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://shivamdixit.comjs/main.js"></script>
+<script src="https://shivamdixit.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47304954-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+
+    </body>
+</html>
