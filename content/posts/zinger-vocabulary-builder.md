@@ -1,6 +1,6 @@
 ---
 title: "Zinger - Build Vocabulary"
-date: 2015-08-29
+date: 2015-02-05
 description: "Build your vocabulary with minimum efforts"
 categories: ["application"]
 slug: application

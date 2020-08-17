@@ -1,6 +1,6 @@
 ---
 title: "Cracking Google Summer Of Code"
-date: 2014-05-11
+date: 2014-08-29
 description: "How to prepare for Google Summer Of Code"
 categories: ["gsoc"]
 slug: gsoc

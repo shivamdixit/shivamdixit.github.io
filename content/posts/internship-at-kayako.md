@@ -1,6 +1,6 @@
 ---
 title: "My Internship At Kayako"
-date: 2016-02-31
+date: 2016-03-02
 description: "My internship experience at Kayako as a product engineer intern"
 categories: ["internship"]
 slug: kayako
