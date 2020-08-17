@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 
+			
+  
+    <meta name="twitter:card" content="summary"/>
+    
+      <meta name="twitter:image" content="https://shivamdixit.comimages/avatar.png" />
+    
+  
+  
+  <meta name="twitter:title" content="Storing Delicious Passwords"/>
+  <meta name="twitter:description" content="An overview of how to securely store passwords in the database"/>
+  
+    <meta name="twitter:site" content="@shivamd001"/>
+  
+  
+  
+  
+    <meta name="twitter:creator" content="@Shivam Dixit"/>
+  
+
+
+
+		
+		<meta name="author" content="Shivam Dixit">
+		<meta name="description" content="Senior Production Engineer at Uber, making Uber’s Payment systems more secure and reliable.">
+		<meta name="generator" content="Hugo 0.74.3" />
+		<title>Storing Delicious Passwords &middot; Shivam Dixit</title>
+		<link rel="shortcut icon" href="https://shivamdixit.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://shivamdixit.comcss/style.css">
+		<link rel="stylesheet" href="https://shivamdixit.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://shivamdixit.comcss/font-awesome.min.css">
+		
+
+		
+		<link href="https://shivamdixit.com/index.xml" rel="alternate" type="application/rss+xml" title="Shivam Dixit" />
+		
+
+		
+		<link rel="stylesheet" href="https://shivamdixit.comcss/main.css">
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://shivamdixit.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://shivamdixit.composts'>Archive</a>
+	<a href='https://shivamdixit.comcategories'>Categories</a>
+	<a href='https://shivamdixit.comabout'>About</a>
+
+	
+
+	
+	<a class="cta" href="https://shivamdixit.com/index.xml">RSS</a>
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Storing Delicious Passwords
+                    </h1>
+                    <h2 class="headline">
+                    Aug 27, 2014 00:00
+                    · 1318 words
+                    · 7 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://shivamdixit.comtags/password">password</a>
+                          
+                              <a href="https://shivamdixit.comtags/hash">hash</a>
+                          
+                              <a href="https://shivamdixit.comtags/crypto">crypto</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p>Most of the web applications require their users to authenticate themselves by asking them username and password. They compare the user supplied credentials with the data stored in their database and if the credentials match, the user is granted access. Sounds good! But what will happen if the database in which the website is storing your passwords gets compromised? This article covers various techniques of storing passwords in the database.</p>
+<p><img src="/images/hash-passwords-post/sign-in.jpg" alt="Sign In"></p>
+<p>According to <a href="http://nakedsecurity.sophos.com/2013/04/23/users-same-password-most-websites/">naked security</a>, 55% of the net users use the same password for most of the websites! It implies that if the website storing your password in <strong>plain text</strong> gets compromised, hacker is not only able to gain access of your account on that website but all your social media, email, forums etc accounts in which you are using the same password!</p>
+<p>Well, you must be wondering that if the database is exposed to the hacker then what can be done? The hacker has access to all the information. WRONG!! There are many ways through which the process of retrieving password from the database can be made cumbersome for the hacker. Even then the developers tend to ignore the basic guidelines and store the passwords in plain text. There are over <a href="http://www.readwriteweb.com/archives/rockyou_hacker_30_of_sites_store_plain_text_passwords.php">30% websites</a> which store your passwords in plain text (including some reputed sites also). If the website is storing your password in plain text then no matter how strong password you choose, you are not safe!</p>
+<blockquote>
+<p>Storing plain text passwords in the database is a sin</p>
+</blockquote>
+<p>One might think that if not plain text then we must <strong>encrypt</strong> the password and then store. It is also a terrible idea. Encryption functions provide one-one mapping between input and output and they are always <strong>reversible</strong>. If the hacker gets the key, he will be able to decrypt the passwords. The better way would be to use a one way cryptographic <strong>hash</strong> function. Hash function provides a many-one mapping between input and output and it is practically impossible to reverse a output. A good cryptographic hash function has lesser number of <a href="http://en.wikipedia.org/wiki/Collision_(computer_science)">Collisions</a> (<strong>i.e</strong> for different input values to the function it is difficult to get the same output). Collisions cannot be completely avoided because of <a href="http://www.wikipedia.org/wiki/Pigeonhole_principle">pigeonhole principle</a>. For hashing passwords we can assume that the hash function will generate unique output <strong>i.e</strong> for no two different passwords we will get a same hash value.</p>
+<p>Some of the popular cryptographic hash functions are (read <em>were</em>) <a href="http://en.wikipedia.org/wiki/MD5">MD5</a> and <a href="http://en.wikipedia.org/wiki/SHA-1">SHA1</a>. Instead of storing plain text password in the database one way is to store the hash of the password. You might be thinking that if we cannot get the actual password back from the hash then how are we going to verify the credentials that the user entered? It&rsquo;s simple, apply the same hash function on the password which user entered and then compare it with the hash stored in the database. If both hashes match then the user is authenticated (since hash of same input will give same output). Now if the attacker is able to get database access, he will be only able to view the hashed output and not the actual password.</p>
+<blockquote>
+<p>Using cryptographic hash function is better than storing plain text password.</p>
+</blockquote>
+<p>Hackers are smart guys and once they came to know that developers are storing hashed passwords, they pre-computed hash of large number of words (from a popular word list or dictionary words). They created a table of words and their corresponding hashes. This table is known as <a href="http://en.wikipedia.org/wiki/Rainbow_table">Rainbow Table</a> and it is readily available online. They can use this table to reverse lookup the actual password by comparing the hashes obtained from the database. Hence it is very important to have a <strong>strong</strong> password since the possibility of your password appearing in the word list becomes less.</p>
+<figure class="align-center">
+    <img src="/images/hash-passwords-post/rainbow-table.png"/> <figcaption>
+            <h4>Simplified rainbow table with 3 reduction functions (Source: Wikipedia)</h4>
+        </figcaption>
+</figure>
+
+<p>Simply storing the hash of a password is not going to help anymore. Processing power has increased drastically with the introduction of GPUs and CUDA, OpenCL libraries. A fast GPU can generate millions of MD5/SHA1 hashes in one second. Hence a hacker can easily generate large number of hashes by brute-forcing various possible combinations and can compare it with the hashes stored in the database to extract the actual password.</p>
+<figure class="half-width align-center">
+    <img src="/images/hash-passwords-post/surprised.png"/> <figcaption>
+            <h4>Even hashed passwords are not secure! Surprised?</h4>
+        </figcaption>
+</figure>
+
+<p>Don&rsquo;t loose hope! There is still something that developers can do to keep your passwords away from prying eyes of the hackers. Make the passwords <strong>delicious</strong> by adding some <strong>salt</strong> to them! Yeah, right..! Add a <a href="http://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a>. A salt is random data that is concatenated with your password before sending it as the input of the hashing function. For example - if your password is <code>abc</code> and the salt is <code>!ZaP0#8</code>, the result of <code>hashFunction('abc!ZaP0#8')</code> will be stored in the database instead of hashFunction(&lsquo;abc&rsquo;). Hence the rainbow table attacks won&rsquo;t be effective now as the probability that rainbow table contains hash of &lsquo;abc!ZaP0#8&rsquo; is meager (because generally rainbow tables are constructed from common words, dictionary words etc). Salt is <strong>not</strong> stored in the database and only present in the application configuration file which is not accessible to outer world. Gaining access to the source files is difficult than gaining access to the database.</p>
+<blockquote>
+<p>Storing hash of a delicious password is better than storing hash of plain password</p>
+</blockquote>
+<p>The above salting method is <strong>static</strong>. We have one <strong>fixed</strong> salt for all the passwords. To authenticate the user, first concatenate the fixed salt to the user supplied input (password) and then pass the value to the hashing function and compare it with the value stored in the database. However this approach is still vulnerable to brute-force and if the attacker is able to get the static salt he can use the old attack methodology by concatenating the salt in every word.</p>
+<p>A better approach would be to use a dynamic salt. For each user a new salt is generated by cryptographically strong random string generator. The password entered by user is concatenated with a random generated salt as well as a static salt. The concatenated string is passed as the input of hashing function. The result obtained is stored in database. Dynamic salt is required to be stored in the database since it is different for different users. When the user is to be authenticated, first the value of dynamic salt for that user is fetched from the database, it is concatenated with user supplied input and the static salt. The result is compared with the hash stored in the database.</p>
+<p>If the database is compromised the hacker will not only get your password hashes but also the dynamic salt used. You might be wondering then what is the advantage of dynamic salt over static salt if attacker has dynamic salt? Even if the attacker has dynamic salt he needs to create a new hash-table (or rainbow table) for each and every user present in the database (as per dynamic salt). This is a lot more expensive operation than creating just one table for all the users.</p>
+<blockquote>
+<p>Dynamic salt + static salt is better than simple static salt. It makes your password more delicious!</p>
+</blockquote>
+<p>The above approach is quite good to slow down a hacker. However it is recommended to use algorithms like <code>bcrypt</code> and <code>scrypt</code> instead of MD5/SHA1. Bcrypt is a hashing algorithm based on <strong>Blowfish</strong>. It requires you to specify a cost/work factor. The work factor makes the overall process slower and hence time taken to generate hash-table would increase multiple times.</p>
+<p>Some people suggest that salt should be stored in the same column as the password so that the hacker is not able to guess which part is salt and which is the hash. For them, I just want to say:</p>
+<blockquote>
+<p>Security by obscurity is a bad practice</p>
+</blockquote>
+<p>I&rsquo;m not a crypto expert, the techniques mentioned above are the standard techniques used in industry. If you disagree please feel free to comment.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fshivamdixit.com%2fsecurity%2fstoring-delicious-passwords%2f - Storing%20Delicious%20Passwords by @shivamd001"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'shivamdixit'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/shivamdixit">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.linkedin.com/in/shivamd001/">
+        <i class="fa fa-linkedin-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/shivamd001">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Shivam Dixit
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://shivamdixit.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://shivamdixit.comjs/main.js"></script>
+<script src="https://shivamdixit.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47304954-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+
+    </body>
+</html>

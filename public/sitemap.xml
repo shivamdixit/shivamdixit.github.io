@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://shivamdixit.com/categories/</loc>
+    <lastmod>2020-05-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/decision-making/</loc>
+    <lastmod>2020-05-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/categories/management/</loc>
+    <lastmod>2020-05-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/musings/</loc>
+    <lastmod>2020-05-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/management/opinions/</loc>
+    <lastmod>2020-05-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/posts/</loc>
+    <lastmod>2020-05-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/</loc>
+    <lastmod>2020-05-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/</loc>
+    <lastmod>2020-05-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/kayako/incident-response/</loc>
+    <lastmod>2017-03-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/incident-response/</loc>
+    <lastmod>2017-03-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/kayako/</loc>
+    <lastmod>2017-03-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/outages/</loc>
+    <lastmod>2017-03-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/ddos/</loc>
+    <lastmod>2017-02-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/http/</loc>
+    <lastmod>2017-02-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/categories/linux/</loc>
+    <lastmod>2017-02-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/nginx/</loc>
+    <lastmod>2017-02-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/linux/slowhttp-the-insidious-killer/</loc>
+    <lastmod>2017-02-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/slowloris/</loc>
+    <lastmod>2017-02-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/bash/</loc>
+    <lastmod>2016-09-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/linux/how-ls-caused-production-downtime/</loc>
+    <lastmod>2016-09-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/linux/</loc>
+    <lastmod>2016-09-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/shell/</loc>
+    <lastmod>2016-09-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/humla/</loc>
+    <lastmod>2016-05-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/security/null-humla-writeup/</loc>
+    <lastmod>2016-05-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/nullcon/</loc>
+    <lastmod>2016-05-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/owasp/</loc>
+    <lastmod>2016-05-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/writeup/</loc>
+    <lastmod>2016-05-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/crypto/</loc>
+    <lastmod>2016-01-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/categories/ctf/</loc>
+    <lastmod>2016-01-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/hackim/</loc>
+    <lastmod>2016-01-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/ctf/hackim-writeup/</loc>
+    <lastmod>2016-01-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/programming/</loc>
+    <lastmod>2016-01-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/personal/how-did-it-get-so-late-so-soon/</loc>
+    <lastmod>2015-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/new-year/</loc>
+    <lastmod>2015-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/categories/personal/</loc>
+    <lastmod>2015-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/reflection/</loc>
+    <lastmod>2015-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/resolution/</loc>
+    <lastmod>2015-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/categories/application/</loc>
+    <lastmod>2015-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/chrome-extension/</loc>
+    <lastmod>2015-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/vocabulary/</loc>
+    <lastmod>2015-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/application/zinger-vocabulary-builder/</loc>
+    <lastmod>2015-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/hash/</loc>
+    <lastmod>2014-08-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/password/</loc>
+    <lastmod>2014-08-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/categories/security/</loc>
+    <lastmod>2014-08-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/security/storing-delicious-passwords/</loc>
+    <lastmod>2014-08-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/gsoc/cracking-google-summer-of-code/</loc>
+    <lastmod>2014-05-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/gsoc/</loc>
+    <lastmod>2014-05-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/categories/gsoc/</loc>
+    <lastmod>2014-05-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/howto/</loc>
+    <lastmod>2014-05-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/grub/</loc>
+    <lastmod>2014-02-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/operating-system/</loc>
+    <lastmod>2014-02-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/linux/what-happens-when-you-power-on-your-computer/</loc>
+    <lastmod>2014-02-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/apache/</loc>
+    <lastmod>2014-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/linux/using-custom-404-page-in-apache/</loc>
+    <lastmod>2014-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/gsoc/gsoc-14-webgoatphp-proposal/</loc>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/internship/</loc>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/categories/internship/</loc>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/kayako/internship-at-kayako/</loc>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/webgoatphp/</loc>
+  </url>
+  
+</urlset>

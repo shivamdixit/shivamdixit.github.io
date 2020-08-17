@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 
+			
+  
+    <meta name="twitter:card" content="summary"/>
+    
+      <meta name="twitter:image" content="https://shivamdixit.comimages/avatar.png" />
+    
+  
+  
+  <meta name="twitter:title" content="Incident handling at Kayako"/>
+  <meta name="twitter:description" content="An overview of how Kayako handles incidents and downtimes"/>
+  
+    <meta name="twitter:site" content="@shivamd001"/>
+  
+  
+  
+  
+    <meta name="twitter:creator" content="@Shivam Dixit"/>
+  
+
+
+
+		
+		<meta name="author" content="Shivam Dixit">
+		<meta name="description" content="Senior Production Engineer at Uber, making Uber’s Payment systems more secure and reliable.">
+		<meta name="generator" content="Hugo 0.74.3" />
+		<title>Incident handling at Kayako &middot; Shivam Dixit</title>
+		<link rel="shortcut icon" href="https://shivamdixit.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://shivamdixit.comcss/style.css">
+		<link rel="stylesheet" href="https://shivamdixit.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://shivamdixit.comcss/font-awesome.min.css">
+		
+
+		
+		<link href="https://shivamdixit.com/index.xml" rel="alternate" type="application/rss+xml" title="Shivam Dixit" />
+		
+
+		
+		<link rel="stylesheet" href="https://shivamdixit.comcss/main.css">
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://shivamdixit.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://shivamdixit.composts'>Archive</a>
+	<a href='https://shivamdixit.comcategories'>Categories</a>
+	<a href='https://shivamdixit.comabout'>About</a>
+
+	
+
+	
+	<a class="cta" href="https://shivamdixit.com/index.xml">RSS</a>
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Incident handling at Kayako
+                    </h1>
+                    <h2 class="headline">
+                    Mar 23, 2017 00:00
+                    · 1973 words
+                    · 10 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://shivamdixit.comtags/incident-response">incident response</a>
+                          
+                              <a href="https://shivamdixit.comtags/outages">outages</a>
+                          
+                              <a href="https://shivamdixit.comtags/kayako">kayako</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p>We at Kayako strive for the number of 9&rsquo;s in our uptime metric. We want to ensure minimum service disruption for our customers, and therefore we need to work hard on the following two aspects:</p>
+<ol>
+<li>Identifying that an incident has occurred</li>
+<li>Minimizing the impact of the incident</li>
+</ol>
+<h3 id="identifying-an-incident">Identifying an incident</h3>
+<p>Our goal is to identify an incident before our customer. It not only helps us in proactively informing our customers on the ongoing issues but also helps us to prepare our Support team better for the incoming queries. It is a step towards better customer experience, which is what Kayako is all about.</p>
+<p>To achieve this goal, we have monitoring at multiple levels in our entire infra, and we are improving it continuously. Most of these monitoring tools are either integrated with <a href="https://medium.com/life-at-kayako/staying-on-top-of-our-stack-with-slack-e72c34a0b090#.vj5q9wig6">Slack</a> or Pagerduty so that our SRE team is the first one to know about these incidents.</p>
+<p>Some of the things that we currently monitor are:</p>
+<ol>
+<li>Health of our servers (like load, memory-usage, io wait, etc.)</li>
+<li>Health of individual Kayako helpdesks (crons, emails, search, queues, realtime dispatch, etc.)</li>
+<li>Connectivity within our infra (for ex: if application is able to connect to the Database)</li>
+<li>Health of Database</li>
+<li>Any delays in outgoing emails</li>
+<li>Spam alerts</li>
+<li>Health of our microservices</li>
+<li>Trial sign-ups failures</li>
+<li>Timely DB backups</li>
+<li>Any suspicious activity</li>
+<li>Health of critical processes like Nginx, supervisord, etc.</li>
+</ol>
+<p>&hellip;and the list goes on. Once we have identified an incident, it brings up to the next step:</p>
+<h3 id="minimizing-the-impact-of-an-incident">Minimizing the impact of an incident</h3>
+<p>Incidents are inevitable, things do go wrong, but our goal is to minimize the impact on our customers. We have a Standard Operating Procedure (SOP) around incidents response, and one of the critical parts of that SOP is an <em>issue</em> channel.</p>
+<p>We create a channel on Slack for every new incident (called an &ldquo;issue&rdquo; channel), all the relevant stakeholders join that channel, and all the discussion about the incident happen only in that channel. The issue channel remains open until we do a post-mortem, find the root cause of the issue and fix it. The channel is archived once we fix the root cause.</p>
+<p>Before I go into the details of our SOP, let&rsquo;s first start by listing down all the issue channels that we currently have. We follow convention as #issue-topic-ddmm. So if there is an issue with our crons on 12th March 2016, we will create a channel #issue-cron-1203.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+<span style="color:#f92672">import</span> json
+
+slack_token <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxx&#39;</span>
+slack_channel_list <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://slack.com/api/channels.list&#39;</span>
+
+<span style="color:#75715e"># Let&#39;s first fetch all the channels from the Slack API</span>
+r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(slack_channel_list, params<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;token&#39;</span>: slack_token})
+
+<span style="color:#75715e"># and load them into a JSON object</span>
+channels <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(r<span style="color:#f92672">.</span>text)
+
+<span style="color:#75715e"># Now let&#39;s filter out the issue channels from all the channels</span>
+issue_channels <span style="color:#f92672">=</span> list(filter(<span style="color:#66d9ef">lambda</span> x: x[<span style="color:#e6db74">&#34;name&#34;</span>]<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#34;issue-&#34;</span>), channels<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;channels&#34;</span>)))
+
+<span style="color:#75715e"># Let&#39;s see how many channels do we have</span>
+<span style="color:#66d9ef">print</span>(len(issue_channels))
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>207
+</code></pre>
+<h4 id="207-thats-a-lot-of-issues">207, that&rsquo;s a lot of issues!</h4>
+<p>But before we conclude anything, let&rsquo;s see what is the time range in which these channels span:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime
+
+<span style="color:#75715e"># We will sort these channels by created date, which is a unix-timestamp</span>
+issue_channels <span style="color:#f92672">=</span> sorted(issue_channels, key <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x: x[<span style="color:#e6db74">&#39;created&#39;</span>])
+
+<span style="color:#75715e"># Let&#39;s pick the first and the last created channel</span>
+first_channel <span style="color:#f92672">=</span> issue_channels[<span style="color:#ae81ff">0</span>]
+last_channel <span style="color:#f92672">=</span> issue_channels[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+
+<span style="color:#75715e"># Let&#39;s look at the average number of issue channels per month</span>
+<span style="color:#75715e"># Since the timestamp is in seconds, therefore we convert it to months</span>
+total_months <span style="color:#f92672">=</span> (last_channel[<span style="color:#e6db74">&#39;created&#39;</span>] <span style="color:#f92672">-</span> first_channel[<span style="color:#e6db74">&#39;created&#39;</span>]) <span style="color:#f92672">/</span> (<span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">30</span>)
+
+average <span style="color:#f92672">=</span> int(len(issue_channels) <span style="color:#f92672">/</span> total_months)
+
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;First issue channel: &#34;</span> <span style="color:#f92672">+</span> str(datetime<span style="color:#f92672">.</span>fromtimestamp(first_channel[<span style="color:#e6db74">&#39;created&#39;</span>])))
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Last issue channel: &#34;</span> <span style="color:#f92672">+</span> str(datetime<span style="color:#f92672">.</span>fromtimestamp(last_channel[<span style="color:#e6db74">&#39;created&#39;</span>])))
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Average number of issue channels per month: &#34;</span> <span style="color:#f92672">+</span> str(average))
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>First issue channel: 2016-03-11 06:55:23
+Last issue channel: 2017-03-23 00:43:10
+Average number of issue channels per month: 16
+</code></pre>
+<p>Let&rsquo;s see how many of these issue channels are active as of now:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">active_issue_channels <span style="color:#f92672">=</span> list(filter(<span style="color:#66d9ef">lambda</span> x: <span style="color:#f92672">not</span> x[<span style="color:#e6db74">&#34;is_archived&#34;</span>], issue_channels))
+
+<span style="color:#66d9ef">print</span>(len(active_issue_channels))
+</code></pre></div><pre><code>3
+</code></pre>
+<h4 id="only-3-active-issue-channels">Only 3 active issue channels!</h4>
+<p>Active not necessarily mean that the issue is ongoing, it can also mean that the issue is resolved, however, the root cause analysis is pending (which is the case here).</p>
+<p>Do you want to know what was my worst day in the last one year? Let&rsquo;s find out</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Let&#39;s find out the maximum number of issue channels created in a day</span>
+<span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> OrderedDict
+
+<span style="color:#75715e"># We will create an ordered dictionary with tuples date and count</span>
+<span style="color:#75715e"># The structure will look like: {(date, count), ...}</span>
+
+<span style="color:#75715e"># Let&#39;s create the &#39;key&#39; (date) for our tuple from timestamp</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_date_from_timestamp</span>(timestamp):
+    <span style="color:#66d9ef">return</span> datetime<span style="color:#f92672">.</span>fromtimestamp(timestamp)<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>)
+
+<span style="color:#75715e"># Iterate over all the channels and count the channels created same day</span>
+channels_on_dates <span style="color:#f92672">=</span> OrderedDict()
+<span style="color:#66d9ef">for</span> channel <span style="color:#f92672">in</span> issue_channels:
+    creation_date <span style="color:#f92672">=</span> get_date_from_timestamp(channel[<span style="color:#e6db74">&#39;created&#39;</span>])
+
+    <span style="color:#66d9ef">if</span> creation_date <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> channels_on_dates<span style="color:#f92672">.</span>keys():
+        channels_on_dates[creation_date] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">else</span>:
+        channels_on_dates[creation_date] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+
+<span style="color:#75715e"># Let&#39;s sort the dictionary based on number of channels</span>
+channels_on_dates <span style="color:#f92672">=</span> sorted(channels_on_dates<span style="color:#f92672">.</span>items(), key <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x: x[<span style="color:#ae81ff">1</span>])
+
+<span style="color:#75715e"># Let&#39;s print the maximum number of channels</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Worst day in last year: &#34;</span> <span style="color:#f92672">+</span> str(channels_on_dates[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]))
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Total number of issue channels created on this date: &#34;</span> <span style="color:#f92672">+</span> str(channels_on_dates[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]))
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>Worst day in last year: 2016-08-09
+Total number of issue channels created on this date: 6
+</code></pre>
+<p>Let&rsquo;s try to analyze the trend of issue channels over time. To find a trend, we need to need to know the archive date of a channel, which is not present in the issue_channels list that we have. Fortunately, Slack has an API to get the archive date of a channel.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Let&#39;s fetch archive date from history API</span>
+<span style="color:#f92672">import</span> math
+
+slack_channel_history <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://slack.com/api/channels.history&#39;</span>
+
+<span style="color:#75715e"># This methods return archive date from channel ID</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_archive_date</span>(channel_id):
+    r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(slack_channel_history, params<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;token&#39;</span>: slack_token, <span style="color:#e6db74">&#39;channel&#39;</span>: channel_id})
+
+    <span style="color:#66d9ef">for</span> message <span style="color:#f92672">in</span> json<span style="color:#f92672">.</span>loads(r<span style="color:#f92672">.</span>text)<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;messages&#39;</span>):
+        <span style="color:#75715e"># This code assumes that archive key will be present in first paginatinated response</span>
+        <span style="color:#75715e"># otherwise we simply assume that the channel is not archived yet</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;subtype&#39;</span> <span style="color:#f92672">in</span> message <span style="color:#f92672">and</span> message[<span style="color:#e6db74">&#39;subtype&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;channel_archive&#39;</span>:
+            <span style="color:#66d9ef">return</span> message[<span style="color:#e6db74">&#39;ts&#39;</span>]
+
+    <span style="color:#66d9ef">return</span> math<span style="color:#f92672">.</span>inf
+
+<span style="color:#66d9ef">for</span> channel <span style="color:#f92672">in</span> issue_channels:
+    channel[<span style="color:#e6db74">&#39;archived&#39;</span>] <span style="color:#f92672">=</span> get_archive_date(channel[<span style="color:#e6db74">&#39;id&#39;</span>])
+</code></pre></td></tr></table>
+</div>
+</div><p>Now we have archived dates in our issue_channels list. Let&rsquo;s try to plot the number of open issue channels over time in the given date range. To plot this, we will create a range of dates for X-axis and the number of issue channels that were open on that date on the Y axis.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> time
+
+<span style="color:#75715e"># Returns if the channel was open at a given timestamp</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">was_open</span>(channel, timestamp):
+    <span style="color:#66d9ef">return</span> timestamp <span style="color:#f92672">&gt;=</span> float(channel[<span style="color:#e6db74">&#39;created&#39;</span>]) <span style="color:#f92672">and</span> timestamp <span style="color:#f92672">&lt;=</span> float(channel[<span style="color:#e6db74">&#39;archived&#39;</span>])
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">timestamp_to_date</span>(timestamp):
+    <span style="color:#66d9ef">return</span> datetime<span style="color:#f92672">.</span>fromtimestamp(timestamp)
+
+<span style="color:#75715e"># We will start X-axis date just before our first issue channel</span>
+start_timestamp <span style="color:#f92672">=</span> first_channel[<span style="color:#e6db74">&#39;created&#39;</span>] <span style="color:#f92672">-</span> <span style="color:#ae81ff">1000</span> <span style="color:#75715e"># 1000 can be any positive value</span>
+end_timestamp <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+interval <span style="color:#f92672">=</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">30</span> <span style="color:#75715e"># We will create a monthly interval</span>
+
+<span style="color:#75715e"># Let&#39;s generate our X-axis</span>
+xaxis <span style="color:#f92672">=</span> list(range(int(start_timestamp), int(end_timestamp), interval))
+
+<span style="color:#75715e"># We might have skipped the current timestamp because it might have been</span>
+<span style="color:#75715e"># overflowed the range, so let&#39;s add it explicitly</span>
+xaxis<span style="color:#f92672">.</span>append(int(time<span style="color:#f92672">.</span>time()))
+
+yaxis <span style="color:#f92672">=</span> [] <span style="color:#75715e"># we need to find the values</span>
+
+<span style="color:#66d9ef">for</span> date <span style="color:#f92672">in</span> xaxis:
+    open_channels <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> channel <span style="color:#f92672">in</span> issue_channels:
+        <span style="color:#66d9ef">if</span> was_open(channel, date):
+            open_channels <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+
+    yaxis<span style="color:#f92672">.</span>append(open_channels)
+
+<span style="color:#75715e"># Convert convert the timestamps to actual dates</span>
+xaxis <span style="color:#f92672">=</span> list(map(timestamp_to_date, xaxis))
+</code></pre></td></tr></table>
+</div>
+</div><p>So we have our range on X-axis and the corresponding number of open issue channels on Y-axis. Let&rsquo;s plot them:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%</span>matplotlib inline
+
+<span style="color:#f92672">import</span> matplotlib
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+
+plt<span style="color:#f92672">.</span>plot(xaxis, yaxis, linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">2.0</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;Number of issue channels&#39;</span>)
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;Date&#39;</span>)
+
+plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Issue channels over time&#39;</span>)
+plt<span style="color:#f92672">.</span>autoscale(enable<span style="color:#f92672">=</span>True, tight<span style="color:#f92672">=</span>False)
+
+plt<span style="color:#f92672">.</span>show()
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/images/incident-post/output.png" alt="Graph"></p>
+<h4 id="interpreting-the-graph">Interpreting the graph</h4>
+<p>We launched The New Kayako in <strong>July 2016</strong>, and there was a steep rise in the number of issue channels. Just like with any other product launch, things were not so stable. We worked hard on fixing the root issues and making sure that the problems don&rsquo;t repeat. Whatever issues we encountered, they were fixed forever. The results you can see by yourself. There is a declining trend in the number of incidents. The system has become a lot more stable from where we started. We have spent countless nights to reach the current state.</p>
+<p>By no way this is an ideal state, we are continuously improving and getting stable with every passing day.</p>
+<h4 id="issue-channels-hit-or-miss">Issue channels, hit or miss?</h4>
+<p>I would leave it to the readers to decide if this strategy was a success or a failure. I have shared a part of the data that we have on it.</p>
+<h4 id="standard-operating-procedure-for-incidents">Standard Operating Procedure for Incidents</h4>
+<p>Issue channel is just one of the many things that we follow to minimize the impact of an incident. Let me share some points from our SOP document on the incident response:</p>
+<ul>
+<li>
+<p>Change your mindset - quickly say the following things to yourself.</p>
+<ul>
+<li>This is an extreme situation and my normal behavior is not ideal in this context</li>
+<li>The customer is suffering because of us and it is paramount to restore services first - anyway possible</li>
+<li>We are not debugging, that is for later, we don’t care for root causes right now - only solutions</li>
+<li>I will lose my sense of time as I start working, I must put a timer that repeats every 10 mins so I realize the passage of time</li>
+<li>I may not be able to solve this alone</li>
+<li>I don’t need to know everything before I escalate. If it’s time to escalate, I will do it even with incomplete information.</li>
+<li>The escalation is a form of communication and the act alone has value.</li>
+<li>I am not the only person impacted by this problem. I am not the only person worried about it. But I am the closest to the action and therefore all communication starts at me.</li>
+</ul>
+</li>
+<li>
+<p>Build context, answer the following questions as best as you can don’t spend more than two minutes on this</p>
+<ul>
+<li>Which component seems to be the source of this problem?</li>
+<li>What is the frequency or duration of this problem?</li>
+<li>What other components are affected by this behaviour?</li>
+<li>What is the severity of this issue? It’s critical or severe if one or more customers are facing a downtime</li>
+</ul>
+</li>
+<li>
+<p>In the issue channel set the topic to a brief line about the problem and add names for SRE issue owner and Developer/Product Engineer issue owner, as applicable</p>
+</li>
+<li>
+<p>Check the escalation matrix periodically and escalate as required</p>
+</li>
+<li>
+<p>Update issue channel with summary of issue, cover the following points, if something is not known say its ‘UNKNOWN’</p>
+<ul>
+<li>Environment: Staging / Production</li>
+<li>Component responsible for problem</li>
+<li>Probable cause if known</li>
+<li>Frequency or Duration of issue</li>
+<li>Type: Self (Engineering), Unknown, Scale (any scalability problems etc), Vendor (AWS, Dynect, Sendgrid, Realtime etc)</li>
+<li>Estimated Time to recovery (If Unknown, take an educated guess is it a matter of minutes, hours, or days)</li>
+<li>Who is working to fix this</li>
+<li>Current action step</li>
+<li>Next action step</li>
+</ul>
+</li>
+</ul>
+<h3 id="summary">Summary</h3>
+<p>Production outages are extreme pressure situations, in such situations, we try to:</p>
+<ul>
+<li>Communicate as much as possible – to engineering teams, to support teams or any other stakeholders</li>
+<li>Minimize the downtime and impact</li>
+<li>Leave trails for finding and fixing root cause right afterward</li>
+<li>Escalate as required</li>
+</ul>
+<p>I mentioned some of the tools and processes that we use to achieve these goals. They are not perfect, and we keep them improving based on the feedback. If you have similar processes in your company, drop a comment below and let us know!</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fshivamdixit.com%2fkayako%2fincident-response%2f - Incident%20handling%20at%20Kayako by @shivamd001"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'shivamdixit'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/shivamdixit">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.linkedin.com/in/shivamd001/">
+        <i class="fa fa-linkedin-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/shivamd001">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Shivam Dixit
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://shivamdixit.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://shivamdixit.comjs/main.js"></script>
+<script src="https://shivamdixit.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47304954-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+
+    </body>
+</html>

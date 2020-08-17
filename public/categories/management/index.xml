@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>management on Shivam Dixit</title>
+    <link>https://shivamdixit.com/categories/management/</link>
+    <description>Recent content in management on Shivam Dixit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 17 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://shivamdixit.com/categories/management/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Opinions</title>
+      <link>https://shivamdixit.com/management/opinions/</link>
+      <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/management/opinions/</guid>
+      <description>We all have opinions on different topics, from the best pizza place in town to the political party to vote for in the next election. More often than not these opinions are innocuous and don&amp;rsquo;t impact anything critical. However, there are times when opinions can have an impact on other individuals, projects, or an organization.
+In such cases, a certain level of rigor is expected from an individual before they form an opinion.</description>
+    </item>
+    
+  </channel>
+</rss>

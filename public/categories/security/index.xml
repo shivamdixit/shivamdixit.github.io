@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>security on Shivam Dixit</title>
+    <link>https://shivamdixit.com/categories/security/</link>
+    <description>Recent content in security on Shivam Dixit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 27 Aug 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://shivamdixit.com/categories/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Storing Delicious Passwords</title>
+      <link>https://shivamdixit.com/security/storing-delicious-passwords/</link>
+      <pubDate>Wed, 27 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/security/storing-delicious-passwords/</guid>
+      <description>Most of the web applications require their users to authenticate themselves by asking them username and password. They compare the user supplied credentials with the data stored in their database and if the credentials match, the user is granted access. Sounds good! But what will happen if the database in which the website is storing your passwords gets compromised? This article covers various techniques of storing passwords in the database.</description>
+    </item>
+    
+    <item>
+      <title>GSOC &#39;14 WebGoatPHP Proposal</title>
+      <link>https://shivamdixit.com/gsoc/gsoc-14-webgoatphp-proposal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/gsoc/gsoc-14-webgoatphp-proposal/</guid>
+      <description>Abstract WebGoat is one of the most popular open source web applications developed by OWASP. It is a deliberately insecure web application developed using Java to provide a security awareness environment. It offers a set of challenges based on various vulnerabilities listed in OWASP. Since PHP is extremely popular in web applications and has many of the security flaws which Java doesn&amp;rsquo;t, my work is to develop a deliberately insecure PHP web application.</description>
+    </item>
+    
+  </channel>
+</rss>

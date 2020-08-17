@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 
+			
+  
+    <meta name="twitter:card" content="summary"/>
+    
+      <meta name="twitter:image" content="https://shivamdixit.comimages/avatar.png" />
+    
+  
+  
+  <meta name="twitter:title" content="Custom 404 page in Apache"/>
+  <meta name="twitter:description" content="How to use custom 404 error page in Apache"/>
+  
+    <meta name="twitter:site" content="@shivamd001"/>
+  
+  
+  
+  
+    <meta name="twitter:creator" content="@Shivam Dixit"/>
+  
+
+
+
+		
+		<meta name="author" content="Shivam Dixit">
+		<meta name="description" content="Senior Production Engineer at Uber, making Uber’s Payment systems more secure and reliable.">
+		<meta name="generator" content="Hugo 0.74.3" />
+		<title>Custom 404 page in Apache &middot; Shivam Dixit</title>
+		<link rel="shortcut icon" href="https://shivamdixit.comimages/favicon.ico">
+		<link rel="stylesheet" href="https://shivamdixit.comcss/style.css">
+		<link rel="stylesheet" href="https://shivamdixit.comcss/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://shivamdixit.comcss/font-awesome.min.css">
+		
+
+		
+		<link href="https://shivamdixit.com/index.xml" rel="alternate" type="application/rss+xml" title="Shivam Dixit" />
+		
+
+		
+		<link rel="stylesheet" href="https://shivamdixit.comcss/main.css">
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://shivamdixit.com'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://shivamdixit.composts'>Archive</a>
+	<a href='https://shivamdixit.comcategories'>Categories</a>
+	<a href='https://shivamdixit.comabout'>About</a>
+
+	
+
+	
+	<a class="cta" href="https://shivamdixit.com/index.xml">RSS</a>
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Custom 404 page in Apache
+                    </h1>
+                    <h2 class="headline">
+                    Jan 29, 2014 00:00
+                    · 280 words
+                    · 2 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://shivamdixit.comtags/apache">apache</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <h2 id="what-is-404-error">What is 404 error?</h2>
+<p><img src="/images/404_post.png" alt="404 error"></p>
+<p>When you fire up your web-browser and type in, say <code>google.com/foo</code>, your web-browser makes a request to the server for page &ldquo;foo&rdquo;. In return, server returns a response with a special status code indicating the status of the request. If the page <code>foo</code> is not found on the server, <code>404</code> status code is sent in the respone. Some other common status codes are:</p>
+<pre><code>200 : OK
+301 : Moved Permanently
+400 : Bad Request
+401 : Unauthorized
+403 : Forbidden
+404 : Not Found
+500 : Internal Server Error
+</code></pre>
+<h2 id="what-is-htaccess-file">What is .htaccess file?</h2>
+<p><code>.htaccess</code> is short name for Hypertext Access. They are apache server configuration files at directory level <em>i.e</em> they control the settings for the directory in which they are placed in as well as the sub-directories underneath. You can use them to over-ride the parent configuration settings. It is not recommended to use <code>.htaccess</code> files as they create certain performance issues. By default they are disabled.</p>
+<h2 id="how-to-enable-htaccess-">How to enable .htaccess ?</h2>
+<p>Open the file &ldquo;default&rdquo; placed inside <code>sites-available</code></p>
+<p><code>$ vim /etc/apache2/sites-available/default</code></p>
+<p>Search for the section:</p>
+<pre><code>&lt;Directory /var/www/&gt;
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride None
+            Order allow,deny
+            allow from all
+&lt;/Directory&gt;
+</code></pre>
+<p>Modify <code>AllowOverride None</code> to <code>AllowOverride All</code></p>
+<p>Restart the apache server:</p>
+<p><code>$ sudo service apache2 restart</code></p>
+<p>You are done!</p>
+<h2 id="how-to-use-custom-404-page-using-htaccess-">How to use custom 404 page using .htaccess ?</h2>
+<p>Create a file with name <code>.htaccess</code> in your document web root. If it already exists skip to next step.</p>
+<p>Place the following line at the end of the file :</p>
+<p><code>ErrorDocument 404 /404.html</code></p>
+<p>Save and exit.</p>
+<p>Now whenever a visitor request a page which does not exists, they will see 404.html instead of apache default 404 error message.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fshivamdixit.com%2flinux%2fusing-custom-404-page-in-apache%2f - Custom%20404%20page%20in%20Apache by @shivamd001"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'shivamdixit'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.github.com/shivamdixit">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.linkedin.com/in/shivamd001/">
+        <i class="fa fa-linkedin-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/shivamd001">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Shivam Dixit
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://shivamdixit.comjs/jquery-3.3.1.min.js"></script>
+<script src="https://shivamdixit.comjs/main.js"></script>
+<script src="https://shivamdixit.comjs/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47304954-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+
+    </body>
+</html>

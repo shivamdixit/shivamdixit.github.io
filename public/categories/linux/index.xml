@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Shivam Dixit</title>
+    <link>https://shivamdixit.com/categories/linux/</link>
+    <description>Recent content in linux on Shivam Dixit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 07 Feb 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://shivamdixit.com/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Slow HTTP - The Insidious Killer</title>
+      <link>https://shivamdixit.com/linux/slowhttp-the-insidious-killer/</link>
+      <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/linux/slowhttp-the-insidious-killer/</guid>
+      <description>Slow HTTP are application layer Denial Of Service (DoS) attacks and have a potential to knock down a server with limited resources. Because of the nature of the attack (slow speed and low volume), they are hard to detect and can cause equal damage as a high volume DDoS. In this post, I&amp;rsquo;ll share my experience with these attacks.
+Introduction As explained in the WiKi [1], Slow HTTP attacks rely on the fact that the HTTP protocol, by design, requires requests to be completely received by the server before they are processed.</description>
+    </item>
+    
+    <item>
+      <title>What Happens When You Power On Your Computer</title>
+      <link>https://shivamdixit.com/linux/what-happens-when-you-power-on-your-computer/</link>
+      <pubDate>Fri, 07 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/linux/what-happens-when-you-power-on-your-computer/</guid>
+      <description>Ever wondered what all goes inside your computer when you switch on the power button? How is an Operating System loaded ? How you are presented with an user friendly GUI screen? Through this post I will peek into the booting process of UNIX like Operating Systems and try to answer some of the questions. Some of the things discussed in this post are also valid for Windows operating system.</description>
+    </item>
+    
+    <item>
+      <title>Custom 404 page in Apache</title>
+      <link>https://shivamdixit.com/linux/using-custom-404-page-in-apache/</link>
+      <pubDate>Wed, 29 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/linux/using-custom-404-page-in-apache/</guid>
+      <description>What is 404 error? When you fire up your web-browser and type in, say google.com/foo, your web-browser makes a request to the server for page &amp;ldquo;foo&amp;rdquo;. In return, server returns a response with a special status code indicating the status of the request. If the page foo is not found on the server, 404 status code is sent in the respone. Some other common status codes are:
+200 : OK 301 : Moved Permanently 400 : Bad Request 401 : Unauthorized 403 : Forbidden 404 : Not Found 500 : Internal Server Error  What is .</description>
+    </item>
+    
+  </channel>
+</rss>
