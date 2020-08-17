@@ -1,5 +1,5 @@
 # Site settings
-baseurl = "https://shivamdixit.com"
+baseurl = "https://shivamdixit.com/"
 languageCode = "en"
 title = "Shivam Dixit"
 theme = "hugo-theme-cactus-plus"
