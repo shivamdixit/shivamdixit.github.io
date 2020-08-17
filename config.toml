@@ -48,11 +48,13 @@ hasCJKLanguage = false
     home = ""
     about = ""
     archive = ""
-    subscribe = ""
+    categories = ""
+    subscribe = "RSS"
 
     olderPosts = ""
     newerPosts = ""
     copyright = ""
+
 
     # show latest posts in single page
     showLatestPosts = false
