@@ -81,4 +81,4 @@ hasCJKLanguage = false
     github-square = "https://www.github.com/shivamdixit"
 
 [permalinks]
-    posts = "/:slug/:title/"
+    posts = "/:slug/:filename/"
