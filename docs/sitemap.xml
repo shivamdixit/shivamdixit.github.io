@@ -138,6 +138,21 @@
   </url>
   
   <url>
+    <loc>https://shivamdixit.com/tags/internship/</loc>
+    <lastmod>2016-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/categories/internship/</loc>
+    <lastmod>2016-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/kayako/internship-at-kayako/</loc>
+    <lastmod>2016-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://shivamdixit.com/tags/crypto/</loc>
     <lastmod>2016-01-31T00:00:00+00:00</lastmod>
   </url>
@@ -189,22 +204,42 @@
   
   <url>
     <loc>https://shivamdixit.com/categories/application/</loc>
-    <lastmod>2015-08-29T00:00:00+00:00</lastmod>
+    <lastmod>2015-02-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://shivamdixit.com/tags/chrome-extension/</loc>
-    <lastmod>2015-08-29T00:00:00+00:00</lastmod>
+    <lastmod>2015-02-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://shivamdixit.com/tags/vocabulary/</loc>
-    <lastmod>2015-08-29T00:00:00+00:00</lastmod>
+    <lastmod>2015-02-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://shivamdixit.com/application/zinger-vocabulary-builder/</loc>
-    <lastmod>2015-08-29T00:00:00+00:00</lastmod>
+    <lastmod>2015-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/gsoc/cracking-google-summer-of-code/</loc>
+    <lastmod>2014-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/gsoc/</loc>
+    <lastmod>2014-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/categories/gsoc/</loc>
+    <lastmod>2014-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/tags/howto/</loc>
+    <lastmod>2014-08-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -228,22 +263,12 @@
   </url>
   
   <url>
-    <loc>https://shivamdixit.com/gsoc/cracking-google-summer-of-code/</loc>
+    <loc>https://shivamdixit.com/gsoc/gsoc-14-webgoatphp-proposal/</loc>
     <lastmod>2014-05-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://shivamdixit.com/tags/gsoc/</loc>
-    <lastmod>2014-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://shivamdixit.com/categories/gsoc/</loc>
-    <lastmod>2014-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://shivamdixit.com/tags/howto/</loc>
+    <loc>https://shivamdixit.com/tags/webgoatphp/</loc>
     <lastmod>2014-05-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -274,26 +299,6 @@
   
   <url>
     <loc>https://shivamdixit.com/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://shivamdixit.com/gsoc/gsoc-14-webgoatphp-proposal/</loc>
-  </url>
-  
-  <url>
-    <loc>https://shivamdixit.com/tags/internship/</loc>
-  </url>
-  
-  <url>
-    <loc>https://shivamdixit.com/categories/internship/</loc>
-  </url>
-  
-  <url>
-    <loc>https://shivamdixit.com/kayako/internship-at-kayako/</loc>
-  </url>
-  
-  <url>
-    <loc>https://shivamdixit.com/tags/webgoatphp/</loc>
   </url>
   
 </urlset>

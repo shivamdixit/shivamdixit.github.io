@@ -63,6 +63,17 @@ Introduction Null community organizes three different kinds of events:
     </item>
     
     <item>
+      <title>My Internship At Kayako</title>
+      <link>https://shivamdixit.com/kayako/internship-at-kayako/</link>
+      <pubDate>Wed, 02 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/kayako/internship-at-kayako/</guid>
+      <description>This post was originally posted on Medium as a part of life at Kayako series.
+This summer I got the opportunity to do an internship as a Product Engineer at Kayako. I was fresh out of college and looking for a chance to apply the knowledge that I learned at college. I accepted the offer straight away.
+The internship was the perfect platform to kick start my professional career. It not only honed my technical skills, but also helped me to the understand the various aspects of how an organization like this works.</description>
+    </item>
+    
+    <item>
       <title>HackIM 2016 write-up (Prog and Crypto)</title>
       <link>https://shivamdixit.com/ctf/hackim-writeup/</link>
       <pubDate>Sun, 31 Jan 2016 00:00:00 +0000</pubDate>
@@ -85,10 +96,19 @@ Daniel Kahneman describes planning fallacy as follows:</description>
     <item>
       <title>Zinger - Build Vocabulary</title>
       <link>https://shivamdixit.com/application/zinger-vocabulary-builder/</link>
-      <pubDate>Sat, 29 Aug 2015 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 05 Feb 2015 00:00:00 +0000</pubDate>
       
       <guid>https://shivamdixit.com/application/zinger-vocabulary-builder/</guid>
       <description>Almost all of us face the problem of forgetting new words which we learn. Moreover, it is difficult to compile a list of all new words to later reference. Even if we maintain such list, we almost never open it because of lack of time or motivation. To solve this problem, We have developed a chrome extension - Zinger which helps you to learn new words with minimum efforts. For learning new words you don&amp;rsquo;t have to devote explicit time, you can learn them while you are browsing the web.</description>
+    </item>
+    
+    <item>
+      <title>Cracking Google Summer Of Code</title>
+      <link>https://shivamdixit.com/gsoc/cracking-google-summer-of-code/</link>
+      <pubDate>Fri, 29 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/gsoc/cracking-google-summer-of-code/</guid>
+      <description>Google Summer of Code is a program sponsored by Google to introduce students to open source programming. Students work on the projects mentored by different open source organizations. It is an incredible opportunity to learn the various tools and practices used in real world softwares. I was GSOC 2014 student under Open Web Application Security Project in my sophomore year. In this post I will shed some lights on how to start preparing for GSOC.</description>
     </item>
     
     <item>
@@ -101,12 +121,12 @@ Daniel Kahneman describes planning fallacy as follows:</description>
     </item>
     
     <item>
-      <title>Cracking Google Summer Of Code</title>
-      <link>https://shivamdixit.com/gsoc/cracking-google-summer-of-code/</link>
+      <title>GSOC &#39;14 WebGoatPHP Proposal</title>
+      <link>https://shivamdixit.com/gsoc/gsoc-14-webgoatphp-proposal/</link>
       <pubDate>Sun, 11 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://shivamdixit.com/gsoc/cracking-google-summer-of-code/</guid>
-      <description>Google Summer of Code is a program sponsored by Google to introduce students to open source programming. Students work on the projects mentored by different open source organizations. It is an incredible opportunity to learn the various tools and practices used in real world softwares. I was GSOC 2014 student under Open Web Application Security Project in my sophomore year. In this post I will shed some lights on how to start preparing for GSOC.</description>
+      <guid>https://shivamdixit.com/gsoc/gsoc-14-webgoatphp-proposal/</guid>
+      <description>Abstract WebGoat is one of the most popular open source web applications developed by OWASP. It is a deliberately insecure web application developed using Java to provide a security awareness environment. It offers a set of challenges based on various vulnerabilities listed in OWASP. Since PHP is extremely popular in web applications and has many of the security flaws which Java doesn&amp;rsquo;t, my work is to develop a deliberately insecure PHP web application.</description>
     </item>
     
     <item>
@@ -126,26 +146,6 @@ Daniel Kahneman describes planning fallacy as follows:</description>
       <guid>https://shivamdixit.com/linux/using-custom-404-page-in-apache/</guid>
       <description>What is 404 error? When you fire up your web-browser and type in, say google.com/foo, your web-browser makes a request to the server for page &amp;ldquo;foo&amp;rdquo;. In return, server returns a response with a special status code indicating the status of the request. If the page foo is not found on the server, 404 status code is sent in the respone. Some other common status codes are:
 200 : OK 301 : Moved Permanently 400 : Bad Request 401 : Unauthorized 403 : Forbidden 404 : Not Found 500 : Internal Server Error  What is .</description>
-    </item>
-    
-    <item>
-      <title>GSOC &#39;14 WebGoatPHP Proposal</title>
-      <link>https://shivamdixit.com/gsoc/gsoc-14-webgoatphp-proposal/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://shivamdixit.com/gsoc/gsoc-14-webgoatphp-proposal/</guid>
-      <description>Abstract WebGoat is one of the most popular open source web applications developed by OWASP. It is a deliberately insecure web application developed using Java to provide a security awareness environment. It offers a set of challenges based on various vulnerabilities listed in OWASP. Since PHP is extremely popular in web applications and has many of the security flaws which Java doesn&amp;rsquo;t, my work is to develop a deliberately insecure PHP web application.</description>
-    </item>
-    
-    <item>
-      <title>My Internship At Kayako</title>
-      <link>https://shivamdixit.com/kayako/internship-at-kayako/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://shivamdixit.com/kayako/internship-at-kayako/</guid>
-      <description>This post was originally posted on Medium as a part of life at Kayako series.
-This summer I got the opportunity to do an internship as a Product Engineer at Kayako. I was fresh out of college and looking for a chance to apply the knowledge that I learned at college. I accepted the offer straight away.
-The internship was the perfect platform to kick start my professional career. It not only honed my technical skills, but also helped me to the understand the various aspects of how an organization like this works.</description>
     </item>
     
   </channel>

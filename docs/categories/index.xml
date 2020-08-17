@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>internship</title>
+      <link>https://shivamdixit.com/categories/internship/</link>
+      <pubDate>Wed, 02 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/categories/internship/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>CTF</title>
       <link>https://shivamdixit.com/categories/ctf/</link>
       <pubDate>Sun, 31 Jan 2016 00:00:00 +0000</pubDate>
@@ -50,9 +59,18 @@
     <item>
       <title>application</title>
       <link>https://shivamdixit.com/categories/application/</link>
-      <pubDate>Sat, 29 Aug 2015 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 05 Feb 2015 00:00:00 +0000</pubDate>
       
       <guid>https://shivamdixit.com/categories/application/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gsoc</title>
+      <link>https://shivamdixit.com/categories/gsoc/</link>
+      <pubDate>Fri, 29 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/categories/gsoc/</guid>
       <description></description>
     </item>
     
@@ -62,24 +80,6 @@
       <pubDate>Wed, 27 Aug 2014 00:00:00 +0000</pubDate>
       
       <guid>https://shivamdixit.com/categories/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gsoc</title>
-      <link>https://shivamdixit.com/categories/gsoc/</link>
-      <pubDate>Sun, 11 May 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://shivamdixit.com/categories/gsoc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>internship</title>
-      <link>https://shivamdixit.com/categories/internship/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://shivamdixit.com/categories/internship/</guid>
       <description></description>
     </item>
     

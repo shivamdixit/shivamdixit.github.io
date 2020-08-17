@@ -23,7 +23,7 @@
     <item>
       <title>GSOC &#39;14 WebGoatPHP Proposal</title>
       <link>https://shivamdixit.com/gsoc/gsoc-14-webgoatphp-proposal/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 11 May 2014 00:00:00 +0000</pubDate>
       
       <guid>https://shivamdixit.com/gsoc/gsoc-14-webgoatphp-proposal/</guid>
       <description>Abstract WebGoat is one of the most popular open source web applications developed by OWASP. It is a deliberately insecure web application developed using Java to provide a security awareness environment. It offers a set of challenges based on various vulnerabilities listed in OWASP. Since PHP is extremely popular in web applications and has many of the security flaws which Java doesn&amp;rsquo;t, my work is to develop a deliberately insecure PHP web application.</description>
