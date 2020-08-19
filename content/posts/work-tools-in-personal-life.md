@@ -8,7 +8,7 @@ tags: ["agile", "okrs", "kpi", "productivity"]
 draft: false
 ---
 
-When I joined a mega-corporation for the first time, I realized that a lot of thought has been put into organizing things. There are several frameworks, for example, OKRs, KPIs, etc., to help manage the complexity. These tools are common knowledge in the industry now. Over time, I realized that they can also benefit in personal life and help in improving focus and productivity. In this post I share how I have been using some of these tools.
+When I joined a mega-corporation for the first time, I realized that a lot of thought has been put into organizing things. There are several frameworks, for example, OKRs, KPIs, etc., to help manage the complexity. These tools are common knowledge in the industry now. Over time, I realized that they can also be beneficial in personal life and help in improving focus and productivity. In this post I share how I have been using some of these tools.
 
 ### 1. Objectives and Key Results (OKRs)
 
