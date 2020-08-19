@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>personal</title>
-      <link>https://shivamdixit.com/categories/personal/</link>
+      <title>howto</title>
+      <link>https://shivamdixit.com/categories/howto/</link>
       <pubDate>Wed, 19 Aug 2020 14:55:25 +0200</pubDate>
       
-      <guid>https://shivamdixit.com/categories/personal/</guid>
+      <guid>https://shivamdixit.com/categories/howto/</guid>
       <description></description>
     </item>
     
@@ -53,6 +53,15 @@
       <pubDate>Sun, 31 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>https://shivamdixit.com/categories/ctf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>personal</title>
+      <link>https://shivamdixit.com/categories/personal/</link>
+      <pubDate>Thu, 31 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://shivamdixit.com/categories/personal/</guid>
       <description></description>
     </item>
     

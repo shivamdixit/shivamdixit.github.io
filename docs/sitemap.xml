@@ -18,17 +18,17 @@
   </url>
   
   <url>
+    <loc>https://shivamdixit.com/categories/howto/</loc>
+    <lastmod>2020-08-19T14:55:25+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://shivamdixit.com/tags/kpi/</loc>
     <lastmod>2020-08-19T14:55:25+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://shivamdixit.com/tags/okrs/</loc>
-    <lastmod>2020-08-19T14:55:25+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://shivamdixit.com/categories/personal/</loc>
     <lastmod>2020-08-19T14:55:25+02:00</lastmod>
   </url>
   
@@ -214,6 +214,11 @@
   
   <url>
     <loc>https://shivamdixit.com/tags/new-year/</loc>
+    <lastmod>2015-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivamdixit.com/categories/personal/</loc>
     <lastmod>2015-12-31T00:00:00+00:00</lastmod>
   </url>
   
