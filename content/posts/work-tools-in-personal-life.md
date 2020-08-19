@@ -2,7 +2,7 @@
 title: "How I Use Work Tools To Organize Personal Life"
 date: 2020-08-19T14:55:25+02:00
 description: "How I use work tools in personal life to organize it and improve my productivity."
-categories: ["personal"]
+categories: ["howto"]
 slug: personal
 tags: ["agile", "okrs", "kpi", "productivity"]
 draft: false
@@ -12,21 +12,21 @@ When I joined a mega-corporation for the first time, I realized that a lot of th
 
 ### 1. Objectives and Key Results (OKRs)
 
-[OKR](https://felipecastro.com/en/okr/what-is-okr/) is a framework for goal setting. It comprises of an "objective" that you want to achieve and a few "key results" that indicate the progress on that objective. Defining OKRs at the start of each year helps me to focus on 2 or 3 main priorities for that year. For each objective, I define key result(s) and for each key result, I define three milestones to compare the progress. The milestones are: 0.3 (30%), 0.7, and 1.0 (100%). Here’s one of my OKR from the previous year:
+[OKR](https://felipecastro.com/en/okr/what-is-okr/) is a framework for goal setting. It comprises of an "objective" that you want to achieve, and a few "key results" that indicate the progress on that objective. Defining OKRs at the start of each year helps me to focus on 2 or 3 main priorities for that year. For each objective, I define key result(s) and for each key result, I define three milestones to compare the progress. The milestones are: 0.3 (30%), 0.7, and 1.0 (100%). Here’s one of my OKR from the previous year:
 
 {{< figure src="/images/work-tools-personal-life-post/example_objective.png" title="An OKR from 2019" class="half-width align-center" >}}
 
 A rule of thumb that I follow when defining the milestones is: 0.3 is "business as usual", i.e., what I will achieve without putting in much effort, 0.7 is what I can achieve by pushing myself outside of my comfort zone, and finally, 1.0 is a stretch goal.
 
-I have a recurring reminder in my todo list app ([Todoist](https://todoist.com/)) to review them every quarter. During reviews, I first validate if the OKRs still make sense or do I need to make changes. Then I score each of the key results from 0 to 1 (1 being 100% completed). It enables me to do necessary course correction.
+I have a recurring reminder in my todo list app ([Todoist](https://todoist.com/)) to review them every quarter. During reviews, I first validate if the OKRs still make sense or if I need to make changes. Then I score each of the key results from 0 to 1 (1 being 100% complete). It enables me to do necessary course correction.
 
 ### 2. Key Performance Indicators (KPIs)
 
 While the Key Results are for tracking progress on my annual objectives, I use [KPIs](https://www.klipfolio.com/resources/articles/what-is-a-key-performance-indicator) to track three overarching long term personal goals––**health**, **wealth**, and **happiness**. I have a simple Google Sheets setup for tracking it. Every morning I create an entry with four columns for the previous date, they are––**Date**, **# Productive hours**, **Emotional state**, and **Tags.**
 
-Emotional state is a number from a set `{-2, -1, 0, 1, 2}`, where -2 means extremely unhappy and +2 is extremely happy. These numbers are very subjective and different people might have different baselines but it is fine as long as you are not comparing these numbers with someone else's. Furthermore, [research](https://www.nap.edu/catalog/18548/subjective-well-being-measuring-happiness-suffering-and-other-dimensions-of) has shown that subjective measure can be an effective measure of happiness.
+Emotional state is a number from a set `{-2, -1, 0, 1, 2}`, where -2 means extremely unhappy and +2 is extremely happy. These numbers are very subjective and different people might have different baselines, but it is fine as long as you are not comparing these numbers with someone else's. Furthermore, [research](https://www.nap.edu/catalog/18548/subjective-well-being-measuring-happiness-suffering-and-other-dimensions-of) has shown that subjective measure can be an effective measure of happiness.
 
-I define the number of productive hours as the time when I am learning something new, producing something (software, blog post, etc.), or working on my health. I mark blocks of productive hours in the Google calendar as and when I am doing "productive" activity. When filling out the excel sheet, I count the number of such blocks in the previous day.
+I define the number of productive hours as the time when I am learning something new, producing something (software, blog post, etc.), or working on my health. I mark blocks of productive hours in the Google calendar as and when I am doing "productive" activity. When filling out the Excel sheet, I count the number of such blocks in the previous day.
 
 {{< figure src="/images/work-tools-personal-life-post/average_productivity.png" title="Average productivity graph (y-axis redacted)" class="half-width align-center" >}}
 
@@ -38,7 +38,7 @@ Lastly, wealth tracking is relevant for my [FIRE](https://www.investopedia.com/t
 
 {{< figure src="/images/work-tools-personal-life-post/burn_rate.png" title="Average monthly burn rate (numbers redacted)" class="half-width align-center" >}}
 
-This ritual takes less than a minute every morning and provides me all the information that I need. You can summarise and visualize this data to see trends over time.
+This ritual takes less than a minute every morning and provides me all the information I need. You can summarise and visualize this data to see trends over time.
 
 ### 3. Retrospectives
 
@@ -58,7 +58,7 @@ Organizations often have these well-defined and they use all possible opportunit
 > **Tip:** As you learn and evolve, everything including the purpose can change. So don’t be too fixated on what you defined initially.
 
 
-### 5. Checklists & Runbooks
+### 5. Checklists & Run books
 
 Documentation is a powerful tool, not only in a professional setting but also as an individual. I have realized that one of the ways to keep my brain calm is to write things down. Once I have things written down, it is much easier for me to “let go” of those things. It helps me to reduce the [cognitive load](https://www.mindtools.com/pages/article/cognitive-load-theory.htm) and to preserve knowledge for my future self.
 
@@ -71,7 +71,7 @@ Other than the checklists, I use Evernote extensively to document things. For ex
 
 ### 5. Bonus: Version control everything
 
-Git can be very useful also outside of the programming projects. For example, I use it to version control my resume (in LaTex), dotfiles, CSVs, photos, text files, etc. Pretty much anything that changes with time and I need to maintain historical versions, I use Git for that.
+Git can be very useful also outside of the programming projects. For example, I use it to version control my resume (in LaTex), dotfiles, CSVs, photos, text files, etc. Pretty much anything that changes with time, and I need to maintain historical versions, I use Git for that.
 
 While this all might sound like a lot of work, it is manageable if you stick with the two ground rules: **consistency** and **simplicity**. Try to keep it as simple as possible so that it requires a minimum amount of time and keep doing it consistently to prevent a huge backlog from piling up.
 
