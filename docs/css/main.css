@@ -23,6 +23,13 @@
     width: 60%;
 }
 
+.third-width {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 33%;
+}
+
 .align-center {
     text-align: center;
 }
