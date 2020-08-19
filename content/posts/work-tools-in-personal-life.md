@@ -53,21 +53,21 @@ Purpose, Vision, Mission, and Values all sound similar, but they have subtle dif
 ![BrandNewPurpose](/images/work-tools-personal-life-post/purpose.png)
 *(Source: brandnewpurpose.com)*
 
-Organizations often have these well-defined and they use all possible opportunities to reinforce this in their employees. However, it can be a challenging task to define these for an individual. None the less, it is an interesting exercise in trying to define them. To start with, just replace "We" to "I" in the above image and try to answer the questions. This requires you to answer very hard questions like the purpose of your life, however, don’t get intimidated. You can start with a smaller time horizon which can make things easier.
+Organizations often have these well-defined and they use all possible opportunities to reinforce this in their employees. However, it can be a challenging task to define these for an individual. Nonetheless, it is an interesting exercise in trying to define them. To start with, just replace "We" to "I" in the above image and try to answer the questions. This requires you to answer very hard questions like the purpose of your life, however, don’t get intimidated. You can start with a smaller time horizon which can make things easier.
 
 > **Tip:** As you learn and evolve, everything including the purpose can change. So don’t be too fixated on what you defined initially.
 
 
-### 5. Checklists & Run books
+### 5. Checklists & Runbooks
 
 Documentation is a powerful tool, not only in a professional setting but also as an individual. I have realized that one of the ways to keep my brain calm is to write things down. Once I have things written down, it is much easier for me to “let go” of those things. It helps me to reduce the [cognitive load](https://www.mindtools.com/pages/article/cognitive-load-theory.htm) and to preserve knowledge for my future self.
 
-Documentation can take various forms, for example, checklists, run books, blog posts, notes, etc. Partly inspired by the book [Checklist Manifesto](https://www.goodreads.com/book/show/6667514-the-checklist-manifesto) and partly by the use of checklists in my professional life, I have created a checklist for things that are repetitive and prone to error. For example, since I have defined a checklist for traveling, I have never forgotten anything during my travel (in reality I missed a few things initially, but added them to the list later). Here’s a part of my travel checklist:
+Documentation can take various forms, for example, checklists, runbooks, blog posts, notes, etc. Partly inspired by the book [Checklist Manifesto](https://www.goodreads.com/book/show/6667514-the-checklist-manifesto) and partly by the use of checklists in my professional life, I have created a checklist for things that are repetitive and prone to error. For example, since I have defined a checklist for traveling, I have never forgotten anything during my travel (in reality I missed a few things initially, but added them to the list later). Here’s a part of my travel checklist:
 
 
 {{< figure src="/images/work-tools-personal-life-post/checklist.png" title="My travel checklist (omitted)" class="third-width align-center" >}}
 
-Other than the checklists, I use Evernote extensively to document things. For example, inspired by Ray Dalio’s [Principle](https://www.goodreads.com/book/show/34536488-principles), I have written down my life principles (I intend to publish them in a separate post). I write summaries of the book that I like and have my thoughts written down on several ad-hoc topics like how to deal with high-stress situations, opinions ([published](https://shivamdixit.com/management/opinions/)), on giving suggestions, diet plan, mental models, etc.
+Other than the checklists, I use Evernote extensively to document things. For example, inspired by Ray Dalio’s [Principle](https://www.goodreads.com/book/show/34536488-principles), I have written down my life principles (I intend to publish them in a separate post). I write summaries of the books that I like and have my thoughts written down on several ad-hoc topics like how to deal with high-stress situations, opinions ([published](https://shivamdixit.com/management/opinions/)), on giving suggestions, diet plan, mental models, etc.
 
 ### 5. Bonus: Version control everything
 
