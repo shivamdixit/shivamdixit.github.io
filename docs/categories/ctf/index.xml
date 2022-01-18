@@ -6,11 +6,7 @@
     <description>Recent content in CTF on Shivam Dixit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 31 Jan 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://shivamdixit.com/categories/ctf/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 31 Jan 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://shivamdixit.com/categories/ctf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HackIM 2016 write-up (Prog and Crypto)</title>
       <link>https://shivamdixit.com/ctf/hackim-writeup/</link>

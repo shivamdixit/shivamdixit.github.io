@@ -28,8 +28,8 @@
 
 		
 		<meta name="author" content="Shivam Dixit">
-		<meta name="description" content="Senior Production Engineer at Uber, making Uber’s Payment systems more secure and reliable.">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="description" content="Senior Software Engineer at Databricks, making Databricks’s systems more secure and reliable.">
+		<meta name="generator" content="Hugo 0.92.0" />
 		<title>How &#39;ls&#39; command output caused a downtime on prod &middot; Shivam Dixit</title>
 		<link rel="shortcut icon" href="https://shivamdixit.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://shivamdixit.com/css/style.css">
@@ -104,7 +104,7 @@
 <p><img src="/images/ls-post/output.png" alt="Output"></p>
 <p>Did you spot something strange? Notice the numbers before every line. Yes, this is a screenshot of <code>history</code> command. When I was going through the <code>history</code>, at first glance I just ignored it as command and its output, but then I quickly came to senses and realised that history doesn’t show the command output. It was the output of the command which was being executed as a command. Let’s recap…</p>
 <p>The Engineer&rsquo;s investigation was going well until he mistakenly pasted the clipboard contents (which had ll&rsquo;s output) on the shell. Since it had line-breaks, he couldn&rsquo;t do much to stop it. The output of command execution was:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>root@app04<span style="color:#f92672">]</span>lrwxrwxrwx <span style="color:#ae81ff">1</span> nobody nobody <span style="color:#ae81ff">70</span> Apr <span style="color:#ae81ff">12</span> 13:22 index.php -&gt; /master/current/index.php
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>root@app04<span style="color:#f92672">]</span>lrwxrwxrwx <span style="color:#ae81ff">1</span> nobody nobody <span style="color:#ae81ff">70</span> Apr <span style="color:#ae81ff">12</span> 13:22 index.php -&gt; /master/current/index.php
 bash: lrwxrwxrwx: command not found
 </code></pre></div><p>Aha! <code>bash: lrwxrwxrwx: command not found</code> &mdash; what a relief to see that command didn&rsquo;t execute. <em>Nothing went wrong.</em></p>
 <p>Well, at some point in time, we all have pasted something weird in our shells. Nothing happens usually because the output almost never makes a valid command!</p>
@@ -173,7 +173,7 @@ bash: lrwxrwxrwx: command not found
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Shivam Dixit
+       © Copyright 2022 <i class="fa fa-heart" aria-hidden="true"></i> Shivam Dixit
     
     </p>
 </footer>
@@ -201,7 +201,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

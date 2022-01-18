@@ -28,8 +28,8 @@
 
 		
 		<meta name="author" content="Shivam Dixit">
-		<meta name="description" content="Senior Production Engineer at Uber, making Uber’s Payment systems more secure and reliable.">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="description" content="Senior Software Engineer at Databricks, making Databricks’s systems more secure and reliable.">
+		<meta name="generator" content="Hugo 0.92.0" />
 		<title>GSOC &#39;14 WebGoatPHP Proposal &middot; Shivam Dixit</title>
 		<link rel="shortcut icon" href="https://shivamdixit.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://shivamdixit.com/css/style.css">
@@ -74,7 +74,7 @@
                     </h1>
                     <h2 class="headline">
                     May 11, 2014 00:00
-                    · 1372 words
+                    · 1357 words
                     · 7 minute read
                       <span class="tags">
                       
@@ -91,9 +91,8 @@
                 </header>
                 
                 <section id="post-body">
-                    <figure>
-    <img src="/images/gsoc-proposal/gsoc.png"
-         alt="Google Summer of Code"/> 
+                    <figure><img src="/images/gsoc-proposal/gsoc.png"
+         alt="Google Summer of Code"/>
 </figure>
 
 <h3 id="abstract">Abstract</h3>
@@ -105,12 +104,10 @@
 <p><strong>Single-User Mode</strong></p>
 <p>User can browse all the challenges that are available, can view hints and submit solutions. All the     submissions are evaluated by server side scripts. Each challenge is accompanied by a verbose explanation of the vulnerability and it&rsquo;s solution. This mode is suitable for individuals who want a hands-on experience with various security flaws.</p>
 <p><img src="/images/gsoc-proposal/1.png" alt="Single User Mode" title="Single User Mode"></p>
-<p><!-- raw HTML omitted -->
-<strong>Workshop Mode</strong></p>
+<!-- raw HTML omitted -->
 <p>In this mode, WebGoatPHP has a centralized control system. A lecturer is presented with an admin dashboard where he can manage accounts of all the participants that will connect to the server in workshop mode. He can control various options like challenge selection, allow hints, allow providing feedback by other users etc. A lecturer can monitor progress of all the students. This mode provides an ideal collaborative learning environment.</p>
 <p><img src="/images/gsoc-proposal/2.png" alt="Workshop Mode" title="Workshop Mode"></p>
-<p><!-- raw HTML omitted -->
-<strong>Contest (CTF) Mode</strong></p>
+<!-- raw HTML omitted -->
 <p>This mode is ideal for hosting CTF style contests. Admin of the contest can add/select challenges, assign points, control duration of the contests, open hints for participants etc. A contestant is required to sign-up before taking part in a contest. A real time leader-board is also maintained on the basis of score and time. A secure core framework like OWASP PHPSEC is required to strengthen security of the application and to ensure fair competition.</p>
 <p><img src="/images/gsoc-proposal/3.png" alt="Contest Mode" title="Contest Mode"></p>
 <!-- raw HTML omitted -->
@@ -122,16 +119,13 @@
 <p>1.<strong>Injection attacks</strong></p>
 <p>Injection attacks remain to be the most common web application attacks in OWASP top 10 since many years. Injection flaws occur when data is sent to an interpreter as part of a query without sanitizing it. Different scenarios of injection attacks like SQL injection, LDAP injection, Command injection, XPATH injection etc. are present in WebGoatPHP.</p>
 <p><img src="/images/gsoc-proposal/sqli.png" alt="SQL Injection" title="SQL Injection"></p>
-<p><!-- raw HTML omitted -->
-2.<strong>Broken session management</strong></p>
+<!-- raw HTML omitted -->
 <p>PHP&rsquo;s internal session management has many flaws. Insecure implementation of session management can compromise user&rsquo;s identity. Session hijacking, session fixation attacks are the most common scenarios.</p>
 <p><img src="/images/gsoc-proposal/session_hij.png" alt="Session" title="Session Hijacking"></p>
-<p><!-- raw HTML omitted -->
-3.<strong>Brute force attacks</strong></p>
+<!-- raw HTML omitted -->
 <p>A brute force attack can manifest itself in many different ways. The aim of challenges in this category is to highlight the importance of disallowing weak passwords in web application as well as to familiarize the user with various brute force tools like Hydra, Brutus, DirBuster etc.</p>
 <p><img src="/images/gsoc-proposal/brute_force1.png" alt="Brute Force Attacks" title="Brute Force Attacks"></p>
-<p><!-- raw HTML omitted -->
-4.<strong>Cross Site Scripting (XSS)</strong></p>
+<!-- raw HTML omitted -->
 <p>An attacker can execute malicious script in the victim’s browser through a XSS attack. Using a script an attacker can steal cookies, redirect the user to a phishing websites etc. Challenges for stored XSS attack as well as reflected XSS attack are present in WebGoatPHP.</p>
 <p><img src="/images/gsoc-proposal/XSS.gif" alt="XSS" title="Cross Site Scripting"></p>
 <p>5.<strong>Network Attacks</strong></p>
@@ -226,7 +220,7 @@
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Shivam Dixit
+       © Copyright 2022 <i class="fa fa-heart" aria-hidden="true"></i> Shivam Dixit
     
     </p>
 </footer>
@@ -254,7 +248,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

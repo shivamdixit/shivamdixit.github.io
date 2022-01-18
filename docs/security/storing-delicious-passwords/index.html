@@ -28,8 +28,8 @@
 
 		
 		<meta name="author" content="Shivam Dixit">
-		<meta name="description" content="Senior Production Engineer at Uber, making Uber’s Payment systems more secure and reliable.">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="description" content="Senior Software Engineer at Databricks, making Databricks’s systems more secure and reliable.">
+		<meta name="generator" content="Hugo 0.92.0" />
 		<title>Storing Delicious Passwords &middot; Shivam Dixit</title>
 		<link rel="shortcut icon" href="https://shivamdixit.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://shivamdixit.com/css/style.css">
@@ -106,15 +106,13 @@
 <p>Using cryptographic hash function is better than storing plain text password.</p>
 </blockquote>
 <p>Hackers are smart guys and once they came to know that developers are storing hashed passwords, they pre-computed hash of large number of words (from a popular word list or dictionary words). They created a table of words and their corresponding hashes. This table is known as <a href="http://en.wikipedia.org/wiki/Rainbow_table">Rainbow Table</a> and it is readily available online. They can use this table to reverse lookup the actual password by comparing the hashes obtained from the database. Hence it is very important to have a <strong>strong</strong> password since the possibility of your password appearing in the word list becomes less.</p>
-<figure class="align-center">
-    <img src="/images/hash-passwords-post/rainbow-table.png"/> <figcaption>
+<figure class="align-center"><img src="/images/hash-passwords-post/rainbow-table.png"/><figcaption>
             <h4>Simplified rainbow table with 3 reduction functions (Source: Wikipedia)</h4>
         </figcaption>
 </figure>
 
 <p>Simply storing the hash of a password is not going to help anymore. Processing power has increased drastically with the introduction of GPUs and CUDA, OpenCL libraries. A fast GPU can generate millions of MD5/SHA1 hashes in one second. Hence a hacker can easily generate large number of hashes by brute-forcing various possible combinations and can compare it with the hashes stored in the database to extract the actual password.</p>
-<figure class="half-width align-center">
-    <img src="/images/hash-passwords-post/surprised.png"/> <figcaption>
+<figure class="half-width align-center"><img src="/images/hash-passwords-post/surprised.png"/><figcaption>
             <h4>Even hashed passwords are not secure! Surprised?</h4>
         </figcaption>
 </figure>
@@ -196,7 +194,7 @@
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Shivam Dixit
+       © Copyright 2022 <i class="fa fa-heart" aria-hidden="true"></i> Shivam Dixit
     
     </p>
 </footer>
@@ -224,7 +222,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 

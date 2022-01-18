@@ -28,8 +28,8 @@
 
 		
 		<meta name="author" content="Shivam Dixit">
-		<meta name="description" content="Senior Production Engineer at Uber, making Uber’s Payment systems more secure and reliable.">
-		<meta name="generator" content="Hugo 0.74.3" />
+		<meta name="description" content="Senior Software Engineer at Databricks, making Databricks’s systems more secure and reliable.">
+		<meta name="generator" content="Hugo 0.92.0" />
 		<title>HackIM 2016 write-up (Prog and Crypto) &middot; Shivam Dixit</title>
 		<link rel="shortcut icon" href="https://shivamdixit.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://shivamdixit.com/css/style.css">
@@ -102,9 +102,8 @@
 <pre><code>So you reached Delhi and now the noise in your head is not allowing you to think rationally. The Nosise in your head has origin its Origin in your Stomach. And this is a big hunger. You can finish one or probably 2 Tandoori Chicken. So where can you get the best Tandoori Chicken in Delhi? This place tweeted last week that the Tandoori Chicken it servers is like never B4. You got its twitter handle?
 </code></pre>
 <p>We have three clues in the question - <em>Delhi</em>, <em>Tandoori Chicken</em>, and <em>last week</em>. Twitter has a fancy <a href="https://twitter.com/search-advanced">advance search</a> feature in which I entered &ldquo;Tandoori Chicken&rdquo; in the section &ldquo;All of these words&rdquo;, &ldquo;Delhi&rdquo; as tweet location and set date between 2016-01-17 and 2016-01-29. The tweet popped up right at the bottom.</p>
-<figure>
-    <img src="/images/hackim-writeup-post/prog1.png"
-         alt="Programming 1"/> 
+<figure><img src="/images/hackim-writeup-post/prog1.png"
+         alt="Programming 1"/>
 </figure>
 
 <p><strong>Flag:</strong> @anyahotels</p>
@@ -113,9 +112,8 @@
 </code></pre>
 <p>File: <a href="/assets/hackim-writeup-post/TheLastRuler.txt">TheLastRuler.txt</a></p>
 <p>Without solving anything it is clearly evident that the name of country will be five letters. I quickly opened the <a href="http://bestforpuzzles.com/lists/countries/5.html">list of countries</a> with five letters in name. Our problem space has been significantly reduced. But to proceed further we need something more. To determine a pattern, I did a frequency analysis of letters in each paragraph. Here is how it looks:</p>
-<figure>
-    <img src="/images/hackim-writeup-post/prog2.png"
-         alt="Programming 2"/> 
+<figure><img src="/images/hackim-writeup-post/prog2.png"
+         alt="Programming 2"/>
 </figure>
 
 <p>I separated the letter with highest frequency in each paragraph (In first paragraph it is letter &lsquo;a&rsquo;) and hence got a word - <em>aliby</em>. On re-arranging it slightly we have our country name, <em>i.e</em> Libya. Finally I googled &ldquo;Libya gold ruler&rdquo; and the first name that popped up in results was the flag.</p>
@@ -123,10 +121,9 @@
 <h3 id="programming-3">Programming 3</h3>
 <pre><code>Still Hungry and unsutisfied, you are looking for more. Some more, unique un heard dishes. Then you can find one to make it your self. Its his Dish. He has his own website which is he describes as &quot; a social home for each of our passions&quot;. The link to his website is on his google+ page. whats the name of his site. By the way he loves and hogs on &quot;Onion Kheer&quot;. Have you heard of &quot;Onion Kheer&quot;?
 </code></pre>
-<p>Googling &quot; a social home for each of our passions&rdquo; reveals the name <em>Affimity</em>. On opening their Google+ page, you can see the link to their home page. I don&rsquo;t know why this question is of 300 points.</p>
-<figure>
-    <img src="/images/hackim-writeup-post/prog3.png"
-         alt="Programming 3"/> 
+<p>Googling &quot; a social home for each of our passions&quot; reveals the name <em>Affimity</em>. On opening their Google+ page, you can see the link to their home page. I don&rsquo;t know why this question is of 300 points.</p>
+<figure><img src="/images/hackim-writeup-post/prog3.png"
+         alt="Programming 3"/>
 </figure>
 
 <p><strong>Flag:</strong> affimity.com</p>
@@ -134,9 +131,8 @@
 <pre><code>One of the NullCon vidoes talked about a marvalous Russian Gift. The Vidoe was uploaded on [May of 2015] What is the ID of that youtube video.
 </code></pre>
 <p>I don&rsquo;t even know why this question is here. Just a simple google video search reveals the answer.</p>
-<figure>
-    <img src="/images/hackim-writeup-post/prog4.png"
-         alt="Programming 4"/> 
+<figure><img src="/images/hackim-writeup-post/prog4.png"
+         alt="Programming 4"/>
 </figure>
 
 <p><strong>Flag:</strong> a4_PvN_A1ts</p>
@@ -169,7 +165,7 @@ The world- 10x10
 <p>We have to apply the above algorithm and find the state after 7 generations. I googled and found the implementation of algo. I made some modifications in it as per the requirements. The final C program looks like:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
@@ -300,7 +296,7 @@ The world- 10x10
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">/* dimensions of the screen */</span>
 
@@ -454,9 +450,8 @@ The world- 10x10
 </code></pre>
 <p>File: <a href="http://ctf.nullcon.net/crypto/crypto1.zip">crypto1.zip</a></p>
 <p>We have the following files in the zip:</p>
-<figure>
-    <img src="/images/hackim-writeup-post/crypto1-1.png"
-         alt="Crypto 1-1"/> 
+<figure><img src="/images/hackim-writeup-post/crypto1-1.png"
+         alt="Crypto 1-1"/>
 </figure>
 
 <p>The cipher used for decoding is the XOR cipher (given in the question) which works as follows:</p>
@@ -466,21 +461,18 @@ encrypted_text XOR plain_text = secret
 </code></pre>
 <p>We have both plain text and cipher text for the heart file, hence we will get the secret by XORing both of them. I used an online <a href="http://xor.pw/">tool</a> for the same.</p>
 <p>First convert the text in both the files to hex. I used a tool for Mac known as Hex Fiend.</p>
-<figure>
-    <img src="/images/hackim-writeup-post/crypto1-2.png"
-         alt="Crypto 1-2"/> 
+<figure><img src="/images/hackim-writeup-post/crypto1-2.png"
+         alt="Crypto 1-2"/>
 </figure>
 
 <p>Next take the XOR of both the Hex strings</p>
-<figure>
-    <img src="/images/hackim-writeup-post/crypto1-3.png"
-         alt="Crypto 1-3"/> 
+<figure><img src="/images/hackim-writeup-post/crypto1-3.png"
+         alt="Crypto 1-3"/>
 </figure>
 
 <p>Now we have the secret key -&gt; *Its right there what you are looking for. * (which is ofcourse being repeated). Don&rsquo;t forget the blank space after dot, it is also part of the key. Now use this to decode the cipher text in mind_crypt.txt. Be careful with the key size, split the encrypted text in chunks of key size. Here is the first 42 bytes of data:</p>
-<figure>
-    <img src="/images/hackim-writeup-post/crypto1-4.png"
-         alt="Crypto 1-4"/> 
+<figure><img src="/images/hackim-writeup-post/crypto1-4.png"
+         alt="Crypto 1-4"/>
 </figure>
 
 <p>On decoding the complete file you will get a play store <a href="https://play.google.com/store/apps/collection/promotion_3001629_watch_live_games?hl">URL</a> which says &ldquo;Never Miss a Game&rdquo;</p>
@@ -490,9 +482,8 @@ encrypted_text XOR plain_text = secret
 </code></pre>
 <p>File: <a href="http://ctf.nullcon.net/crypto/The_extract.txt">The_extract.txt</a></p>
 <p>It is a Caesar cipher (given) with unknown key. Hence I used a <a href="http://www.xarg.org/tools/caesar-cipher/">tool</a> which can &ldquo;guess&rdquo; the key. The key turned out to be <strong>16</strong>, and the deciphered text was as follows:</p>
-<figure>
-    <img src="/images/hackim-writeup-post/crypto2.png"
-         alt="Crypto 2"/> 
+<figure><img src="/images/hackim-writeup-post/crypto2.png"
+         alt="Crypto 2"/>
 </figure>
 
 <p>On googling the extract you will find the exact name of the book, which is our flag.</p>
@@ -502,14 +493,12 @@ encrypted_text XOR plain_text = secret
 </code></pre>
 <p>File: <a href="http://ctf.nullcon.net/crypto/AncientSecretsOfTheKamaSutra.txt">AncientSecretsOfTheKamaSutra.txt</a></p>
 <p>This question is same as Crypto 1 except that we don&rsquo;t have the plain text of the given cipher text. Therefore it becomes bit trickier to find the key. There are many algorithms and theories around breaking the repeated key XOR, such as on <a href="http://cryptopals.com/sets/1/challenges/6/">matasano</a>, <a href="https://wiremask.eu/tools/xor-cracker/">web</a>, etc. They are time consuming and I was already running short of time. Therefore I decided to follow a different approach, <em>i.e</em> try finding the plain text directly. Although this might sound bizarre at first and might not work everytime, but I was lucky this time. I googled the name of file <em>Ancient Secrets Of The KamaSutra</em>, it turned out to be a movie. I copied the first few letters (<em>Julie and Steve&rsquo;s</em>) from the imdb story line (17 bytes) and converted them to hex, and XORed it with the first 17 bytes of the cipher text.</p>
-<figure>
-    <img src="/images/hackim-writeup-post/crypto3-1.png"
-         alt="Crypto 3-1"/> 
+<figure><img src="/images/hackim-writeup-post/crypto3-1.png"
+         alt="Crypto 3-1"/>
 </figure>
 
-<figure>
-    <img src="/images/hackim-writeup-post/crypto3-2.png"
-         alt="Crypto 3-2"/> 
+<figure><img src="/images/hackim-writeup-post/crypto3-2.png"
+         alt="Crypto 3-2"/>
 </figure>
 
 <p>Bingo! We have the name that we were looking for. Just a sidenote, this name is also present in the cast on imdb.</p>
@@ -526,11 +515,11 @@ encrypted_text XOR plain_text = secret
 </code></pre>
 <p>File: <a href="http://ctf.nullcon.net/crypto/crypto5.zip">crypto5.zip</a></p>
 <p>It was purely a Brute Force question. Firstly I separated out the keys using AWK:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">awk <span style="color:#e6db74">&#39;/BEGIN PUBLIC KEY/{n++}{print &gt;&#34;out&#34; n &#34;.pub&#34; }&#39;</span> all_keys.txt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">awk <span style="color:#e6db74">&#39;/BEGIN PUBLIC KEY/{n++}{print &gt;&#34;out&#34; n &#34;.pub&#34; }&#39;</span> all_keys.txt
 </code></pre></div><p>At this point, I had 50 different public keys in different files, now I just had to find the correct key file. I wrote a small shell script to know it:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -545,7 +534,7 @@ encrypted_text XOR plain_text = secret
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">for</span> i in <span style="color:#e6db74">`</span>seq <span style="color:#ae81ff">1</span> 50<span style="color:#e6db74">`</span>
 <span style="color:#66d9ef">do</span>
@@ -565,9 +554,8 @@ encrypted_text XOR plain_text = secret
 This fighter is a designation for two separate, heavily upgraded derivatives of the Su-35 'Flanker' jet plane. They are single-seaters designed by Sukhoi(KnAAPO).
 </code></pre>
 <p>On googling the paragraph I found the name of fighter on wikipedia.</p>
-<figure>
-    <img src="/images/hackim-writeup-post/crypto5.png"
-         alt="Crypto 5"/> 
+<figure><img src="/images/hackim-writeup-post/crypto5.png"
+         alt="Crypto 5"/>
 </figure>
 
 <p><strong>Flag:</strong> Sukhoi Su-35</p>
@@ -633,7 +621,7 @@ This fighter is a designation for two separate, heavily upgraded derivatives of 
     
     <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Shivam Dixit
+       © Copyright 2022 <i class="fa fa-heart" aria-hidden="true"></i> Shivam Dixit
     
     </p>
 </footer>
@@ -661,7 +649,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 
 
 
