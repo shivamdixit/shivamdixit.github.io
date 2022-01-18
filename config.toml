@@ -79,9 +79,9 @@ hasCJKLanguage = false
 
 # Add additional social link entries underneath
 [social]
-    twitter-square = "https://www.twitter.com/shivamd001"
-    github-square = "https://www.github.com/shivamdixit"
-    linkedin-square = "https://www.linkedin.com/in/shivamd001/"
+    twitter = "https://www.twitter.com/shivamd001"
+    github = "https://www.github.com/shivamdixit"
+    # linkedin = "https://www.linkedin.com/in/shivamd001/"
 
 [permalinks]
     posts = "/:slug/:filename/"
