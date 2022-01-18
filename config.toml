@@ -81,7 +81,7 @@ hasCJKLanguage = false
 [social]
     twitter = "https://www.twitter.com/shivamd001"
     github = "https://www.github.com/shivamdixit"
-    # linkedin = "https://www.linkedin.com/in/shivamd001/"
+    linkedin = "https://www.linkedin.com/in/shivamd001/"
 
 [permalinks]
     posts = "/:slug/:filename/"
